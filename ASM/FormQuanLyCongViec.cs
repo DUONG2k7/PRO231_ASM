@@ -310,8 +310,8 @@ namespace ASM
             {
                 try
                 {
-                    cbChonMonHoc.SelectedValue = dgvDsMonHocGV.CurrentRow.Cells["IDMonHoc"]?.Value?.ToString() ?? string.Empty;
-                    dtpNgayChotViecKM.Value = Convert.ToDateTime(dgvDsMonHocGV.CurrentRow.Cells["NgayChotViec"].Value);
+                    cbChonMonHoc.SelectedValue = dgvDsMonHocGV.CurrentRow.Cells["Mã Môn"]?.Value?.ToString() ?? string.Empty;
+                    dtpNgayChotViecKM.Value = Convert.ToDateTime(dgvDsMonHocGV.CurrentRow.Cells["Ngày Chốt Việc"].Value);
                 }
                 catch (Exception ex)
                 {
@@ -327,8 +327,8 @@ namespace ASM
             {
                 try
                 {
-                    cbLop.SelectedValue = dgvDsGvClass.CurrentRow.Cells["IDLop"]?.Value?.ToString() ?? string.Empty;
-                    dtpNgayLopGV.Value = Convert.ToDateTime(dgvDsGvClass.CurrentRow.Cells["NgayChotLop"].Value);
+                    cbLop.SelectedValue = dgvDsGvClass.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString() ?? string.Empty;
+                    dtpNgayLopGV.Value = Convert.ToDateTime(dgvDsGvClass.CurrentRow.Cells["Ngày Chốt Lớp"].Value);
                 }
                 catch (Exception ex)
                 {

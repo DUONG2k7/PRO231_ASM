@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="34549184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="35791808">
       <assemblyIdentity name="ASM" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>CEhS9L21K8sfI//Ej8DcapxcDLgzbYSgsqTILVmWIQY=</dsig:DigestValue>
+        <dsig:DigestValue>oef8TL8OtDV5tLsTYu4xKqcOIbsEnwMuwoQ16kcl1xM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hqM0M3zVnS1GBgvdNOz9u+KnCRdSQQpNN36pJpr+ttM=</dsig:DigestValue>
+        <dsig:DigestValue>+pvnOzQNYUf6g7SO19TY7Fa+juENT0Fn/trPIx7BRy4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="90112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="94208">
       <assemblyIdentity name="DAL_QL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QeBnfJ2q/JxBrVY9/eftQiWdzFDXHzGvC3oXgSvS7K0=</dsig:DigestValue>
+        <dsig:DigestValue>ZKDYf2BNjkrmDAQ49EICh8sZ4J2KAIQxmp7ykZ8Ex7U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>AZN0pr2fSLBPb3oXWebz/u6aYek4jmTZE14+Hr3C5Cc=</dsig:DigestValue>
+        <dsig:DigestValue>1s5Zb8pudJWauySrpW98nOabrqkrCYncbOdPn0+i60g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -128,13 +128,13 @@
       <dsig:DigestValue>vavq2++ET4xk2o5oHkt+gLwUscSJxSmsxHN25FtLv5s=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="ASM.exe.config" size="1105">
+  <file name="ASM.exe.config" size="1128">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>ss+w1+HuA/X5Dv8Ef065UGtUuwzS2BbAyee93Wu0V20=</dsig:DigestValue>
+      <dsig:DigestValue>RCFSiUQH0XIwxse6VknFLCyOkI55HnVbAVgs0EMvT/4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="CBDTPIC\CBDT (1).png" size="353531">

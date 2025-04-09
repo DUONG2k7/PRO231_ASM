@@ -65,6 +65,8 @@
             // 
             // dgvDanhSach
             // 
+            this.dgvDanhSach.AllowUserToAddRows = false;
+            this.dgvDanhSach.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDanhSach.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -89,6 +91,7 @@
             this.dgvDanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSach.Location = new System.Drawing.Point(0, 154);
             this.dgvDanhSach.Name = "dgvDanhSach";
+            this.dgvDanhSach.ReadOnly = true;
             this.dgvDanhSach.RowHeadersVisible = false;
             this.dgvDanhSach.Size = new System.Drawing.Size(953, 617);
             this.dgvDanhSach.TabIndex = 37;
@@ -105,7 +108,7 @@
             this.dgvDanhSach.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvDanhSach.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvDanhSach.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvDanhSach.ThemeStyle.ReadOnly = false;
+            this.dgvDanhSach.ThemeStyle.ReadOnly = true;
             this.dgvDanhSach.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSach.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvDanhSach.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -202,9 +202,9 @@ namespace ASM
             {
                 try
                 {
-                    txtTenKy.Text = dgvDsKyHoc.CurrentRow.Cells["TenKy"]?.Value?.ToString() ?? string.Empty;
-                    dtpNamBatDau.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["NamBatDau"].Value);
-                    dtpNamKetThuc.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["NamKetThuc"].Value);
+                    txtTenKy.Text = dgvDsKyHoc.CurrentRow.Cells["Học Kỳ"]?.Value?.ToString() ?? string.Empty;
+                    dtpNamBatDau.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["Năm Bắt Đầu"].Value);
+                    dtpNamKetThuc.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["Năm Kết Thúc"].Value);
                 }
                 catch (Exception ex)
                 {
@@ -268,7 +268,7 @@ namespace ASM
                 if (row.Cells["CheckColumn"] is DataGridViewCheckBoxCell cell && Convert.ToBoolean(cell.Value))
                 {
                     hasChecked = true;
-                    int idMonHoc = Convert.ToInt32(row.Cells["IDMonHoc"].Value);
+                    int idMonHoc = Convert.ToInt32(row.Cells["Mã Môn"].Value);
 
                     if (Qlkyhoc.ThemChiDinhMHtoKyHoc(idKyHoc, idMonHoc, true, out string message))
                     {
@@ -333,9 +333,9 @@ namespace ASM
             {
                 try
                 {
-                    cbChonKyHoc.SelectedValue = dgvDsKyHocMonHoc.CurrentRow.Cells["IDKyHoc"]?.Value?.ToString() ?? string.Empty;
-                    dtpNamBatDau.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["NamBatDau"].Value);
-                    dtpNamKetThuc.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["NamKetThuc"].Value);
+                    cbChonKyHoc.SelectedValue = dgvDsKyHocMonHoc.CurrentRow.Cells["Mã Kỳ"]?.Value?.ToString() ?? string.Empty;
+                    dtpNamBatDau.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["Năm Bắt Đầu"].Value);
+                    dtpNamKetThuc.Value = Convert.ToDateTime(dgvDsKyHoc.CurrentRow.Cells["Năm Kết Thúc"].Value);
                 }
                 catch (Exception ex)
                 {

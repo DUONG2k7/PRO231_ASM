@@ -77,7 +77,7 @@ namespace DAL_QL
         }
         public DataTable GetListAccount(string IDRole)
         {
-            string query = "SELECT R.IDRole, A.IdAcc, A.Username, R.Role, CASE WHEN A.Trangthai = 1 THEN N'Khóa' ELSE N'Đang sử dụng' END AS TrangThai FROM ACCOUNTS A JOIN ROLES R ON A.IDRole = R.IDRole WHERE R.IDRole = @IDRole";
+            string query = "SELECT R.IDRole AS [Mã Quyền], A.IdAcc AS [Mã Tài Khoản], A.Username AS [Tên Tài Khoản], R.Role AS [Quyền], CASE WHEN A.Trangthai = 1 THEN N'Khóa' ELSE N'Đang sử dụng' END AS [Trạng Thái] FROM ACCOUNTS A JOIN ROLES R ON A.IDRole = R.IDRole WHERE R.IDRole = @IDRole";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -313,7 +313,7 @@ namespace DAL_QL
 
                         cmd.ExecuteNonQuery();
                     }
-                    
+
                     transaction.Commit();
                     message = "Thông tin tài khoản đã được cập nhật thành công!";
                     return true;
@@ -394,7 +394,7 @@ namespace DAL_QL
         //Form Quản lý tin tức
         public DataTable GetListNews()
         {
-            string query = "SELECT N.IDTin, N.Title, N.Content, N.NgayDang, N.Hinh, CASE WHEN N.Trangthai = 1 THEN N'Đang sử dụng' ELSE N'Khóa' END AS Trangthai FROM NEWS N";
+            string query = "SELECT N.IDTin AS [Mã Tin], N.Title AS [Tiêu Đề], N.Content AS [Nội Dung], N.NgayDang AS [Ngày Đăng], N.Hinh AS [Hình], CASE WHEN N.Trangthai = 1 THEN N'Đang sử dụng' ELSE N'Khóa' END AS [Trạng Thái] FROM NEWS N";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);

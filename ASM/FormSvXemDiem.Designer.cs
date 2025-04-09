@@ -79,6 +79,8 @@
             // 
             // dgvDiem
             // 
+            this.dgvDiem.AllowUserToAddRows = false;
+            this.dgvDiem.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDiem.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

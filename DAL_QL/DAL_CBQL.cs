@@ -14,9 +14,9 @@ namespace DAL_QL
         //IT
         public DataTable GetListIT()
         {
-            string query = "SELECT P.IDPhong, I.IDIT, I.TenIT, I.IdAcc, I.Email, I.SoDT, " +
-                            "CASE WHEN I.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS Gioitinh, " +
-                            "I.Diachi, I.Hinh, P.TenPhong " +
+            string query = "SELECT P.IDPhong AS [Mã Phòng], I.IDIT AS [Mã Cán Bộ], I.TenIT AS [Tên Cán Bộ], I.IdAcc AS [Mã Tài Khoản], I.Email, I.SoDT AS [Số Điện Thoại], " +
+                            "CASE WHEN I.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], " +
+                            "I.Diachi AS [Địa Chỉ], I.Hinh AS [Hình], P.TenPhong AS [Tên Phòng] " +
                             "FROM IT I JOIN PhongBan P ON I.IDPhong = P.IDPhong";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -156,10 +156,17 @@ namespace DAL_QL
         //CBDT
         public DataTable GetListCBDT()
         {
-            string query = "SELECT P.IDPhong, CB.IDCBDT, CB.TenCBDT, CB.IdAcc, CB.Email, CB.SoDT, " +
-                            "CASE WHEN CB.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS Gioitinh, " +
-                            "CB.Diachi, CB.Hinh, P.TenPhong " +
-                            "FROM CBDT CB JOIN PhongBan P ON CB.IDPhong = P.IDPhong";
+            string query = "SELECT P.IDPhong AS [Mã Phòng], " +
+                           "CB.IDCBDT AS [Mã Cán Bộ], " +
+                           "CB.TenCBDT AS [Tên Cán Bộ], " +
+                           "CB.IdAcc AS [Mã Tài Khoản], " +
+                           "CB.Email, " +
+                           "CB.SoDT AS [Số Điện Thoại], " +
+                           "CASE WHEN CB.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], " +
+                           "CB.Diachi AS [Địa Chỉ], " +
+                           "CB.Hinh AS Hình, " +
+                           "P.TenPhong AS [Tên Phòng]" + 
+                           "FROM CBDT CB JOIN PhongBan P ON CB.IDPhong = P.IDPhong"; 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -298,9 +305,9 @@ namespace DAL_QL
         //CBQL
         public DataTable GetListCBQL()
         {
-            string query = "SELECT P.IDPhong, QL.IDCBQL, QL.TenCBQL, QL.IdAcc, QL.Email, QL.SoDT, " +
-                            "CASE WHEN QL.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS Gioitinh, " +
-                            "QL.Diachi, QL.Hinh, P.TenPhong " +
+            string query = "SELECT P.IDPhong AS [Mã Phòng], QL.IDCBQL AS [Mã Cán Bộ], QL.TenCBQL AS [Tên Cán Bộ], QL.IdAcc AS [Mã Tài Khoản], QL.Email, QL.SoDT AS [Số Điện Thoại], " +
+                            "CASE WHEN QL.Gioitinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], " +
+                            "QL.Diachi AS [Địa Chỉ], QL.Hinh AS [Hình], P.TenPhong AS [Tên Phòng] " +
                             "FROM CBQL QL JOIN PhongBan P ON QL.IDPhong = P.IDPhong";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -440,7 +447,7 @@ namespace DAL_QL
         //Phòng ban
         public DataTable GetListPhong()
         {
-            string query = "SELECT IDPhong, TenPhong FROM PhongBan";
+            string query = "SELECT IDPhong, TenPhong AS [Tên Phòng] FROM PhongBan";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();

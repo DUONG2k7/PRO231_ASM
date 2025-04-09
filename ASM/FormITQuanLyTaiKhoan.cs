@@ -171,9 +171,9 @@ namespace ASM
                 {
                     btnUpdate.Enabled = true;
 
-                    txtMaTk.Text = dgvDataTk.CurrentRow.Cells["IdAcc"]?.Value?.ToString() ?? string.Empty;
-                    txtTk.Text = dgvDataTk.CurrentRow.Cells["Username"]?.Value?.ToString() ?? string.Empty;
-                    cbRole.SelectedValue = dgvDataTk.CurrentRow.Cells["IDRole"]?.Value?.ToString() ?? string.Empty;
+                    txtMaTk.Text = dgvDataTk.CurrentRow.Cells["Mã Tài Khoản"]?.Value?.ToString() ?? string.Empty;
+                    txtTk.Text = dgvDataTk.CurrentRow.Cells["Tên Tài Khoản"]?.Value?.ToString() ?? string.Empty;
+                    cbRole.SelectedValue = dgvDataTk.CurrentRow.Cells["Mã Quyền"]?.Value?.ToString() ?? string.Empty;
 
                     btnLoU.Enabled = true;
                     btnHis.Enabled = true;

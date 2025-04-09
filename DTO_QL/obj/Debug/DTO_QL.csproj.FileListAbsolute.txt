@@ -34,3 +34,9 @@ C:\GIT_PRO231_3layer\FinalVer\DTO_QL\obj\Debug\DTO_QL.csproj.AssemblyReference.c
 C:\GIT_PRO231_3layer\FinalVer\DTO_QL\obj\Debug\DTO_QL.csproj.CoreCompileInputs.cache
 C:\GIT_PRO231_3layer\FinalVer\DTO_QL\obj\Debug\DTO_QL.dll
 C:\GIT_PRO231_3layer\FinalVer\DTO_QL\obj\Debug\DTO_QL.pdb
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\bin\Debug\DTO_QL.dll
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\bin\Debug\DTO_QL.pdb
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\obj\Debug\DTO_QL.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\obj\Debug\DTO_QL.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\obj\Debug\DTO_QL.dll
+C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DTO_QL\obj\Debug\DTO_QL.pdb

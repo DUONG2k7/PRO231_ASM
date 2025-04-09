@@ -49,7 +49,7 @@ namespace ASM
         {
             if (dgvData.CurrentRow != null)
             {
-                string trangThai = dgvData.CurrentRow.Cells["TrangThai"]?.Value?.ToString() ?? string.Empty;
+                string trangThai = dgvData.CurrentRow.Cells["Trạng Thái"]?.Value?.ToString() ?? string.Empty;
 
                 if (trangThai == "Khóa")
                 {
@@ -153,8 +153,8 @@ namespace ASM
                 {
                     btnUpdate.Enabled = true;
 
-                    txtMaLop.Text = dgvData.CurrentRow.Cells["IDLop"]?.Value?.ToString() ?? string.Empty;
-                    txtTenlop.Text = dgvData.CurrentRow.Cells["ClassName"]?.Value?.ToString() ?? string.Empty;
+                    txtMaLop.Text = dgvData.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString() ?? string.Empty;
+                    txtTenlop.Text = dgvData.CurrentRow.Cells["Tên Lớp"]?.Value?.ToString() ?? string.Empty;
 
                     btnLoU.Enabled = true;
 
@@ -249,5 +249,6 @@ namespace ASM
             btnUpdate.Enabled = true;
             dgvData.Enabled = true;
         }
+
     }
 }

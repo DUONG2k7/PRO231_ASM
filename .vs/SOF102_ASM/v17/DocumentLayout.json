@@ -1,10 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\GIT_PRO231_3layer\\FinalVer\\",
+  "WorkspaceRootPath": "C:\\Users\\ADMIN\\Desktop\\ASM_GD3\\TEST\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|c:\\git_pro231_3layer\\finalver\\dal_ql\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|solutionrelative:dal_ql\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|c:\\users\\admin\\desktop\\asm_gd3\\test\\asm\\formsvxemlichthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|solutionrelative:asm\\formsvxemlichthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|c:\\users\\admin\\desktop\\asm_gd3\\test\\dal_ql\\dal_sv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|solutionrelative:dal_ql\\dal_sv.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,27 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 165,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DbConnect.cs",
-              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalVer\\DAL_QL\\DbConnect.cs",
-              "RelativeDocumentMoniker": "DAL_QL\\DbConnect.cs",
-              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalVer\\DAL_QL\\DbConnect.cs",
-              "RelativeToolTip": "DAL_QL\\DbConnect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Title": "FormSvXemLichThi.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\ASM_GD3\\TEST\\ASM\\FormSvXemLichThi.cs",
+              "RelativeDocumentMoniker": "ASM\\FormSvXemLichThi.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\ASM_GD3\\TEST\\ASM\\FormSvXemLichThi.cs",
+              "RelativeToolTip": "ASM\\FormSvXemLichThi.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T14:05:06.596Z",
+              "WhenOpened": "2025-04-09T14:22:26.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DAL_SV.cs",
+              "DocumentMoniker": "C:\\Users\\ADMIN\\Desktop\\ASM_GD3\\TEST\\DAL_QL\\DAL_SV.cs",
+              "RelativeDocumentMoniker": "DAL_QL\\DAL_SV.cs",
+              "ToolTip": "C:\\Users\\ADMIN\\Desktop\\ASM_GD3\\TEST\\DAL_QL\\DAL_SV.cs",
+              "RelativeToolTip": "DAL_QL\\DAL_SV.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAAwDAAAABoAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T14:19:55.292Z",
               "EditorCaption": ""
             }
           ]

@@ -131,8 +131,8 @@ namespace ASM
             {
                 try
                 {
-                    txtTenMon.Text = dgvDsMonHoc.CurrentRow.Cells["TenMon"]?.Value?.ToString() ?? string.Empty;
-                    txtSotiet.Text = dgvDsMonHoc.CurrentRow.Cells["SoTiet"]?.Value?.ToString() ?? string.Empty;
+                    txtTenMon.Text = dgvDsMonHoc.CurrentRow.Cells["Tên Môn Học"]?.Value?.ToString() ?? string.Empty;
+                    txtSotiet.Text = dgvDsMonHoc.CurrentRow.Cells["Số Tiết"]?.Value?.ToString() ?? string.Empty;
                 }
                 catch (Exception ex)
                 {

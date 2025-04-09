@@ -38,7 +38,7 @@ namespace ASM
         {
             if (cbHocKy.SelectedValue is DataRowView rowView)
             {
-                int selectedKyHoc = Convert.ToInt32(rowView["IDKyHoc"]); // Đổi "MaHocKy" thành tên cột thực tế
+                int selectedKyHoc = Convert.ToInt32(rowView["IDKyHoc"]);
                 LoadDSDIEM(idACC, selectedKyHoc);
             }
             else

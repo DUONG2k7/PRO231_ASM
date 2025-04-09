@@ -14,7 +14,8 @@ namespace DAL_QL
         //Sinh Viên
         public DataTable GetListStudent(string IDLOP)
         {
-            string query = "SELECT CL.IDLop AS N'ID Lớp', SV.IDSV AS N'Mã Sinh Viên', SV.TenSV AS N'Tên Sinh Viên', CL.ClassName AS N'Tên Lớp', SV.Email AS N'Email', SV.SoDT AS N'Số Điện Thoại', CASE WHEN SV.Gioitinh = 1 THEN 'Nam' ELSE N'Nữ' END AS N'Giới Tính', SV.Diachi AS N'Địa Chỉ', SV.Hinh AS N'Hình' FROM STUDENTS SV JOIN CLASSES CL ON SV.IDLop = CL.IDLop WHERE CL.IDLop = @IDLOP";
+            string query = "SELECT CL.IDLop AS N'ID Lớp', SV.IDSV AS N'Mã Sinh Viên', SV.TenSV AS N'Tên Sinh Viên', CL.ClassName AS N'Tên Lớp', SV.Email AS N'Email', SV.SoDT AS N'Số Điện Thoại'," +
+                " CASE WHEN SV.Gioitinh = 1 THEN 'Nam' ELSE N'Nữ' END AS N'Giới Tính', SV.Diachi AS N'Địa Chỉ', SV.Hinh AS N'Hình' FROM STUDENTS SV JOIN CLASSES CL ON SV.IDLop = CL.IDLop WHERE CL.IDLop = @IDLOP";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -264,10 +265,10 @@ namespace DAL_QL
         //Giáo viên
         public DataTable GetListTeacher()
         {
-            string query = "SELECT T.IDGV, T.TenGV, T.IdAcc, T.Email, T.SoDT, " +
-                            "CASE WHEN T.Gioitinh = 1 THEN 'Nam' ELSE N'Nữ' END AS Gioitinh, " +
-                            "T.Diachi, T.Hinh, " +
-                            "ISNULL(C.ClassName, N'Chưa có lớp') AS TenLop " +
+            string query = "SELECT T.IDGV AS'Mã Giảng Viên', T.TenGV AS'Tên Giảng Viên', T.IdAcc, T.Email, T.SoDT AS'Số Điện Thoại', " +
+                            "CASE WHEN T.Gioitinh = 1 THEN 'Nam' ELSE N'Nữ' END AS N'Giới Tính', " +
+                            "T.Diachi AS'Địa Chỉ', T.Hinh AS'Hình', " +
+                            "ISNULL(C.ClassName, N'Chưa có lớp') AS 'Tên Lớp' " +
                             "FROM TEACHERS T " +
                             "LEFT JOIN Class_Teacher CT ON T.IDGV = CT.IDGV " +
                             "LEFT JOIN CLASSES C ON CT.IDLop = C.IDLop";
@@ -438,7 +439,8 @@ namespace DAL_QL
         //Class
         public DataTable GetListClass()
         {
-            string query = "SELECT c.IDLop, c.ClassName, COUNT(s.IDSV) AS SiSo, CASE WHEN c.BuoiHoc = 1 THEN N'Sáng' ELSE N'Chiều' END AS BuoiHoc, CASE WHEN c.Trangthai = 1 THEN N'Khóa' ELSE N'Đang sử dụng' END AS TrangThai FROM CLASSES c LEFT JOIN STUDENTS s ON c.IDLop = s.IDLop GROUP BY c.IDLop, c.ClassName, c.BuoiHoc, c.Trangthai";
+            string query = "SELECT c.IDLop AS 'Mã Lớp', c.ClassName AS 'Tên Lớp', COUNT(s.IDSV) AS 'Sĩ Số', CASE WHEN c.BuoiHoc = 1 THEN N'Sáng' ELSE N'Chiều' END AS N'Buổi Học', " +
+                "CASE WHEN c.Trangthai = 1 THEN N'Khóa' ELSE N'Đang Sử Dụng' END AS N'Trạng Thái' FROM CLASSES c LEFT JOIN STUDENTS s ON c.IDLop = s.IDLop GROUP BY c.IDLop, c.ClassName, c.BuoiHoc, c.Trangthai";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();
@@ -698,11 +700,24 @@ namespace DAL_QL
         //Lịch học
         public DataTable GetListLich()
         {
-            string query = "SELECT L.IDLichHoc, C.IDLop, MH.IDMonHoc, T.IDGV, K.IDKyHoc, K.TenKy, C.ClassName, MH.TenMon, T.TenGV, CASE WHEN L.LoaiNgay = 1 THEN N'Ngày học' ELSE N'Ngày thi' END AS LoaiNgay, L.Ngay, L.GioBatDau, L.GioKetThuc FROM LichHoc L " +
-                "JOIN CLASSES C ON L.IDLop = C.IDLop " +
-                "JOIN MonHoc MH ON L.IDMonHoc = MH.IDMonHoc " +
-                "JOIN TEACHERS T ON L.IDGV = T.IDGV " +
-                "JOIN KyHoc K ON L.IDKyHoc = K.IDKyHoc";
+            string query = "SELECT L.IDLichHoc, " +
+                           "C.IDLop AS [Mã Lớp], " +
+                           "MH.IDMonHoc AS [Mã Môn], " +
+                           "T.IDGV AS [Mã Giảng Viên], " +
+                           "K.IDKyHoc, " +
+                           "K.TenKy AS [Học Kỳ], " +
+                           "C.ClassName AS [Tên Lớp], " +
+                           "MH.TenMon AS [Tên Môn], " +
+                           "T.TenGV AS [Tên Giảng Viên], " +
+                           "CASE WHEN L.LoaiNgay = 1 THEN N'Ngày học' ELSE N'Ngày thi' END AS [Loại Ngày], " +
+                           "L.Ngay AS [Ngày], " +
+                           "L.GioBatDau AS [Giờ Bắt Đầu], " +
+                           "L.GioKetThuc AS [Giờ Kết Thúc] " + // Thêm dấu cách
+                           "FROM LichHoc L " + // Thêm dấu cách
+                           "JOIN CLASSES C ON L.IDLop = C.IDLop " + // Thêm dấu cách
+                           "JOIN MonHoc MH ON L.IDMonHoc = MH.IDMonHoc " + // Thêm dấu cách
+                           "JOIN TEACHERS T ON L.IDGV = T.IDGV " + // Thêm dấu cách
+                           "JOIN KyHoc K ON L.IDKyHoc = K.IDKyHoc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
@@ -747,7 +762,7 @@ namespace DAL_QL
         }
         public string GetBuoiHocFromLich(string IDLop)
         {
-            string query = "SELECT CASE WHEN BuoiHoc = 1 THEN N'Sáng' ELSE N'Chiều' END AS BuoiHoc FROM CLASSES WHERE IDLop = @IDLop";
+            string query = "SELECT CASE WHEN BuoiHoc = 1 THEN N'Sáng' ELSE N'Chiều' END AS 'Buổi Học' FROM CLASSES WHERE IDLop = @IDLop";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -882,7 +897,7 @@ namespace DAL_QL
         //Kỳ học
         public DataTable GetListKyHoc()
         {
-            string query = "SELECT IDKyHoc, TenKy, NamBatDau, NamKetThuc, CASE WHEN Trangthai = 1 THEN N'Đang học' ELSE N'Khóa' END AS Trangthai FROM KyHoc";
+            string query = "SELECT IDKyHoc AS'Mã Kỳ', TenKy AS'Học Kỳ', NamBatDau AS'Năm Bắt Đầu', NamKetThuc AS'Năm Kết Thúc', CASE WHEN Trangthai = 1 THEN N'Đang học' ELSE N'Khóa' END AS N'Trạng Thái' FROM KyHoc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
@@ -895,7 +910,7 @@ namespace DAL_QL
         }
         public DataTable GetListKyHocMonHoc()
         {
-            string query = "SELECT K.IDKyHoc, MH.IDMonHoc, K.TenKy, MH.TenMon, CASE WHEN MK.Trangthai = 1 THEN N'Đang học' ELSE N'Khóa' END AS Trangthai FROM MonHoc_KyHoc MK JOIN KyHoc K ON MK.IDKyHoc = K.IDKyHoc JOIN MonHoc MH ON MK.IDMonHoc = MH.IDMonHoc";
+            string query = "SELECT K.IDKyHoc AS 'Mã Kỳ', MH.IDMonHoc AS 'Mã Môn', K.TenKy AS 'Học Kỳ', MH.TenMon AS 'Tên Môn', CASE WHEN MK.Trangthai = 1 THEN N'Đang học' ELSE N'Khóa' END AS 'Trạng Thái' FROM MonHoc_KyHoc MK JOIN KyHoc K ON MK.IDKyHoc = K.IDKyHoc JOIN MonHoc MH ON MK.IDMonHoc = MH.IDMonHoc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
@@ -921,7 +936,7 @@ namespace DAL_QL
         }
         public DataTable GetListMHFormChiDinhMonhoc(int idKyHoc)
         {
-            string query = "SELECT MH.IDMonHoc, MH.TenMon FROM MonHoc MH WHERE MH.IDMonHoc NOT IN (SELECT MK.IDMonHoc FROM MonHoc_KyHoc MK WHERE MK.IDKyHoc = @IDKyHoc)";
+            string query = "SELECT MH.IDMonHoc AS 'Mã Môn', MH.TenMon AS 'Môn Học' FROM MonHoc MH WHERE MH.IDMonHoc NOT IN (SELECT MK.IDMonHoc FROM MonHoc_KyHoc MK WHERE MK.IDKyHoc = @IDKyHoc)";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -1147,7 +1162,7 @@ namespace DAL_QL
         //Môn học
         public DataTable GetListmonHoc()
         {
-            string query = "SELECT IDMonHoc, TenMon, SoTiet FROM MonHoc";
+            string query = "SELECT IDMonHoc, TenMon AS 'Tên Môn Học', SoTiet AS 'Số Tiết' FROM MonHoc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
@@ -1230,11 +1245,16 @@ namespace DAL_QL
         //Form phân việc
         public DataTable GetListMonHocGV()
         {
-            string query =  "SELECT K.IDKYHOC, MH.IDMonHoc, K.TenKY, MH.TenMon, T.TenGV, MG.NgayChotViec " +
-                            "FROM MonHoc_GiangVien MG " +
-                            "JOIN KyHoc K ON MG.IDKyHoc = K.IDKyHoc " +
-                            "JOIN MonHoc MH ON MG.IDMonHoc = MH.IDMonHoc " +
-                            "JOIN TEACHERS T ON MG.IDGV = T.IDGV";
+            string query = "SELECT K.IDKYHOC AS [Mã Kỳ], " +
+                           "MH.IDMonHoc AS [Mã Môn], " +
+                           "K.TenKY AS [Học Kỳ], " +
+                           "MH.TenMon AS [Tên Môn], " +
+                           "T.TenGV AS [Tên Giảng Viên], " +
+                           "MG.NgayChotViec AS [Ngày Chốt Việc]" + 
+                           "FROM MonHoc_GiangVien MG " + 
+                           "JOIN KyHoc K ON MG.IDKyHoc = K.IDKyHoc " + 
+                           "JOIN MonHoc MH ON MG.IDMonHoc = MH.IDMonHoc " + 
+                           "JOIN TEACHERS T ON MG.IDGV = T.IDGV";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);
@@ -1247,11 +1267,16 @@ namespace DAL_QL
         }
         public DataTable GetListLopHocGV()
         {
-            string query = "SELECT K.IDKYHOC, C.IDLop, K.TenKY, C.ClassName, T.TenGV, CT.NgayChotLop " +
-                            "FROM Class_Teacher CT " +
-                            "JOIN KyHoc K ON CT.IDKyHoc = K.IDKyHoc " +
-                            "JOIN CLASSES C ON CT.IDLop = C.IDLop " +
-                            "JOIN TEACHERS T ON CT.IDGV = T.IDGV";
+            string query = "SELECT K.IDKYHOC AS [Mã Kỳ], " +
+                           "C.IDLop AS [Mã Lớp], " +
+                           "K.TenKY AS [Học Kỳ], " +
+                           "C.ClassName AS [Tên Lớp], " +
+                           "T.TenGV AS [Tên Giảng Viên], " +
+                           "CT.NgayChotLop AS [Ngày Chốt Lớp] " +
+                           "FROM Class_Teacher CT " +
+                           "JOIN KyHoc K ON CT.IDKyHoc = K.IDKyHoc " +
+                           "JOIN CLASSES C ON CT.IDLop = C.IDLop " +
+                           "JOIN TEACHERS T ON CT.IDGV = T.IDGV";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);

@@ -381,6 +381,8 @@
             // 
             // dgvDataTk
             // 
+            this.dgvDataTk.AllowUserToAddRows = false;
+            this.dgvDataTk.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDataTk.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

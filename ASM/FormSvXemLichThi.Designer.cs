@@ -50,6 +50,8 @@
             // 
             // dgvLichThi
             // 
+            this.dgvLichThi.AllowUserToAddRows = false;
+            this.dgvLichThi.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvLichThi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

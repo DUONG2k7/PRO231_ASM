@@ -140,10 +140,10 @@ namespace ASM
             if (index >= 0 && index < dt.Rows.Count)
             {
                 DataRow row = dt.Rows[index];
-                txtMasvDiemtb.Text = row["IDSV"].ToString();
-                lbTenSV.Text = row["TenSV"].ToString();
-                cbTenMon.Text = row["TenMon"].ToString();
-                txtDiem.Text = row["Diem"].ToString();
+                txtMasvDiemtb.Text = row["Mã Sinh Viên"].ToString();
+                lbTenSV.Text = row["Tên Sinh Viên"].ToString();
+                cbTenMon.Text = row["Tên Môn"].ToString();
+                txtDiem.Text = row["Điểm"].ToString();
 
                 dgvDanhSachSV.ClearSelection();
                 dgvDanhSachSV.Rows[index].Selected = true;
@@ -341,11 +341,11 @@ namespace ASM
             {
                 currentindex = e.RowIndex;
 
-                txtMasvDiemtb.Text = dgvDanhSachSV.CurrentRow.Cells["IDSV"]?.Value?.ToString();
-                lbTenSV.Text = dgvDanhSachSV.CurrentRow.Cells["TenSV"]?.Value?.ToString();
-                cbLop.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["IDLop"]?.Value?.ToString();
-                cbTenMon.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["IDMonHoc"]?.Value?.ToString();
-                txtDiem.Text = dgvDanhSachSV.CurrentRow.Cells["Diem"]?.Value?.ToString();
+                txtMasvDiemtb.Text = dgvDanhSachSV.CurrentRow.Cells["Mã Sinh Viên"]?.Value?.ToString();
+                lbTenSV.Text = dgvDanhSachSV.CurrentRow.Cells["Tên Sinh Viên"]?.Value?.ToString();
+                cbLop.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString();
+                cbTenMon.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Môn"]?.Value?.ToString();
+                txtDiem.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm"]?.Value?.ToString();
 
                 LoadTrangThaiDulieu();
                 LoadTrangThaiNutChuyenTrang();

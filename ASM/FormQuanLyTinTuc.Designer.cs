@@ -160,6 +160,8 @@
             // 
             // dgvDataTinTuc
             // 
+            this.dgvDataTinTuc.AllowUserToAddRows = false;
+            this.dgvDataTinTuc.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDataTinTuc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

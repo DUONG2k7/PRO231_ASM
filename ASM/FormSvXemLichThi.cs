@@ -19,22 +19,22 @@ namespace ASM
             InitializeComponent();
             LoadDsLichThiGV(IDacc);
 
-            dgvLichThi.Columns["Ngay"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            if (dgvLichThi.Columns.Contains("IDKyHoc"))
+            dgvLichThi.Columns["Ngày"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            if (dgvLichThi.Columns.Contains("Mã Kỳ"))
             {
-                dgvLichThi.Columns["IDKyHoc"].Visible = false;
+                dgvLichThi.Columns["Mã Kỳ"].Visible = false;
             }
-            if (dgvLichThi.Columns.Contains("LoaiNgay"))
+            if (dgvLichThi.Columns.Contains("Loại Ngày"))
             {
-                dgvLichThi.Columns["LoaiNgay"].Visible = false;
+                dgvLichThi.Columns["Loại Ngày"].Visible = false;
             }
-            if (dgvLichThi.Columns.Contains("IDLop"))
+            if (dgvLichThi.Columns.Contains("Mã Lớp"))
             {
-                dgvLichThi.Columns["IDLop"].Visible = false;
+                dgvLichThi.Columns["Mã Lớp"].Visible = false;
             }
-            if (dgvLichThi.Columns.Contains("IDGV"))
+            if (dgvLichThi.Columns.Contains("Mã Giảng Viên"))
             {
-                dgvLichThi.Columns["IDGV"].Visible = false;
+                dgvLichThi.Columns["Mã Giảng Viên"].Visible = false;
             }
         }
         public void LoadDsLichThiGV(string IDacc)

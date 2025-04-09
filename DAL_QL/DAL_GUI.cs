@@ -99,7 +99,7 @@ namespace DAL_QL
         //Form SV
         public DataTable GetInfoSv(string IdAcc)
         {
-            string query = "SELECT IDSV, IDLop, TenSV, Email, SoDT, GioiTinh, Diachi FROM STUDENTS WHERE IdAcc = @IdAcc";
+            string query = "SELECT IDSV AS 'Mã Sinh Viên', IDLop AS 'Mã Lớp', TenSV AS 'Tên Sinh Viên', Email, SoDT AS 'Số Điện Thoại', GioiTinh AS 'Giới Tính', Diachi AS 'Địa Chỉ' FROM STUDENTS WHERE IdAcc = @IdAcc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))

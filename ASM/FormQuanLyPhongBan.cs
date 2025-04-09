@@ -81,7 +81,7 @@ namespace ASM
                 try
                 {
                     btnUpdate.Enabled = true;
-                    txtHoten.Text = dgvData.CurrentRow.Cells["TenPhong"]?.Value?.ToString() ?? string.Empty;
+                    txtHoten.Text = dgvData.CurrentRow.Cells["Tên Phòng"]?.Value?.ToString() ?? string.Empty;
                 }
                 catch (Exception ex)
                 {

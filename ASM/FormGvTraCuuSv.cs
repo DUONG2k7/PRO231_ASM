@@ -27,13 +27,13 @@ namespace ASM
             if (dt.Rows.Count > 0)
             {
                 DataRow row = dt.Rows[0];
-                txtHoTen.Text = row["TenSV"].ToString();
-                txtIDLop.Text = row["IDLop"].ToString();
+                txtHoTen.Text = row["Tên Sinh Viên"].ToString();
+                txtIDLop.Text = row["Mã Lớp"].ToString();
                 txtEmail.Text = row["Email"].ToString();
-                txtSDT.Text = row["SoDT"].ToString();
-                txtDiaChi.Text = row["Diachi"].ToString();
-                txtGioiTinh.Text = row["GioiTinh"].ToString() == "1" ? "Nam" : "Nữ";
-                byte[] image = row["Hinh"] as byte[];
+                txtSDT.Text = row["Số Điện Thoại"].ToString();
+                txtDiaChi.Text = row["Địa Chỉ"].ToString();
+                txtGioiTinh.Text = row["Giới Tính"].ToString() == "1" ? "Nam" : "Nữ";
+                byte[] image = row["Hình"] as byte[];
                 if (image != null && image.Length > 0)
                 {
                     using (MemoryStream ms = new MemoryStream(image))

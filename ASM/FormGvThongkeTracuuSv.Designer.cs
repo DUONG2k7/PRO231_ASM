@@ -63,6 +63,7 @@
             this.guna2TabControl1.TabIndex = 0;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            this.guna2TabControl1.SelectedIndexChanged += new System.EventHandler(this.guna2TabControl1_SelectedIndexChanged);
             // 
             // tpThongke
             // 
@@ -73,6 +74,7 @@
             this.tpThongke.TabIndex = 0;
             this.tpThongke.Text = "Thống kê sinh viên";
             this.tpThongke.UseVisualStyleBackColor = true;
+            this.tpThongke.Click += new System.EventHandler(this.tpThongke_Click);
             // 
             // tpTraCuu
             // 
@@ -83,6 +85,7 @@
             this.tpTraCuu.TabIndex = 1;
             this.tpTraCuu.Text = "Tra cứu sinh viên";
             this.tpTraCuu.UseVisualStyleBackColor = true;
+            this.tpTraCuu.Click += new System.EventHandler(this.tpTraCuu_Click);
             // 
             // FormGvThongkeTracuuSv
             // 

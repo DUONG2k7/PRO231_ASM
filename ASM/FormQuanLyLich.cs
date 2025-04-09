@@ -292,22 +292,22 @@ namespace ASM
             {
                 try
                 {
-                    cbLop.SelectedValue = dgvLichHoc.CurrentRow.Cells["IDLop"].Value;
-                    cbMonhoc.SelectedValue = dgvLichHoc.CurrentRow.Cells["IDMonHoc"].Value;
-                    cbGvMonhoc.SelectedValue = dgvLichHoc.CurrentRow.Cells["IDGV"].Value;
+                    cbLop.SelectedValue = dgvLichHoc.CurrentRow.Cells["Mã Lớp"].Value;
+                    cbMonhoc.SelectedValue = dgvLichHoc.CurrentRow.Cells["Mã Môn"].Value;
+                    cbGvMonhoc.SelectedValue = dgvLichHoc.CurrentRow.Cells["Mã Giảng Viên"].Value;
 
-                    TimeSpan gioBatDau = (TimeSpan)dgvLichHoc.CurrentRow.Cells["GioBatDau"].Value;
+                    TimeSpan gioBatDau = (TimeSpan)dgvLichHoc.CurrentRow.Cells["Giờ Bắt Đầu"].Value;
                     if (gioBatDau == new TimeSpan(7, 30, 0)) cbCahoc.SelectedItem = 1;
                     else if (gioBatDau == new TimeSpan(9, 10, 0)) cbCahoc.SelectedItem = 2;
                     else if (gioBatDau == new TimeSpan(13, 0, 0)) cbCahoc.SelectedItem = 3;
                     else if (gioBatDau == new TimeSpan(15, 10, 0)) cbCahoc.SelectedItem = 4;
                     else cbCahoc.SelectedIndex = -1;
 
-                    dtpNgay.Value = Convert.ToDateTime(dgvLichHoc.CurrentRow.Cells["Ngay"].Value);
-                    dtpGioBatDau.Value = DateTime.Today.Add(TimeSpan.Parse(dgvLichHoc.CurrentRow.Cells["GioBatDau"].Value.ToString()));
-                    dtpGioKetThuc.Value = DateTime.Today.Add(TimeSpan.Parse(dgvLichHoc.CurrentRow.Cells["GioKetThuc"].Value.ToString()));
+                    dtpNgay.Value = Convert.ToDateTime(dgvLichHoc.CurrentRow.Cells["Ngày"].Value);
+                    dtpGioBatDau.Value = DateTime.Today.Add(TimeSpan.Parse(dgvLichHoc.CurrentRow.Cells["Giờ Bắt Đầu"].Value.ToString()));
+                    dtpGioKetThuc.Value = DateTime.Today.Add(TimeSpan.Parse(dgvLichHoc.CurrentRow.Cells["Giờ Kết Thúc"].Value.ToString()));
 
-                    string LoaiNgay = dgvLichHoc.CurrentRow.Cells["LoaiNgay"]?.Value?.ToString();
+                    string LoaiNgay = dgvLichHoc.CurrentRow.Cells["Loại Ngày"]?.Value?.ToString();
                     if (!string.IsNullOrEmpty(LoaiNgay))
                     {
                         rdbNgayhoc.Checked = LoaiNgay == "Ngày học";

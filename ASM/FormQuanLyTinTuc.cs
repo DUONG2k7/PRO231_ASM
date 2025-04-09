@@ -29,7 +29,7 @@ namespace ASM
         public void LoadDsTinTuc()
         {
             dgvDataTinTuc.DataSource = QlTinTuc.LoadDsTinTuc();
-            DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvDataTinTuc.Columns["Hinh"];
+            DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvDataTinTuc.Columns["Hình"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
         private void LoadPictureBox()
@@ -200,7 +200,7 @@ namespace ASM
         {
             try
             {
-                int.TryParse(dgvDataTinTuc.CurrentRow.Cells["IDTin"].Value?.ToString(), out int IDTin);
+                int.TryParse(dgvDataTinTuc.CurrentRow.Cells["Mã Tin"].Value?.ToString(), out int IDTin);
                 if (QlTinTuc.LockOrUnlockNews(IDTin))
                 {
                     MessageBox.Show("Cập nhật thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -229,12 +229,12 @@ namespace ASM
                     btnUpdate.Enabled = true;
                     btnLoU.Enabled = true;
 
-                    txtTieuDe.Text = dgvDataTinTuc.CurrentRow.Cells["Title"]?.Value?.ToString() ?? string.Empty;
-                    txtNoiDung.Text = dgvDataTinTuc.CurrentRow.Cells["Content"]?.Value?.ToString() ?? string.Empty;
+                    txtTieuDe.Text = dgvDataTinTuc.CurrentRow.Cells["Tiêu Đề"]?.Value?.ToString() ?? string.Empty;
+                    txtNoiDung.Text = dgvDataTinTuc.CurrentRow.Cells["Nội Dung"]?.Value?.ToString() ?? string.Empty;
 
-                    dtpNgayDang.Value = Convert.ToDateTime(dgvDataTinTuc.CurrentRow.Cells["NgayDang"].Value);
+                    dtpNgayDang.Value = Convert.ToDateTime(dgvDataTinTuc.CurrentRow.Cells["Ngày Đăng"].Value);
 
-                    image = dgvDataTinTuc.CurrentRow.Cells["Hinh"]?.Value as byte[];
+                    image = dgvDataTinTuc.CurrentRow.Cells["Hình"]?.Value as byte[];
                     if (image != null && image.Length > 0)
                     {
                         using (MemoryStream ms = new MemoryStream(image))

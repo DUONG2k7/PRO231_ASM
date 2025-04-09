@@ -86,6 +86,8 @@
             // 
             // dgvDsMonHoc
             // 
+            this.dgvDsMonHoc.AllowUserToAddRows = false;
+            this.dgvDsMonHoc.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvDsMonHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

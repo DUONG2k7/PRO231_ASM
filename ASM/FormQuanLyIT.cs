@@ -31,7 +31,7 @@ namespace ASM
         public void LoadDsIT()
         {
             dgvData.DataSource = QlIT.LoadDsIT();
-            DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvData.Columns["Hinh"];
+            DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvData.Columns["Hình"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
         public void LoadDsPhong()
@@ -196,15 +196,15 @@ namespace ASM
                 {
                     btnUpdate.Enabled = true;
 
-                    txtMaIT.Text = dgvData.CurrentRow.Cells["IDIT"]?.Value?.ToString() ?? string.Empty;
-                    txtHoten.Text = dgvData.CurrentRow.Cells["TenIT"]?.Value?.ToString() ?? string.Empty;
-                    cbPhongBan.SelectedValue = dgvData.CurrentRow.Cells["IDPhong"]?.Value?.ToString() ?? string.Empty;
-                    txtHoten.Text = dgvData.CurrentRow.Cells["TenIT"]?.Value?.ToString() ?? string.Empty;
+                    txtMaIT.Text = dgvData.CurrentRow.Cells["Mã Cán Bộ"]?.Value?.ToString() ?? string.Empty;
+                    txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
+                    cbPhongBan.SelectedValue = dgvData.CurrentRow.Cells["Mã Phòng"]?.Value?.ToString() ?? string.Empty;
+                    txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
                     txtEmail.Text = dgvData.CurrentRow.Cells["Email"]?.Value?.ToString() ?? string.Empty;
-                    txtSodt.Text = dgvData.CurrentRow.Cells["SoDT"]?.Value?.ToString() ?? string.Empty;
-                    txtDiachi.Text = dgvData.CurrentRow.Cells["Diachi"]?.Value?.ToString() ?? string.Empty;
+                    txtSodt.Text = dgvData.CurrentRow.Cells["Số Điện Thoại"]?.Value?.ToString() ?? string.Empty;
+                    txtDiachi.Text = dgvData.CurrentRow.Cells["Địa Chỉ"]?.Value?.ToString() ?? string.Empty;
 
-                    string gioiTinh = dgvData.CurrentRow.Cells["Gioitinh"]?.Value?.ToString();
+                    string gioiTinh = dgvData.CurrentRow.Cells["Giới Tính"]?.Value?.ToString();
                     if (!string.IsNullOrEmpty(gioiTinh))
                     {
                         rdbNam.Checked = gioiTinh == "Nam";
@@ -216,7 +216,7 @@ namespace ASM
                         rdbNu.Checked = false;
                     }
 
-                    image = dgvData.CurrentRow.Cells["Hinh"]?.Value as byte[];
+                    image = dgvData.CurrentRow.Cells["Hình"]?.Value as byte[];
                     if (image != null && image.Length > 0)
                     {
                         using (MemoryStream ms = new MemoryStream(image))

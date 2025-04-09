@@ -40,6 +40,8 @@
             // 
             // dgvLichHoc
             // 
+            this.dgvLichHoc.AllowUserToAddRows = false;
+            this.dgvLichHoc.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvLichHoc.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

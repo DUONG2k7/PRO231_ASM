@@ -50,13 +50,13 @@ namespace DAL_QL
         public DataTable GetListStudent(string IdGv, string IDLop, int IDMonHoc)
         {
             string query = @"SELECT 
-                                SV.IDLop, 
-                                SV.IDSV, 
-                                SV.TenSV, 
-                                KH.TenKy, 
-                                MH.IDMonHoc, 
-                                MH.TenMon, 
-                                COALESCE(CAST(D.Diem AS NVARCHAR), N'Chưa nhập') AS Diem
+                                SV.IDLop AS [Mã Lớp], 
+                                SV.IDSV AS [Mã Sinh Viên], 
+                                SV.TenSV AS [Tên Sinh Viên], 
+                                KH.TenKy AS [Học Kỳ], 
+                                MH.IDMonHoc AS [Mã Môn], 
+                                MH.TenMon AS [Tên Môn], 
+                                COALESCE(CAST(D.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm]
                             FROM STUDENTS SV
                             JOIN CLASSES C ON SV.IDLop = C.IDLop
                             JOIN Class_Teacher CT ON SV.IDLop = CT.IDLop
@@ -601,7 +601,7 @@ namespace DAL_QL
         //Form Tra cứu SV
         public DataTable GetInfoSv(string IDSV)
         {
-            string query = "SELECT IDLop, TenSV, Email, SoDT, GioiTinh, Diachi, Hinh FROM STUDENTS WHERE IDSV = @IDSV";
+            string query = "SELECT IDLop AS [Mã Lớp], TenSV AS [Tên Sinh Viên], Email, SoDT AS [Số Điện Thoại], GioiTinh AS [Giới Tính], Diachi AS [Địa Chỉ], Hinh AS [Hình] FROM STUDENTS WHERE IDSV = @IDSV";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -617,11 +617,11 @@ namespace DAL_QL
         public DataTable GetListDiem(string IDSV)
         {
             string query = @"SELECT 
-                                K.IDKyHoc, 
-                                K.TenKy, 
-                                MH.IDMonHoc, 
-                                MH.TenMon, 
-                                D.Diem 
+                                K.IDKyHoc AS [Mã Kỳ], 
+                                K.TenKy AS [Học Kỳ], 
+                                MH.IDMonHoc AS [Mã Môn], 
+                                MH.TenMon AS [Tên Môn], 
+                                D.Diem AS [Điểm]
                             FROM Diem D
                             JOIN MonHoc MH ON D.IDMonHoc = MH.IDMonHoc
                             JOIN KyHoc K ON D.IDKyHoc = K.IDKyHoc

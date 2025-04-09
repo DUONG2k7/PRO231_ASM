@@ -39,5 +39,20 @@ namespace ASM
             tpTraCuu.Controls.Add(QlGV2);
             QlGV2.Show();
         }
+
+        private void guna2TabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpThongke_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tpTraCuu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDiemDanh = new Guna.UI2.WinForms.Guna2Button();
+            this.rdbNgaythi = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rdbNgayhoc = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dtpNgayDiemDanh = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.cboMonHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cboLopHoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pMain = new System.Windows.Forms.Panel();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.dtpNgayDiemDanh = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rdbNgaythi = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.rdbNgayhoc = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.btnDiemDanh = new Guna.UI2.WinForms.Guna2Button();
             this.dgvDanhSachSinhVien = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.pMain.SuspendLayout();
@@ -73,6 +73,105 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin lịch dạy";
+            // 
+            // btnDiemDanh
+            // 
+            this.btnDiemDanh.Animated = true;
+            this.btnDiemDanh.AutoRoundedCorners = true;
+            this.btnDiemDanh.BackColor = System.Drawing.Color.Transparent;
+            this.btnDiemDanh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiemDanh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDiemDanh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDiemDanh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDiemDanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDiemDanh.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiemDanh.ForeColor = System.Drawing.Color.White;
+            this.btnDiemDanh.Location = new System.Drawing.Point(801, 47);
+            this.btnDiemDanh.Name = "btnDiemDanh";
+            this.btnDiemDanh.Size = new System.Drawing.Size(160, 78);
+            this.btnDiemDanh.TabIndex = 50;
+            this.btnDiemDanh.Text = "Điểm Danh";
+            this.btnDiemDanh.UseTransparentBackground = true;
+            this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
+            // 
+            // rdbNgaythi
+            // 
+            this.rdbNgaythi.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgaythi.CheckedState.BorderThickness = 0;
+            this.rdbNgaythi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgaythi.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNgaythi.Location = new System.Drawing.Point(578, 102);
+            this.rdbNgaythi.Name = "rdbNgaythi";
+            this.rdbNgaythi.Size = new System.Drawing.Size(20, 20);
+            this.rdbNgaythi.TabIndex = 48;
+            this.rdbNgaythi.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNgaythi.UncheckedState.BorderThickness = 2;
+            this.rdbNgaythi.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNgaythi.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdbNgayhoc
+            // 
+            this.rdbNgayhoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgayhoc.CheckedState.BorderThickness = 0;
+            this.rdbNgayhoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgayhoc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNgayhoc.Location = new System.Drawing.Point(444, 102);
+            this.rdbNgayhoc.Name = "rdbNgayhoc";
+            this.rdbNgayhoc.Size = new System.Drawing.Size(20, 20);
+            this.rdbNgayhoc.TabIndex = 49;
+            this.rdbNgayhoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNgayhoc.UncheckedState.BorderThickness = 2;
+            this.rdbNgayhoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNgayhoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(604, 102);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(57, 17);
+            this.label21.TabIndex = 46;
+            this.label21.Text = "Lịch Thi";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(470, 102);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(61, 17);
+            this.label20.TabIndex = 47;
+            this.label20.Text = "Lịch Học";
+            // 
+            // dtpNgayDiemDanh
+            // 
+            this.dtpNgayDiemDanh.Animated = true;
+            this.dtpNgayDiemDanh.AutoRoundedCorners = true;
+            this.dtpNgayDiemDanh.BackColor = System.Drawing.Color.Transparent;
+            this.dtpNgayDiemDanh.Checked = true;
+            this.dtpNgayDiemDanh.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDiemDanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.dtpNgayDiemDanh.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dtpNgayDiemDanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDiemDanh.Location = new System.Drawing.Point(560, 52);
+            this.dtpNgayDiemDanh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayDiemDanh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayDiemDanh.Name = "dtpNgayDiemDanh";
+            this.dtpNgayDiemDanh.Size = new System.Drawing.Size(196, 36);
+            this.dtpNgayDiemDanh.TabIndex = 45;
+            this.dtpNgayDiemDanh.UseTransparentBackground = true;
+            this.dtpNgayDiemDanh.Value = new System.DateTime(2025, 3, 28, 22, 16, 14, 625);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(387, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(167, 25);
+            this.label9.TabIndex = 44;
+            this.label9.Text = "Ngày Điểm Danh:\r\n";
             // 
             // cboMonHoc
             // 
@@ -136,132 +235,30 @@
             this.pMain.Size = new System.Drawing.Size(985, 849);
             this.pMain.TabIndex = 8;
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 22;
-            this.guna2Elipse1.TargetControl = this;
-            // 
-            // dtpNgayDiemDanh
-            // 
-            this.dtpNgayDiemDanh.Animated = true;
-            this.dtpNgayDiemDanh.AutoRoundedCorners = true;
-            this.dtpNgayDiemDanh.BackColor = System.Drawing.Color.Transparent;
-            this.dtpNgayDiemDanh.Checked = true;
-            this.dtpNgayDiemDanh.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayDiemDanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dtpNgayDiemDanh.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.dtpNgayDiemDanh.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDiemDanh.Location = new System.Drawing.Point(560, 52);
-            this.dtpNgayDiemDanh.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayDiemDanh.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayDiemDanh.Name = "dtpNgayDiemDanh";
-            this.dtpNgayDiemDanh.Size = new System.Drawing.Size(196, 36);
-            this.dtpNgayDiemDanh.TabIndex = 45;
-            this.dtpNgayDiemDanh.UseTransparentBackground = true;
-            this.dtpNgayDiemDanh.Value = new System.DateTime(2025, 3, 28, 22, 16, 14, 625);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(387, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(167, 25);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Ngày Điểm Danh:\r\n";
-            // 
-            // rdbNgaythi
-            // 
-            this.rdbNgaythi.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgaythi.CheckedState.BorderThickness = 0;
-            this.rdbNgaythi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgaythi.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNgaythi.Location = new System.Drawing.Point(578, 102);
-            this.rdbNgaythi.Name = "rdbNgaythi";
-            this.rdbNgaythi.Size = new System.Drawing.Size(20, 20);
-            this.rdbNgaythi.TabIndex = 48;
-            this.rdbNgaythi.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNgaythi.UncheckedState.BorderThickness = 2;
-            this.rdbNgaythi.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNgaythi.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdbNgayhoc
-            // 
-            this.rdbNgayhoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgayhoc.CheckedState.BorderThickness = 0;
-            this.rdbNgayhoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgayhoc.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNgayhoc.Location = new System.Drawing.Point(444, 102);
-            this.rdbNgayhoc.Name = "rdbNgayhoc";
-            this.rdbNgayhoc.Size = new System.Drawing.Size(20, 20);
-            this.rdbNgayhoc.TabIndex = 49;
-            this.rdbNgayhoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNgayhoc.UncheckedState.BorderThickness = 2;
-            this.rdbNgayhoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNgayhoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(604, 102);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(57, 17);
-            this.label21.TabIndex = 46;
-            this.label21.Text = "Lịch Thi";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(470, 102);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 17);
-            this.label20.TabIndex = 47;
-            this.label20.Text = "Lịch Học";
-            // 
-            // btnDiemDanh
-            // 
-            this.btnDiemDanh.Animated = true;
-            this.btnDiemDanh.AutoRoundedCorners = true;
-            this.btnDiemDanh.BackColor = System.Drawing.Color.Transparent;
-            this.btnDiemDanh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnDiemDanh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnDiemDanh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnDiemDanh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnDiemDanh.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnDiemDanh.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDiemDanh.ForeColor = System.Drawing.Color.White;
-            this.btnDiemDanh.Location = new System.Drawing.Point(801, 47);
-            this.btnDiemDanh.Name = "btnDiemDanh";
-            this.btnDiemDanh.Size = new System.Drawing.Size(160, 78);
-            this.btnDiemDanh.TabIndex = 50;
-            this.btnDiemDanh.Text = "Điểm Danh";
-            this.btnDiemDanh.UseTransparentBackground = true;
-            this.btnDiemDanh.Click += new System.EventHandler(this.btnDiemDanh_Click);
-            // 
             // dgvDanhSachSinhVien
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDanhSachSinhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachSinhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDanhSachSinhVien.AllowUserToAddRows = false;
+            this.dgvDanhSachSinhVien.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvDanhSachSinhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSinhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDanhSachSinhVien.ColumnHeadersHeight = 40;
             this.dgvDanhSachSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachSinhVien.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSachSinhVien.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachSinhVien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDanhSachSinhVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSachSinhVien.Location = new System.Drawing.Point(0, 215);
@@ -292,6 +289,11 @@
             this.dgvDanhSachSinhVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDanhSachSinhVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvDanhSachSinhVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachSinhVien_CellClick);
+            // 
+            // guna2Elipse1
+            // 
+            this.guna2Elipse1.BorderRadius = 22;
+            this.guna2Elipse1.TargetControl = this;
             // 
             // label1
             // 

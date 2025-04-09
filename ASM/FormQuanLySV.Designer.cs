@@ -149,6 +149,8 @@
             // 
             // dgvData
             // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             this.dgvData.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -455,7 +457,6 @@
             this.cbLocDuLieu.Location = new System.Drawing.Point(411, 52);
             this.cbLocDuLieu.Name = "cbLocDuLieu";
             this.cbLocDuLieu.Size = new System.Drawing.Size(293, 36);
-            this.cbLocDuLieu.StartIndex = 0;
             this.cbLocDuLieu.TabIndex = 79;
             // 
             // label11

@@ -36,8 +36,8 @@ namespace ASM
             switch (cbDanhSach.SelectedItem.ToString())
             {
                 case "Mặc định":
-                    query = @"SELECT GD.IDDiem, SV.IDSV, SV.TenSV, MH.TenMon,
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS Diem 
+                    query = @"SELECT GD.IDDiem AS [Mã Điểm], SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], MH.TenMon AS [Tên Môn],
+                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm] 
                             FROM STUDENTS SV 
                             LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
                             LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc 
@@ -45,8 +45,8 @@ namespace ASM
                     break;
 
                 case "Top 3 sinh viên cao nhất":
-                    query = @"SELECT TOP 3 SV.IDSV, SV.TenSV, 
-                            ROUND(SUM(GD.Diem) / COUNT(GD.IDDiem), 2) AS DiemTB
+                    query = @"SELECT TOP 3 SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
+                            ROUND(SUM(GD.Diem) / COUNT(GD.IDDiem), 2) AS [Điểm Trung Bình]
                             FROM STUDENTS SV
                             JOIN Diem GD ON SV.IDSV = GD.IDSV
                             WHERE SV.IDLop = @IDLop AND GD.Diem IS NOT NULL
@@ -55,9 +55,9 @@ namespace ASM
                     break;
 
                 case "Tăng dần theo mã sinh viên":
-                    query = @"SELECT SV.IDSV, SV.TenSV, 
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS Diem, 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS DiemTB 
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
+                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm], 
+                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
                             FROM STUDENTS SV 
                             LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
                             WHERE SV.IDLop = @IDLop 
@@ -67,8 +67,8 @@ namespace ASM
 
                 case "Tăng dần theo giới tính":
                     query = @"SELECT SV.IDSV, SV.TenSV, 
-                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS GioiTinh, 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS DiemTB 
+                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], 
+                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
                             FROM STUDENTS SV 
                             LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
                             WHERE SV.IDLop = @IDLop 
@@ -77,9 +77,9 @@ namespace ASM
                     break;
 
                 case "Giảm dần theo mã sinh viên":
-                    query = @"SELECT SV.IDSV, SV.TenSV, 
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS Diem, 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS DiemTB 
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
+                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm], 
+                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
                             FROM STUDENTS SV 
                             LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
                             WHERE SV.IDLop = @IDLop 
@@ -88,9 +88,9 @@ namespace ASM
                     break;
 
                 case "Giảm dần theo giới tính":
-                    query = @"SELECT SV.IDSV, SV.TenSV, 
-                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS GioiTinh, 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS DiemTB 
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
+                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], 
+                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
                             FROM STUDENTS SV 
                             LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
                             WHERE SV.IDLop = @IDLop 
