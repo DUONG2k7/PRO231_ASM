@@ -1754,3 +1754,145 @@ C:\Users\ADMIN\Desktop\ASM_GD3\TEST\ASM\bin\Debug\ASM.exe.config
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\ASM\bin\Debug\ASM.exe.manifest
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\ASM\bin\Debug\ASM.application
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\ASM\obj\Debug\ASM.csproj.Up2Date
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\AdminPic\ADMIN (1).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\AdminPic\ADMIN (2).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\AdminPic\ADMIN (3).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (1).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (10).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (11).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (12).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (13).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (14).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (15).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (16).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (17).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (18).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (19).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (2).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (20).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (21).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (22).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (3).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (4).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (5).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (6).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (7).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (8).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\CBDTPIC\CBDT (9).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (1).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (2).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (3).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (4).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (5).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (6).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (7).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\GVPIC\GV (8).jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\10.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\11.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\12.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\2.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\3.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\4.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\5.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\6.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\7.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\8.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\MainPicture\9.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\redo.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\user1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\undo.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2021-PTCD-01.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2022-PTCD-Black-01.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2022-PTCD-White-01.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Banner-548-x-1280.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\bia.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\images.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\LDP-2000-x-947.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\post-anh-Gia-Binh_Mesa-de-trabajo-1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2024-06-05 174520.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\z6312873568572_bc01b9f2c341f9595dfbf640892f6968-1024x485.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Banner-548-x-12801.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Untitled-1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2020-FPTPolytechic.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\cc-011.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2021-PhoThongFPT E.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2021-PhoThongFPT V (1).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-17 142410.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\2020-FPTPolytechic1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\x18198154_10208600482868814_3469513_n.png.pagespeed.ic_.4_CcyctRxZ (1).png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\eye.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\hidden.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\lock.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\bee.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\image-170-1024x440.jpeg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\About_VN_26032025.jpg
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135131.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135148.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135200.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135210.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135221.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135234.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Screenshot 2025-02-18 135244.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\butchi1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\dấu x1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\daucong41.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\Kính Lúp1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\save1.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Resources\dấu x11.png
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\ASM.exe.config
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\ASM.exe.manifest
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\ASM.application
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\ASM.exe
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\ASM.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\BUS_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\DTO_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\Guna.UI2.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\DAL_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\BUS_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\DTO_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\bin\Debug\DAL_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.csproj.AssemblyReference.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormAdmin.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormGvThongkeTracuuSv.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormIT.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormITQuanLyTaiKhoan.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormBaoCaoDiemDanh.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormCBDT.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormCBQL.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormDanhSachHienThi.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormDiemDanhSV.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormGV.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormGvTraCuuSv.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormGVXemLichDay.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyCBDT.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyCBQL.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyCongViec.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyIT.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyKyHoc.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyLich.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormLichSuDangNhap.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormLogin.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormMain.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyMonHoc.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyNhanSu.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyPhongBan.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLySVDaCoDiem.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyGV.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyLop.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLySV.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormQuanLyTinTuc.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSV.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemDiem.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemLichHoc.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemLichThi.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemThongTin.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.Properties.Resources.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.UcTinTuc.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.csproj.GenerateResource.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.csproj.CoreCompileInputs.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.exe.manifest
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.application
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.csproj.Up2Date
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.exe
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.pdb

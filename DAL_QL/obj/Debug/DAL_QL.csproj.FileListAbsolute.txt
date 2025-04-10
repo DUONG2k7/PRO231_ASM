@@ -61,3 +61,12 @@ C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DAL_QL\obj\Debug\DAL_QL.csproj.CoreCompileIn
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DAL_QL\obj\Debug\DAL_QL.csproj.Up2Date
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DAL_QL\obj\Debug\DAL_QL.dll
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\DAL_QL\obj\Debug\DAL_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\bin\Debug\DAL_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\bin\Debug\DAL_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\bin\Debug\DTO_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\bin\Debug\DTO_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\obj\Debug\DAL_QL.csproj.AssemblyReference.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\obj\Debug\DAL_QL.csproj.CoreCompileInputs.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\obj\Debug\DAL_QL.csproj.Up2Date
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\obj\Debug\DAL_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\DAL_QL\obj\Debug\DAL_QL.pdb

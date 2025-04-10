@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
@@ -58,7 +57,6 @@
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -75,7 +73,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(460, 74);
+            this.groupBox1.Size = new System.Drawing.Size(506, 74);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm SV trong lớp";
@@ -104,7 +102,7 @@
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.Location = new System.Drawing.Point(374, 19);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(68, 44);
+            this.btnSearch.Size = new System.Drawing.Size(105, 44);
             this.btnSearch.TabIndex = 95;
             this.btnSearch.Text = "Tìm";
             this.btnSearch.UseTransparentBackground = true;
@@ -121,11 +119,11 @@
             this.txtMasv.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMasv.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMasv.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMasv.Location = new System.Drawing.Point(121, 33);
+            this.txtMasv.Location = new System.Drawing.Point(121, 25);
             this.txtMasv.Name = "txtMasv";
             this.txtMasv.PlaceholderText = "Nhập MSV cần tìm...";
             this.txtMasv.SelectedText = "";
-            this.txtMasv.Size = new System.Drawing.Size(221, 24);
+            this.txtMasv.Size = new System.Drawing.Size(221, 38);
             this.txtMasv.TabIndex = 94;
             // 
             // groupBox2
@@ -137,7 +135,7 @@
             this.groupBox2.Controls.Add(this.lbTenSV);
             this.groupBox2.Controls.Add(this.txtMasvDiemtb);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(510, 70);
+            this.groupBox2.Location = new System.Drawing.Point(561, 70);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -238,7 +236,7 @@
             // btnChangeAllRight
             // 
             this.btnChangeAllRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeAllRight.Location = new System.Drawing.Point(138, 249);
+            this.btnChangeAllRight.Location = new System.Drawing.Point(158, 249);
             this.btnChangeAllRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAllRight.Name = "btnChangeAllRight";
             this.btnChangeAllRight.Size = new System.Drawing.Size(97, 47);
@@ -250,7 +248,7 @@
             // btnChangeAllLeft
             // 
             this.btnChangeAllLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeAllLeft.Location = new System.Drawing.Point(258, 249);
+            this.btnChangeAllLeft.Location = new System.Drawing.Point(296, 249);
             this.btnChangeAllLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAllLeft.Name = "btnChangeAllLeft";
             this.btnChangeAllLeft.Size = new System.Drawing.Size(97, 47);
@@ -262,7 +260,7 @@
             // BtnRight
             // 
             this.BtnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRight.Location = new System.Drawing.Point(380, 249);
+            this.BtnRight.Location = new System.Drawing.Point(426, 249);
             this.BtnRight.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRight.Name = "BtnRight";
             this.BtnRight.Size = new System.Drawing.Size(97, 47);
@@ -275,7 +273,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(7, 302);
+            this.label9.Location = new System.Drawing.Point(11, 315);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(258, 31);
@@ -293,7 +291,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(460, 74);
+            this.groupBox3.Size = new System.Drawing.Size(506, 74);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lọc Dữ Liệu";
@@ -310,7 +308,7 @@
             this.cbTenMon.ItemHeight = 30;
             this.cbTenMon.Location = new System.Drawing.Point(311, 26);
             this.cbTenMon.Name = "cbTenMon";
-            this.cbTenMon.Size = new System.Drawing.Size(140, 36);
+            this.cbTenMon.Size = new System.Drawing.Size(168, 36);
             this.cbTenMon.TabIndex = 101;
             this.cbTenMon.SelectedIndexChanged += new System.EventHandler(this.cbTenMon_SelectedIndexChanged);
             // 
@@ -346,7 +344,7 @@
             this.cbLop.ItemHeight = 30;
             this.cbLop.Location = new System.Drawing.Point(70, 26);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(140, 36);
+            this.cbLop.Size = new System.Drawing.Size(168, 36);
             this.cbLop.TabIndex = 99;
             this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
@@ -354,32 +352,32 @@
             // 
             this.dgvDanhSachSV.AllowUserToAddRows = false;
             this.dgvDanhSachSV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dgvDanhSachSV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvDanhSachSV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDanhSachSV.ColumnHeadersHeight = 40;
             this.dgvDanhSachSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachSV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSachSV.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSachSV.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dgvDanhSachSV.Location = new System.Drawing.Point(0, 356);
+            this.dgvDanhSachSV.Location = new System.Drawing.Point(0, 368);
             this.dgvDanhSachSV.Name = "dgvDanhSachSV";
             this.dgvDanhSachSV.ReadOnly = true;
             this.dgvDanhSachSV.RowHeadersVisible = false;
-            this.dgvDanhSachSV.Size = new System.Drawing.Size(969, 454);
+            this.dgvDanhSachSV.Size = new System.Drawing.Size(1085, 454);
             this.dgvDanhSachSV.TabIndex = 90;
             this.dgvDanhSachSV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSachSV.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -417,9 +415,9 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(880, 176);
+            this.btnUpdate.Location = new System.Drawing.Point(931, 163);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(65, 45);
+            this.btnUpdate.Size = new System.Drawing.Size(117, 58);
             this.btnUpdate.TabIndex = 93;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseTransparentBackground = true;
@@ -438,9 +436,9 @@
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNew.Location = new System.Drawing.Point(880, 91);
+            this.btnNew.Location = new System.Drawing.Point(931, 78);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(65, 45);
+            this.btnNew.Size = new System.Drawing.Size(117, 58);
             this.btnNew.TabIndex = 92;
             this.btnNew.Text = "Thêm";
             this.btnNew.UseTransparentBackground = true;
@@ -459,9 +457,9 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(880, 262);
+            this.btnSave.Location = new System.Drawing.Point(931, 249);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(65, 45);
+            this.btnSave.Size = new System.Drawing.Size(117, 58);
             this.btnSave.TabIndex = 93;
             this.btnSave.Text = "Lưu";
             this.btnSave.UseTransparentBackground = true;
@@ -477,16 +475,11 @@
             this.label2.TabIndex = 94;
             this.label2.Text = "QUẢN LÝ ĐIỂM SINH VIÊN";
             // 
-            // guna2Elipse1
-            // 
-            this.guna2Elipse1.BorderRadius = 22;
-            this.guna2Elipse1.TargetControl = this;
-            // 
             // FormQuanLySVDaCoDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(969, 810);
+            this.ClientSize = new System.Drawing.Size(1085, 822);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
@@ -545,6 +538,5 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtMasv;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
     }
 }

@@ -56,7 +56,7 @@
             "Giảm dần theo mã sinh viên",
             "Tăng dần theo giới tính",
             "Giảm dần theo giới tính"});
-            this.cbDanhSach.Location = new System.Drawing.Point(346, 67);
+            this.cbDanhSach.Location = new System.Drawing.Point(410, 70);
             this.cbDanhSach.Name = "cbDanhSach";
             this.cbDanhSach.Size = new System.Drawing.Size(293, 36);
             this.cbDanhSach.StartIndex = 0;
@@ -89,11 +89,11 @@
             this.dgvDanhSach.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDanhSach.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDanhSach.Location = new System.Drawing.Point(0, 154);
+            this.dgvDanhSach.Location = new System.Drawing.Point(0, 150);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.ReadOnly = true;
             this.dgvDanhSach.RowHeadersVisible = false;
-            this.dgvDanhSach.Size = new System.Drawing.Size(953, 617);
+            this.dgvDanhSach.Size = new System.Drawing.Size(1085, 672);
             this.dgvDanhSach.TabIndex = 37;
             this.dgvDanhSach.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDanhSach.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -121,7 +121,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(339, 9);
+            this.label2.Location = new System.Drawing.Point(387, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(316, 40);
             this.label2.TabIndex = 38;
@@ -136,7 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(953, 771);
+            this.ClientSize = new System.Drawing.Size(1085, 822);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvDanhSach);
             this.Controls.Add(this.cbDanhSach);

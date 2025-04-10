@@ -75,3 +75,14 @@ C:\Users\ADMIN\Desktop\ASM_GD3\TEST\BUS_QL\obj\Debug\BUS_QL.csproj.CoreCompileIn
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\BUS_QL\obj\Debug\BUS_QL.csproj.Up2Date
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\BUS_QL\obj\Debug\BUS_QL.dll
 C:\Users\ADMIN\Desktop\ASM_GD3\TEST\BUS_QL\obj\Debug\BUS_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\BUS_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\BUS_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\DAL_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\DTO_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\DAL_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\bin\Debug\DTO_QL.pdb
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\obj\Debug\BUS_QL.csproj.AssemblyReference.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\obj\Debug\BUS_QL.csproj.CoreCompileInputs.cache
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\obj\Debug\BUS_QL.csproj.Up2Date
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\obj\Debug\BUS_QL.dll
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\BUS_QL\obj\Debug\BUS_QL.pdb

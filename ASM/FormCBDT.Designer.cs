@@ -323,7 +323,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormCBDT";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCBDT";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnInfo.ResumeLayout(false);

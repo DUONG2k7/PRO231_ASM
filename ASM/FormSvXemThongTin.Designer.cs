@@ -45,7 +45,7 @@
             this.guna2TabControl1.Location = new System.Drawing.Point(0, 0);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(1006, 880);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1087, 822);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -71,7 +71,7 @@
             this.tpXemLichHoc.Location = new System.Drawing.Point(4, 44);
             this.tpXemLichHoc.Name = "tpXemLichHoc";
             this.tpXemLichHoc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpXemLichHoc.Size = new System.Drawing.Size(998, 832);
+            this.tpXemLichHoc.Size = new System.Drawing.Size(1079, 774);
             this.tpXemLichHoc.TabIndex = 0;
             this.tpXemLichHoc.Text = "Xem lịch học";
             this.tpXemLichHoc.UseVisualStyleBackColor = true;
@@ -100,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 880);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
             this.Controls.Add(this.guna2TabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormSvXemThongTin";

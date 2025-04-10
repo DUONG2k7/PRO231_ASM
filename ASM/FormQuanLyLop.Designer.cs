@@ -245,11 +245,11 @@
             this.dgvData.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvData.Location = new System.Drawing.Point(0, 302);
+            this.dgvData.Location = new System.Drawing.Point(0, 380);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersVisible = false;
-            this.dgvData.Size = new System.Drawing.Size(1032, 442);
+            this.dgvData.Size = new System.Drawing.Size(1087, 442);
             this.dgvData.TabIndex = 54;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -308,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 744);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
             this.Controls.Add(this.rdbBuoiChieu);
             this.Controls.Add(this.rdbBuoiSang);
             this.Controls.Add(this.label4);

@@ -26,6 +26,10 @@ namespace ASM
             LoadDsPhong();
             LockControl();
 
+            if (dgvData.Columns.Contains("Hình"))
+            {
+                dgvData.Columns["Hình"].Visible = false;
+            }
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LoadDsIT()
@@ -37,7 +41,7 @@ namespace ASM
         public void LoadDsPhong()
         {
             cbPhongBan.DataSource = QlIT.LoadDsPhong();
-            cbPhongBan.DisplayMember = "TenPhong";
+            cbPhongBan.DisplayMember = "Tên Phòng";
             cbPhongBan.ValueMember = "IDPhong";
         }
         private void LoadPictureBox()
@@ -80,9 +84,11 @@ namespace ASM
             rdbNam.Enabled = false;
             rdbNu.Enabled = false;
             pbPicIT.Enabled = false;
+            cbPhongBan.Enabled = false;
             dgvData.Enabled = true;
 
             btnSave.Enabled = false;
+            btnNew.Enabled = true;
             btnUpdate.Enabled = false;
         }
         public void ClearForm()

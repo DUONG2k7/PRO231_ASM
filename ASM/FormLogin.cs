@@ -84,7 +84,6 @@ namespace ASM
                     this.Hide();
                     Form form = null;
                     Form forma = null;
-                    FormTinTuc formTinTuc = new FormTinTuc();
                     switch (role)
                     {
                         case "R05":
@@ -108,19 +107,12 @@ namespace ASM
                     }
                     if (form != null)
                     {
-                        form.FormClosed += (s, args) => formTinTuc.Close();
                         form.FormClosed += (s1, e1) =>
                         {
                             Application.OpenForms["FormMain"]?.Show();
                         };
-                        form.LocationChanged += (s, e1) =>
-                        {
-                            formTinTuc.Location = new Point(form.Location.X + form.Width, form.Location.Y);
-                        };
 
                         form.Show();
-                        formTinTuc.Location = new Point(form.Location.X + form.Width, form.Location.Y);
-                        formTinTuc.Show();
                     }
                     else if(forma != null)
                     {

@@ -44,6 +44,7 @@
             this.dragFromCBQL = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnMain.SuspendLayout();
             this.PnInfo.SuspendLayout();
@@ -74,9 +75,9 @@
             this.PnMain.Controls.Add(this.pictureBox1);
             this.PnMain.Controls.Add(this.lblMarquee);
             this.PnMain.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnMain.Location = new System.Drawing.Point(291, 0);
+            this.PnMain.Location = new System.Drawing.Point(293, 0);
             this.PnMain.Name = "PnMain";
-            this.PnMain.Size = new System.Drawing.Size(997, 887);
+            this.PnMain.Size = new System.Drawing.Size(1087, 822);
             this.PnMain.TabIndex = 15;
             this.PnMain.UseTransparentBackground = true;
             // 
@@ -124,12 +125,13 @@
             // PnInfo
             // 
             this.PnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.PnInfo.Controls.Add(this.guna2Button3);
             this.PnInfo.Controls.Add(this.guna2Button2);
             this.PnInfo.Controls.Add(this.guna2Button1);
             this.PnInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnInfo.Location = new System.Drawing.Point(0, 0);
             this.PnInfo.Name = "PnInfo";
-            this.PnInfo.Size = new System.Drawing.Size(94, 887);
+            this.PnInfo.Size = new System.Drawing.Size(94, 822);
             this.PnInfo.TabIndex = 16;
             // 
             // btnMenuQlyIT
@@ -185,7 +187,7 @@
             this.PnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnMenu.Location = new System.Drawing.Point(94, 0);
             this.PnMenu.Name = "PnMenu";
-            this.PnMenu.Size = new System.Drawing.Size(201, 887);
+            this.PnMenu.Size = new System.Drawing.Size(201, 822);
             this.PnMenu.TabIndex = 17;
             // 
             // dragFromCBQL
@@ -206,17 +208,36 @@
             this.guna2DragControl1.TargetControl = this.PnInfo;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
+            // guna2Button3
+            // 
+            this.guna2Button3.Animated = true;
+            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button3.ForeColor = System.Drawing.Color.White;
+            this.guna2Button3.Image = global::ASM.Properties.Resources.undo;
+            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.guna2Button3.ImageSize = new System.Drawing.Size(40, 40);
+            this.guna2Button3.Location = new System.Drawing.Point(12, 765);
+            this.guna2Button3.Name = "guna2Button3";
+            this.guna2Button3.Size = new System.Drawing.Size(67, 45);
+            this.guna2Button3.TabIndex = 17;
+            this.guna2Button3.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
             // FormCBQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 887);
+            this.ClientSize = new System.Drawing.Size(1380, 822);
             this.Controls.Add(this.PnMenu);
             this.Controls.Add(this.PnInfo);
             this.Controls.Add(this.PnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCBQL";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormCBQL";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnMain.ResumeLayout(false);
@@ -244,5 +265,6 @@
         private Guna.UI2.WinForms.Guna2DragControl dragFromCBQL;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }

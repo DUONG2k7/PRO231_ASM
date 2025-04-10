@@ -81,7 +81,7 @@
             this.tcQlyKyHoc.Location = new System.Drawing.Point(0, 0);
             this.tcQlyKyHoc.Name = "tcQlyKyHoc";
             this.tcQlyKyHoc.SelectedIndex = 0;
-            this.tcQlyKyHoc.Size = new System.Drawing.Size(1064, 822);
+            this.tcQlyKyHoc.Size = new System.Drawing.Size(1087, 822);
             this.tcQlyKyHoc.TabIndex = 0;
             // 
             // tpTaoKyHoc
@@ -101,7 +101,7 @@
             this.tpTaoKyHoc.Location = new System.Drawing.Point(4, 22);
             this.tpTaoKyHoc.Name = "tpTaoKyHoc";
             this.tpTaoKyHoc.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTaoKyHoc.Size = new System.Drawing.Size(1056, 796);
+            this.tpTaoKyHoc.Size = new System.Drawing.Size(1079, 796);
             this.tpTaoKyHoc.TabIndex = 0;
             this.tpTaoKyHoc.Text = "Tạo kỳ học";
             this.tpTaoKyHoc.UseVisualStyleBackColor = true;
@@ -278,7 +278,7 @@
             this.dgvDsKyHoc.Name = "dgvDsKyHoc";
             this.dgvDsKyHoc.ReadOnly = true;
             this.dgvDsKyHoc.RowHeadersVisible = false;
-            this.dgvDsKyHoc.Size = new System.Drawing.Size(1050, 503);
+            this.dgvDsKyHoc.Size = new System.Drawing.Size(1073, 503);
             this.dgvDsKyHoc.TabIndex = 41;
             this.dgvDsKyHoc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDsKyHoc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -609,7 +609,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 822);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
             this.Controls.Add(this.tcQlyKyHoc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormQuanLyKyHoc";

@@ -95,7 +95,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 179);
+            this.pictureBox1.Location = new System.Drawing.Point(83, 209);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(950, 193);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -125,9 +125,9 @@
             this.PnMain.Controls.Add(this.lblMarquee);
             this.PnMain.Controls.Add(this.pictureBox1);
             this.PnMain.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnMain.Location = new System.Drawing.Point(294, 0);
+            this.PnMain.Location = new System.Drawing.Point(295, 0);
             this.PnMain.Name = "PnMain";
-            this.PnMain.Size = new System.Drawing.Size(1006, 849);
+            this.PnMain.Size = new System.Drawing.Size(1085, 822);
             this.PnMain.TabIndex = 17;
             this.PnMain.UseTransparentBackground = true;
             // 
@@ -139,7 +139,7 @@
             this.PnInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnInfo.Location = new System.Drawing.Point(0, 0);
             this.PnInfo.Name = "PnInfo";
-            this.PnInfo.Size = new System.Drawing.Size(94, 849);
+            this.PnInfo.Size = new System.Drawing.Size(94, 822);
             this.PnInfo.TabIndex = 18;
             // 
             // guna2Button2
@@ -187,7 +187,7 @@
             this.PnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnMenu.Location = new System.Drawing.Point(94, 0);
             this.PnMenu.Name = "PnMenu";
-            this.PnMenu.Size = new System.Drawing.Size(201, 849);
+            this.PnMenu.Size = new System.Drawing.Size(201, 822);
             this.PnMenu.TabIndex = 19;
             // 
             // btnMenuGvXemLichDaySV
@@ -285,14 +285,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1300, 849);
+            this.ClientSize = new System.Drawing.Size(1380, 822);
             this.Controls.Add(this.PnMenu);
             this.Controls.Add(this.PnInfo);
             this.Controls.Add(this.PnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormGV";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGV";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.PnMain.ResumeLayout(false);

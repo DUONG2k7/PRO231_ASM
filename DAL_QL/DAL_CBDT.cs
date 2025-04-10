@@ -808,6 +808,54 @@ namespace DAL_QL
                 }
             }
         }
+        public bool KiemTraTrungLich(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                string query = @"
+                SELECT COUNT(*) 
+                FROM LichHoc 
+                WHERE 
+                IDLop = @MaLop 
+                AND CONVERT(date, Ngay) = @NgayHoc 
+                AND (@GioBDMoi < GioKetThuc AND @GioKTMoi > GioBatDau)";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLop", maLop);
+                cmd.Parameters.AddWithValue("@NgayHoc", ngayHoc.Date);
+                cmd.Parameters.AddWithValue("@GioBDMoi", gioBDMoi);
+                cmd.Parameters.AddWithValue("@GioKTMoi", gioKTMoi);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+        public bool KiemTraTrungLichSua(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                string query = @"
+                SELECT COUNT(*) 
+                FROM LichHoc 
+                WHERE 
+                IDLop = @MaLop 
+                AND CONVERT(date, Ngay) = @NgayHoc
+                AND (@GioBDMoi < GioKetThuc AND @GioKTMoi > GioBatDau)
+                AND IDLICHHOC != @IDLichHoc";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@MaLop", maLop);
+                cmd.Parameters.AddWithValue("@NgayHoc", ngayHoc.Date);
+                cmd.Parameters.AddWithValue("@GioBDMoi", gioBDMoi);
+                cmd.Parameters.AddWithValue("@GioKTMoi", gioKTMoi);
+                cmd.Parameters.AddWithValue("@IDLichHoc", idLichHoc);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
         public bool InsertLichHoc(DTO_CBDT_LICHHOC LICH, out string message)
         {
             try

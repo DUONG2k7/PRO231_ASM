@@ -18,14 +18,14 @@ namespace ASM
         }
         public string TieuDe
         {
-            get => txtTieuDe.Text;
-            set => txtTieuDe.Text = value;
+            get => lbTieuDE.Text;
+            set => lbTieuDE.Text = value;
         }
 
         public string NoiDung
         {
-            get => txtNoiDung.Text;
-            set => txtNoiDung.Text = value;
+            get => lbNd.Text;
+            set => lbNd.Text = value;
         }
 
         public Image HinhAnh

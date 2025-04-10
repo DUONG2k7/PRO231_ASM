@@ -33,7 +33,6 @@
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.btndangnhap = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
@@ -41,8 +40,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pbAnh = new Guna.UI2.WinForms.Guna2PictureBox();
             this.ElipMain = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.pnTinTuc = new Guna.UI2.WinForms.Guna2Panel();
+            this.timerND = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnh)).BeginInit();
+            this.pnTinTuc.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2DragControl1
@@ -71,11 +73,6 @@
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 8;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 2000;
             // 
             // label3
             // 
@@ -146,12 +143,13 @@
             // pbAnh
             // 
             this.pbAnh.BackColor = System.Drawing.Color.Transparent;
+            this.pbAnh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbAnh.FillColor = System.Drawing.Color.Transparent;
             this.pbAnh.Image = global::ASM.Properties.Resources.z6312873568572_bc01b9f2c341f9595dfbf640892f6968_1024x485;
             this.pbAnh.ImageRotate = 0F;
-            this.pbAnh.Location = new System.Drawing.Point(505, 56);
+            this.pbAnh.Location = new System.Drawing.Point(0, 0);
             this.pbAnh.Name = "pbAnh";
-            this.pbAnh.Size = new System.Drawing.Size(463, 370);
+            this.pbAnh.Size = new System.Drawing.Size(463, 350);
             this.pbAnh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbAnh.TabIndex = 10;
             this.pbAnh.TabStop = false;
@@ -161,6 +159,22 @@
             // 
             this.ElipMain.BorderRadius = 22;
             this.ElipMain.TargetControl = this;
+            // 
+            // pnTinTuc
+            // 
+            this.pnTinTuc.BackColor = System.Drawing.Color.Transparent;
+            this.pnTinTuc.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.pnTinTuc.BorderThickness = 2;
+            this.pnTinTuc.Controls.Add(this.pbAnh);
+            this.pnTinTuc.Location = new System.Drawing.Point(519, 56);
+            this.pnTinTuc.Name = "pnTinTuc";
+            this.pnTinTuc.Size = new System.Drawing.Size(463, 350);
+            this.pnTinTuc.TabIndex = 16;
+            this.pnTinTuc.UseTransparentBackground = true;
+            // 
+            // timerND
+            // 
+            this.timerND.Tick += new System.EventHandler(this.timerND_Tick);
             // 
             // FormMain
             // 
@@ -175,7 +189,7 @@
             this.Controls.Add(this.guna2PictureBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pbAnh);
+            this.Controls.Add(this.pnTinTuc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -184,6 +198,7 @@
             this.Text = "FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAnh)).EndInit();
+            this.pnTinTuc.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,7 +209,6 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2GradientButton btndangnhap;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox2;
@@ -202,5 +216,7 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2PictureBox pbAnh;
         public Guna.UI2.WinForms.Guna2Elipse ElipMain;
+        private Guna.UI2.WinForms.Guna2Panel pnTinTuc;
+        private System.Windows.Forms.Timer timerND;
     }
 }

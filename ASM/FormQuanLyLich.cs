@@ -24,6 +24,7 @@ namespace ASM
             InitializeComponent();
 
             idkyhoc = IDKYHOC;
+            dtpNgay.Value = DateTime.Today;
 
             LoadDsLich();
             LoadDsLop();
@@ -177,7 +178,7 @@ namespace ASM
             cbGvMonhoc.Enabled = false;
             dtpNgay.Enabled = false;
             rdbNgayhoc.Enabled = false;
-            d.Enabled = false;
+            rdbNgaythi.Enabled = false;
 
             btnNew.Enabled = true;
             btnUpdate.Enabled = false;
@@ -209,7 +210,7 @@ namespace ASM
             cbGvMonhoc.Enabled = true;
             dtpNgay.Enabled = true;
             rdbNgayhoc.Enabled = true;
-            d.Enabled = true;
+            rdbNgaythi.Enabled = true;
             dgvLichHoc.Enabled = false;
 
             btnNew.Enabled = false;
@@ -228,7 +229,7 @@ namespace ASM
             cbGvMonhoc.Enabled = true;
             dtpNgay.Enabled = true;
             rdbNgayhoc.Enabled = true;
-            d.Enabled = true;
+            rdbNgaythi.Enabled = true;
             dgvLichHoc.Enabled = false;
 
             btnNew.Enabled = false;
@@ -242,6 +243,24 @@ namespace ASM
             {
                 if (!CheckInput())
                 {
+                    return;
+                }
+
+                DateTime today = DateTime.Today;
+                int daysUntilNextMonday = ((int)DayOfWeek.Monday - (int)today.DayOfWeek + 7) % 7;
+                if (daysUntilNextMonday == 0) daysUntilNextMonday = 7; // Nếu hôm nay là thứ Hai thì tuần sau là 7 ngày nữa
+                DateTime nextMonday = today.AddDays(daysUntilNextMonday);
+
+                if (dtpNgay.Value.Date < nextMonday)
+                {
+                    MessageBox.Show("Lịch học phải được thêm trước thứ Hai của tuần.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (QlLich.KiemTraTrungLich(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
+                                  dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay))
+                {
+                    MessageBox.Show("Lớp này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -259,6 +278,19 @@ namespace ASM
             {
                 if (!CheckInput())
                 {
+                    return;
+                }
+
+                if (dtpNgay.Value.Date <= DateTime.Today)
+                {
+                    MessageBox.Show("Ngày học phải là một ngày trong tương lai (sau hôm nay).", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (QlLich.KiemTraTrungLichSua(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
+                                  dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay, Convert.ToInt32(dgvLichHoc.CurrentRow.Cells["IDLichHoc"].Value)))
+                {
+                    MessageBox.Show("Lớp này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 

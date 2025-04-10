@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormITQuanLyTaiKhoan));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbCapTaiKhoan = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             // 
             this.lbCapTaiKhoan.AutoSize = true;
             this.lbCapTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCapTaiKhoan.Location = new System.Drawing.Point(479, 242);
+            this.lbCapTaiKhoan.Location = new System.Drawing.Point(514, 236);
             this.lbCapTaiKhoan.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCapTaiKhoan.Name = "lbCapTaiKhoan";
             this.lbCapTaiKhoan.Size = new System.Drawing.Size(159, 20);
@@ -71,7 +71,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(82, 241);
+            this.label7.Location = new System.Drawing.Point(117, 235);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 20);
@@ -82,7 +82,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(550, 186);
+            this.label9.Location = new System.Drawing.Point(585, 180);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(88, 20);
@@ -93,7 +93,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(546, 132);
+            this.label10.Location = new System.Drawing.Point(581, 126);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(92, 20);
@@ -104,7 +104,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(76, 188);
+            this.label11.Location = new System.Drawing.Point(111, 182);
             this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(57, 20);
@@ -115,7 +115,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 131);
+            this.label2.Location = new System.Drawing.Point(72, 125);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 20);
@@ -126,7 +126,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(329, 28);
+            this.label3.Location = new System.Drawing.Point(398, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(309, 40);
             this.label3.TabIndex = 40;
@@ -145,7 +145,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdd.Location = new System.Drawing.Point(15, 677);
+            this.btnAdd.Location = new System.Drawing.Point(15, 692);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(123, 79);
             this.btnAdd.TabIndex = 42;
@@ -166,7 +166,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnUpdate.Location = new System.Drawing.Point(220, 677);
+            this.btnUpdate.Location = new System.Drawing.Point(242, 692);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 79);
             this.btnUpdate.TabIndex = 43;
@@ -187,7 +187,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnSave.Location = new System.Drawing.Point(440, 677);
+            this.btnSave.Location = new System.Drawing.Point(483, 692);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(123, 79);
             this.btnSave.TabIndex = 43;
@@ -208,7 +208,7 @@
             this.btnLoU.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnLoU.ForeColor = System.Drawing.Color.White;
             this.btnLoU.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnLoU.Location = new System.Drawing.Point(642, 677);
+            this.btnLoU.Location = new System.Drawing.Point(729, 692);
             this.btnLoU.Name = "btnLoU";
             this.btnLoU.Size = new System.Drawing.Size(149, 79);
             this.btnLoU.TabIndex = 43;
@@ -230,7 +230,7 @@
             this.btnHis.ForeColor = System.Drawing.Color.White;
             this.btnHis.Image = ((System.Drawing.Image)(resources.GetObject("btnHis.Image")));
             this.btnHis.ImageSize = new System.Drawing.Size(28, 28);
-            this.btnHis.Location = new System.Drawing.Point(843, 677);
+            this.btnHis.Location = new System.Drawing.Point(973, 677);
             this.btnHis.Name = "btnHis";
             this.btnHis.Size = new System.Drawing.Size(101, 94);
             this.btnHis.TabIndex = 44;
@@ -257,7 +257,7 @@
             "Cán Bộ Quản Lý",
             "Sinh Viên",
             "Tài Khoản Bị Khóa"});
-            this.cbLocDuLieu.Location = new System.Drawing.Point(143, 125);
+            this.cbLocDuLieu.Location = new System.Drawing.Point(178, 119);
             this.cbLocDuLieu.Name = "cbLocDuLieu";
             this.cbLocDuLieu.Size = new System.Drawing.Size(293, 36);
             this.cbLocDuLieu.StartIndex = 0;
@@ -278,7 +278,7 @@
             this.txtMaTk.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.txtMaTk.ForeColor = System.Drawing.Color.Black;
             this.txtMaTk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaTk.Location = new System.Drawing.Point(143, 179);
+            this.txtMaTk.Location = new System.Drawing.Point(178, 173);
             this.txtMaTk.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaTk.Name = "txtMaTk";
             this.txtMaTk.PlaceholderText = "";
@@ -302,7 +302,7 @@
             "Cán Bộ Đào Tạo",
             "Cán Bộ Quản Lý",
             "IT"});
-            this.cbRole.Location = new System.Drawing.Point(143, 233);
+            this.cbRole.Location = new System.Drawing.Point(178, 227);
             this.cbRole.Name = "cbRole";
             this.cbRole.Size = new System.Drawing.Size(293, 36);
             this.cbRole.TabIndex = 47;
@@ -323,7 +323,7 @@
             this.txtTk.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtTk.ForeColor = System.Drawing.Color.Black;
             this.txtTk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTk.Location = new System.Drawing.Point(642, 125);
+            this.txtTk.Location = new System.Drawing.Point(677, 119);
             this.txtTk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTk.Name = "txtTk";
             this.txtTk.PlaceholderText = "";
@@ -345,7 +345,7 @@
             this.txtMk.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.txtMk.ForeColor = System.Drawing.Color.Black;
             this.txtMk.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMk.Location = new System.Drawing.Point(642, 179);
+            this.txtMk.Location = new System.Drawing.Point(677, 173);
             this.txtMk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtMk.Name = "txtMk";
             this.txtMk.PlaceholderText = "";
@@ -369,7 +369,7 @@
             "Cán Bộ Đào Tạo",
             "Cán Bộ Quản Lý",
             "IT"});
-            this.cbTk.Location = new System.Drawing.Point(642, 233);
+            this.cbTk.Location = new System.Drawing.Point(677, 227);
             this.cbTk.Name = "cbTk";
             this.cbTk.Size = new System.Drawing.Size(284, 36);
             this.cbTk.TabIndex = 47;
@@ -383,32 +383,32 @@
             // 
             this.dgvDataTk.AllowUserToAddRows = false;
             this.dgvDataTk.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDataTk.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDataTk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvDataTk.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDataTk.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDataTk.ColumnHeadersHeight = 40;
             this.dgvDataTk.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDataTk.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDataTk.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDataTk.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvDataTk.Location = new System.Drawing.Point(15, 298);
             this.dgvDataTk.Name = "dgvDataTk";
             this.dgvDataTk.ReadOnly = true;
             this.dgvDataTk.RowHeadersVisible = false;
-            this.dgvDataTk.Size = new System.Drawing.Size(929, 353);
+            this.dgvDataTk.Size = new System.Drawing.Size(1059, 353);
             this.dgvDataTk.TabIndex = 50;
             this.dgvDataTk.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDataTk.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -437,7 +437,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 783);
+            this.ClientSize = new System.Drawing.Size(1086, 822);
             this.Controls.Add(this.dgvDataTk);
             this.Controls.Add(this.txtMk);
             this.Controls.Add(this.txtTk);

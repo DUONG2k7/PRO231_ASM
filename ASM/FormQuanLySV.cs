@@ -29,7 +29,10 @@ namespace ASM
             LockControl();
 
             cbLocDuLieu.SelectedValueChanged += cbLocDuLieu_SelectedIndexChanged;
-
+            if (dgvData.Columns.Contains("Hình"))
+            {
+                dgvData.Columns["Hình"].Visible = false;
+            }
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LockControl()

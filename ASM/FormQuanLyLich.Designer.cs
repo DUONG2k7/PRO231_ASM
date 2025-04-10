@@ -37,16 +37,12 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.dgvLichHoc = new Guna.UI2.WinForms.Guna2DataGridView();
-            this.rdbNgaythi = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.rdbNgayhoc = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.dtpGioKetThuc = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.dtpGioBatDau = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.d = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -56,6 +52,8 @@
             this.cbMonhoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbCahoc = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cbLop = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.rdbNgayhoc = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdbNgaythi = new Guna.UI2.WinForms.Guna2RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLichHoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -183,7 +181,7 @@
             this.dgvLichHoc.Name = "dgvLichHoc";
             this.dgvLichHoc.ReadOnly = true;
             this.dgvLichHoc.RowHeadersVisible = false;
-            this.dgvLichHoc.Size = new System.Drawing.Size(1064, 508);
+            this.dgvLichHoc.Size = new System.Drawing.Size(1087, 508);
             this.dgvLichHoc.TabIndex = 56;
             this.dgvLichHoc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLichHoc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -207,38 +205,6 @@
             this.dgvLichHoc.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLichHoc.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.dgvLichHoc.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLichHoc_CellClick);
-            // 
-            // rdbNgaythi
-            // 
-            this.rdbNgaythi.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgaythi.CheckedState.BorderThickness = 0;
-            this.rdbNgaythi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgaythi.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNgaythi.Location = new System.Drawing.Point(840, 182);
-            this.rdbNgaythi.Name = "rdbNgaythi";
-            this.rdbNgaythi.Size = new System.Drawing.Size(20, 20);
-            this.rdbNgaythi.TabIndex = 55;
-            this.rdbNgaythi.Text = "guna2CustomRadioButton1";
-            this.rdbNgaythi.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNgaythi.UncheckedState.BorderThickness = 2;
-            this.rdbNgaythi.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNgaythi.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdbNgayhoc
-            // 
-            this.rdbNgayhoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgayhoc.CheckedState.BorderThickness = 0;
-            this.rdbNgayhoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNgayhoc.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNgayhoc.Location = new System.Drawing.Point(706, 182);
-            this.rdbNgayhoc.Name = "rdbNgayhoc";
-            this.rdbNgayhoc.Size = new System.Drawing.Size(20, 20);
-            this.rdbNgayhoc.TabIndex = 54;
-            this.rdbNgayhoc.Text = "guna2CustomRadioButton1";
-            this.rdbNgayhoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNgayhoc.UncheckedState.BorderThickness = 2;
-            this.rdbNgayhoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNgayhoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // dtpGioKetThuc
             // 
@@ -313,26 +279,6 @@
             this.label18.Size = new System.Drawing.Size(104, 21);
             this.label18.TabIndex = 51;
             this.label18.Text = "Giờ Bắt Đầu:";
-            // 
-            // d
-            // 
-            this.d.AutoSize = true;
-            this.d.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.d.Location = new System.Drawing.Point(866, 185);
-            this.d.Name = "d";
-            this.d.Size = new System.Drawing.Size(57, 17);
-            this.d.TabIndex = 47;
-            this.d.Text = "Lịch Thi";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(732, 185);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(61, 17);
-            this.label20.TabIndex = 46;
-            this.label20.Text = "Lịch Học";
             // 
             // label16
             // 
@@ -457,27 +403,63 @@
             this.cbLop.TabIndex = 37;
             this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
+            // rdbNgayhoc
+            // 
+            this.rdbNgayhoc.AutoSize = true;
+            this.rdbNgayhoc.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgayhoc.CheckedState.BorderThickness = 0;
+            this.rdbNgayhoc.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgayhoc.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNgayhoc.CheckedState.InnerOffset = -4;
+            this.rdbNgayhoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNgayhoc.Location = new System.Drawing.Point(706, 185);
+            this.rdbNgayhoc.Name = "rdbNgayhoc";
+            this.rdbNgayhoc.Size = new System.Drawing.Size(89, 21);
+            this.rdbNgayhoc.TabIndex = 62;
+            this.rdbNgayhoc.Text = "Lịch Học";
+            this.rdbNgayhoc.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNgayhoc.UncheckedState.BorderThickness = 2;
+            this.rdbNgayhoc.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNgayhoc.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdbNgaythi
+            // 
+            this.rdbNgaythi.AutoSize = true;
+            this.rdbNgaythi.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgaythi.CheckedState.BorderThickness = 0;
+            this.rdbNgaythi.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNgaythi.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNgaythi.CheckedState.InnerOffset = -4;
+            this.rdbNgaythi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNgaythi.Location = new System.Drawing.Point(848, 185);
+            this.rdbNgaythi.Name = "rdbNgaythi";
+            this.rdbNgaythi.Size = new System.Drawing.Size(84, 21);
+            this.rdbNgaythi.TabIndex = 62;
+            this.rdbNgaythi.Text = "Lịch Thi";
+            this.rdbNgaythi.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNgaythi.UncheckedState.BorderThickness = 2;
+            this.rdbNgaythi.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNgaythi.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
             // FormQuanLyLich
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 822);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
+            this.Controls.Add(this.rdbNgaythi);
+            this.Controls.Add(this.rdbNgayhoc);
             this.Controls.Add(this.txtBuoihoc);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.dgvLichHoc);
-            this.Controls.Add(this.rdbNgaythi);
-            this.Controls.Add(this.rdbNgayhoc);
             this.Controls.Add(this.dtpGioKetThuc);
             this.Controls.Add(this.dtpGioBatDau);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.d);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label11);
@@ -504,16 +486,12 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2DataGridView dgvLichHoc;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton rdbNgaythi;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton rdbNgayhoc;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpGioKetThuc;
         private Guna.UI2.WinForms.Guna2DateTimePicker dtpGioBatDau;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label d;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label11;
@@ -523,5 +501,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cbMonhoc;
         private Guna.UI2.WinForms.Guna2ComboBox cbCahoc;
         private Guna.UI2.WinForms.Guna2ComboBox cbLop;
+        private Guna.UI2.WinForms.Guna2RadioButton rdbNgayhoc;
+        private Guna.UI2.WinForms.Guna2RadioButton rdbNgaythi;
     }
 }

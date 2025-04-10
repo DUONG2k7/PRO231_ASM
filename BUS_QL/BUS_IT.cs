@@ -90,9 +90,9 @@ namespace BUS_QL
         {
             return TruyVanTaiKhoan.GetTotalNews();
         }
-        public DataTable LayDsTinTuc()
+        public DataTable LayDsTinTuc(int id)
         {
-            return TruyVanTaiKhoan.GetAllNews();
+            return TruyVanTaiKhoan.GetAllNews(id);
         }
     }
 }

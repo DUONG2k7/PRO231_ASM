@@ -58,8 +58,12 @@ namespace ASM
         }
         public void LoadDanhSachChuaCoTaiKhoan()
         {
+            if (cbRole.SelectedValue == null)
+                return;
+
             string IDRole = cbRole.SelectedValue.ToString();
             string role = "";
+
             switch (IDRole)
             {
                 case "R01":
@@ -77,11 +81,15 @@ namespace ASM
                 case "R05":
                     role = "SV";
                     break;
+                default:
+                    return; // IDRole không khớp với bất kỳ giá trị nào, không xử lý tiếp
             }
+
             cbTk.DataSource = QlTaiKhoan.LoadDsChuaCoTaiKhoan(role);
             cbTk.DisplayMember = "RoleName";
             cbTk.ValueMember = "ID";
         }
+
         private void cbLocDuLieu_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadDsTk();
@@ -126,7 +134,6 @@ namespace ASM
             isAdding = false;
             txtMk.Enabled = true;
             cbRole.Enabled = false;
-            cbTk.Enabled = true;
             btnSave.Enabled = true;
             btnUpdate.Enabled = false;
             btnAdd.Enabled = false;
@@ -192,7 +199,7 @@ namespace ASM
 
         private void btnHis_Click(object sender, EventArgs e)
         {
-            if (dgvDataTk.CurrentRow != null && dgvDataTk.CurrentRow.Cells["IdAcc"] != null)
+            if (dgvDataTk.CurrentRow != null && dgvDataTk.CurrentRow.Cells["Mã Tài Khoản"] != null)
             {
                 using (FormLichSuDangNhap frmhienthi = new FormLichSuDangNhap(txtMaTk.Text))
                 {
@@ -267,7 +274,7 @@ namespace ASM
                     return;
                 }
 
-                DTO_IT_IT taikhoan = new DTO_IT_IT(txtMaTk.Text, txtMk.Text, ID);
+                DTO_IT_IT taikhoan = new DTO_IT_IT(txtMaTk.Text, txtMk.Text, cbRole.SelectedValue.ToString());
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật tài khoản này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {

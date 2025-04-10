@@ -54,7 +54,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(358, 9);
+            this.label4.Location = new System.Drawing.Point(403, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(286, 40);
             this.label4.TabIndex = 58;
@@ -103,11 +103,11 @@
             this.dgvDiem.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDiem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDiem.Location = new System.Drawing.Point(0, 267);
+            this.dgvDiem.Location = new System.Drawing.Point(0, 200);
             this.dgvDiem.Name = "dgvDiem";
             this.dgvDiem.ReadOnly = true;
             this.dgvDiem.RowHeadersVisible = false;
-            this.dgvDiem.Size = new System.Drawing.Size(998, 565);
+            this.dgvDiem.Size = new System.Drawing.Size(1079, 574);
             this.dgvDiem.TabIndex = 60;
             this.dgvDiem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDiem.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -135,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(998, 832);
+            this.ClientSize = new System.Drawing.Size(1079, 774);
             this.Controls.Add(this.dgvDiem);
             this.Controls.Add(this.cbHocKy);
             this.Controls.Add(this.label4);

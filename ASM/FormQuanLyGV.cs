@@ -26,6 +26,10 @@ namespace ASM
             LoadDsGV();
             LockControl();
 
+            if (dgvData.Columns.Contains("Hình"))
+            {
+                dgvData.Columns["Hình"].Visible = false;
+            }
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LoadDsGV()
@@ -75,6 +79,7 @@ namespace ASM
             dgvData.Enabled = true;
 
             btnSave.Enabled = false;
+            btnNew.Enabled = true;
             btnUpdate.Enabled = false;
         }
         public void ClearForm()

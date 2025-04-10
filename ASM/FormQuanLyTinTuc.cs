@@ -24,6 +24,10 @@ namespace ASM
             LoadDsTinTuc();
             LockControl();
 
+            if (dgvDataTinTuc.Columns.Contains("Hình"))
+            {
+                dgvDataTinTuc.Columns["Hình"].Visible = false;
+            }
             dgvDataTinTuc.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LoadDsTinTuc()

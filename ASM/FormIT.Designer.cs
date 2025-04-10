@@ -73,9 +73,9 @@
             this.PnMain.Controls.Add(this.guna2PictureBox1);
             this.PnMain.Controls.Add(this.lblMarquee);
             this.PnMain.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnMain.Location = new System.Drawing.Point(295, 0);
+            this.PnMain.Location = new System.Drawing.Point(294, 0);
             this.PnMain.Name = "PnMain";
-            this.PnMain.Size = new System.Drawing.Size(993, 822);
+            this.PnMain.Size = new System.Drawing.Size(1086, 822);
             this.PnMain.TabIndex = 5;
             this.PnMain.UseTransparentBackground = true;
             // 
@@ -83,7 +83,7 @@
             // 
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(53, 138);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(107, 140);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
             this.guna2PictureBox1.Size = new System.Drawing.Size(902, 501);
             this.guna2PictureBox1.TabIndex = 0;
@@ -220,14 +220,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1288, 822);
+            this.ClientSize = new System.Drawing.Size(1380, 822);
             this.Controls.Add(this.PnMenu);
             this.Controls.Add(this.PnInfo);
             this.Controls.Add(this.PnMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormIT";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormADMIN";
             this.PnMain.ResumeLayout(false);
             this.PnMain.PerformLayout();

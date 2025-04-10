@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BUS_QL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,25 +14,64 @@ namespace ASM
 {
     public partial class FormMain : Form
     {
-        private string[] images;
-        private int index = 0;
+        BUS_IT qltintuc = new BUS_IT();
+        int max;
+        int IdTinTuc;
         FormLogin formLogin;
         public FormMain()
         {
             InitializeComponent();
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string resourcePath = Path.Combine(basePath, "MainPicture");
-            images = Directory.GetFiles(resourcePath, "*.*")
-                              .Where(file => file.EndsWith(".png") || file.EndsWith(".jpg"))
-                              .ToArray();
-            if (images.Length > 0)
+            max = qltintuc.GetTotalNews();
+            if (max > 0)
             {
-                pbAnh.Image = Image.FromFile(images[index]);
-            }
-            timer1.Interval = 2000; // Đặt thời gian mặc định là 3 giây
-            timer1.Start();
-        }
+                IdTinTuc = GetNextID();
+                LoadInfoTinTuc(IdTinTuc);
 
+                timerND.Interval = 5000;
+                timerND.Tick += timerND_Tick;
+                timerND.Start();
+            }
+        }
+        public int GetNextID()
+        {
+            IdTinTuc++;
+
+            if (IdTinTuc > max)
+                IdTinTuc = 1; // Quay lại từ đầu
+
+            return IdTinTuc;
+        }
+        public void LoadInfoTinTuc(int id)
+        {
+            DataTable dt = qltintuc.LayDsTinTuc(id);
+            if (dt.Rows.Count > 0)
+            {
+                pnTinTuc.Controls.Clear();
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    UcTinTuc tin = new UcTinTuc();
+                    tin.TieuDe = row["Title"].ToString();
+                    tin.NoiDung = row["Content"].ToString();
+
+                    byte[] imgBytes = row["Hinh"] as byte[];
+                    if (imgBytes != null && imgBytes.Length > 0)
+                    {
+                        using (MemoryStream ms = new MemoryStream(imgBytes))
+                        {
+                            tin.HinhAnh = Image.FromStream(ms);
+                        }
+                    }
+
+                    pnTinTuc.Controls.Add(tin);
+                }
+            }
+        }
+        private void timerND_Tick(object sender, EventArgs e)
+        {
+            IdTinTuc = GetNextID();
+            LoadInfoTinTuc(IdTinTuc);
+        }
         private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -47,11 +87,6 @@ namespace ASM
             {
                 Close();
             }
-        }
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            index = (index + 1) % images.Length; // Lặp lại khi hết ảnh
-            pbAnh.Image = Image.FromFile(images[index]);
         }
     }
 }

@@ -110,11 +110,11 @@
             this.dgvDsMonHoc.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDsMonHoc.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDsMonHoc.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDsMonHoc.Location = new System.Drawing.Point(0, 288);
+            this.dgvDsMonHoc.Location = new System.Drawing.Point(0, 262);
             this.dgvDsMonHoc.Name = "dgvDsMonHoc";
             this.dgvDsMonHoc.ReadOnly = true;
             this.dgvDsMonHoc.RowHeadersVisible = false;
-            this.dgvDsMonHoc.Size = new System.Drawing.Size(1064, 534);
+            this.dgvDsMonHoc.Size = new System.Drawing.Size(1079, 534);
             this.dgvDsMonHoc.TabIndex = 43;
             this.dgvDsMonHoc.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDsMonHoc.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 822);
+            this.ClientSize = new System.Drawing.Size(1079, 796);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.label6);

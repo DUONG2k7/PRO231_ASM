@@ -35,10 +35,6 @@
             this.btnUpdate = new Guna.UI2.WinForms.Guna2Button();
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.pbPicGV = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.rdbNu = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.rdbNam = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.txtSodt = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtDiachi = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtEmail = new Guna.UI2.WinForms.Guna2TextBox();
@@ -52,6 +48,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.rdbNu = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdbNam = new Guna.UI2.WinForms.Guna2RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbPicGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -131,58 +129,6 @@
             this.pbPicGV.TabStop = false;
             this.pbPicGV.UseTransparentBackground = true;
             this.pbPicGV.Click += new System.EventHandler(this.pbPicGV_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(333, 272);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(27, 17);
-            this.label10.TabIndex = 95;
-            this.label10.Text = "Nữ";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(208, 271);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(37, 17);
-            this.label9.TabIndex = 94;
-            this.label9.Text = "Nam";
-            // 
-            // rdbNu
-            // 
-            this.rdbNu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNu.CheckedState.BorderThickness = 0;
-            this.rdbNu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbNu.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNu.Location = new System.Drawing.Point(296, 270);
-            this.rdbNu.Name = "rdbNu";
-            this.rdbNu.Size = new System.Drawing.Size(41, 20);
-            this.rdbNu.TabIndex = 93;
-            this.rdbNu.Text = "guna2CustomRadioButton1";
-            this.rdbNu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNu.UncheckedState.BorderThickness = 2;
-            this.rdbNu.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNu.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdbNam
-            // 
-            this.rdbNam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rdbNam.CheckedState.BorderThickness = 0;
-            this.rdbNam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.rdbNam.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdbNam.Location = new System.Drawing.Point(174, 269);
-            this.rdbNam.Name = "rdbNam";
-            this.rdbNam.Size = new System.Drawing.Size(41, 20);
-            this.rdbNam.TabIndex = 92;
-            this.rdbNam.Text = "guna2CustomRadioButton1";
-            this.rdbNam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rdbNam.UncheckedState.BorderThickness = 2;
-            this.rdbNam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdbNam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // txtSodt
             // 
@@ -305,11 +251,11 @@
             this.dgvData.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvData.Location = new System.Drawing.Point(0, 378);
+            this.dgvData.Location = new System.Drawing.Point(0, 456);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersVisible = false;
-            this.dgvData.Size = new System.Drawing.Size(1032, 366);
+            this.dgvData.Size = new System.Drawing.Size(1087, 366);
             this.dgvData.TabIndex = 86;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -410,19 +356,55 @@
             this.label2.TabIndex = 78;
             this.label2.Text = "MaGV:";
             // 
+            // rdbNu
+            // 
+            this.rdbNu.AutoSize = true;
+            this.rdbNu.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNu.CheckedState.BorderThickness = 0;
+            this.rdbNu.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNu.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNu.CheckedState.InnerOffset = -4;
+            this.rdbNu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNu.Location = new System.Drawing.Point(284, 269);
+            this.rdbNu.Name = "rdbNu";
+            this.rdbNu.Size = new System.Drawing.Size(46, 21);
+            this.rdbNu.TabIndex = 101;
+            this.rdbNu.Text = "Nữ";
+            this.rdbNu.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNu.UncheckedState.BorderThickness = 2;
+            this.rdbNu.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNu.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdbNam
+            // 
+            this.rdbNam.AutoSize = true;
+            this.rdbNam.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNam.CheckedState.BorderThickness = 0;
+            this.rdbNam.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rdbNam.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdbNam.CheckedState.InnerOffset = -4;
+            this.rdbNam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbNam.Location = new System.Drawing.Point(174, 269);
+            this.rdbNam.Name = "rdbNam";
+            this.rdbNam.Size = new System.Drawing.Size(58, 21);
+            this.rdbNam.TabIndex = 102;
+            this.rdbNam.Text = "Nam";
+            this.rdbNam.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdbNam.UncheckedState.BorderThickness = 2;
+            this.rdbNam.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdbNam.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
             // FormQuanLyGV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 744);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
+            this.Controls.Add(this.rdbNu);
+            this.Controls.Add(this.rdbNam);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.pbPicGV);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.rdbNu);
-            this.Controls.Add(this.rdbNam);
             this.Controls.Add(this.txtSodt);
             this.Controls.Add(this.txtDiachi);
             this.Controls.Add(this.txtEmail);
@@ -454,10 +436,6 @@
         private Guna.UI2.WinForms.Guna2Button btnUpdate;
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2PictureBox pbPicGV;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton rdbNu;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton rdbNam;
         private Guna.UI2.WinForms.Guna2TextBox txtSodt;
         private Guna.UI2.WinForms.Guna2TextBox txtDiachi;
         private Guna.UI2.WinForms.Guna2TextBox txtEmail;
@@ -471,5 +449,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2RadioButton rdbNu;
+        private Guna.UI2.WinForms.Guna2RadioButton rdbNam;
     }
 }

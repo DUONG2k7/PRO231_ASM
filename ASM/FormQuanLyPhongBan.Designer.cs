@@ -54,7 +54,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(730, 159);
+            this.btnSave.Location = new System.Drawing.Point(786, 158);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(180, 52);
             this.btnSave.TabIndex = 87;
@@ -75,7 +75,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(406, 159);
+            this.btnUpdate.Location = new System.Drawing.Point(462, 158);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(180, 52);
             this.btnUpdate.TabIndex = 86;
@@ -96,7 +96,7 @@
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNew.Location = new System.Drawing.Point(68, 159);
+            this.btnNew.Location = new System.Drawing.Point(124, 158);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(180, 52);
             this.btnNew.TabIndex = 85;
@@ -108,7 +108,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(249, 89);
+            this.label5.Location = new System.Drawing.Point(305, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(151, 25);
             this.label5.TabIndex = 84;
@@ -125,7 +125,7 @@
             this.txtHoten.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHoten.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtHoten.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoten.Location = new System.Drawing.Point(406, 84);
+            this.txtHoten.Location = new System.Drawing.Point(462, 83);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.PlaceholderText = "";
             this.txtHoten.SelectedText = "";
@@ -158,11 +158,11 @@
             this.dgvData.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvData.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvData.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvData.Location = new System.Drawing.Point(0, 248);
+            this.dgvData.Location = new System.Drawing.Point(0, 300);
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.RowHeadersVisible = false;
-            this.dgvData.Size = new System.Drawing.Size(956, 600);
+            this.dgvData.Size = new System.Drawing.Size(1087, 522);
             this.dgvData.TabIndex = 82;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvData.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -191,7 +191,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(324, 9);
+            this.label4.Location = new System.Drawing.Point(380, 8);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(327, 40);
             this.label4.TabIndex = 81;
@@ -201,7 +201,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(956, 848);
+            this.ClientSize = new System.Drawing.Size(1087, 822);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnNew);
