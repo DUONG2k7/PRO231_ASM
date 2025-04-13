@@ -160,7 +160,7 @@ namespace DAL_QL
         }
         public DataTable GetListHistory(string idAcc)
         {
-            string query = "SELECT A.IdAcc, A.Username, R.Role, L.LichSuLogin FROM LoginHistory L JOIN ACCOUNTS A ON L.IdAcc = A.IdAcc JOIN ROLES R ON A.IDRole = R.IDRole WHERE A.IdAcc = @IdAcc";
+            string query = "SELECT A.IdAcc AS 'Mã Tài Khoản', A.Username AS 'Tên Tài Khoản', R.Role AS 'Quyền', L.LichSuLogin AS 'Lịch Sử Đăng Nhập' FROM LoginHistory L JOIN ACCOUNTS A ON L.IdAcc = A.IdAcc JOIN ROLES R ON A.IDRole = R.IDRole WHERE A.IdAcc = @IdAcc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 conn.Open();

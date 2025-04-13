@@ -56,6 +56,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Location = new System.Drawing.Point(106, 102);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(880, 569);
@@ -82,10 +85,11 @@
             // 
             // PnInfo
             // 
+            this.PnInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.PnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
             this.PnInfo.Controls.Add(this.guna2Button2);
             this.PnInfo.Controls.Add(this.guna2Button1);
-            this.PnInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnInfo.Location = new System.Drawing.Point(0, 0);
             this.PnInfo.Name = "PnInfo";
             this.PnInfo.Size = new System.Drawing.Size(94, 822);
@@ -98,15 +102,15 @@
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::ASM.Properties.Resources.undo;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(12, 765);
+            this.guna2Button2.Location = new System.Drawing.Point(0, 754);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(67, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(94, 68);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
@@ -129,6 +133,8 @@
             // 
             // PnMenu
             // 
+            this.PnMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.PnMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.PnMenu.Controls.Add(this.btnMenuQlyPhanChiaViec);
             this.PnMenu.Controls.Add(this.btnMenyQlyKyHoc);
@@ -136,7 +142,6 @@
             this.PnMenu.Controls.Add(this.btnMenuQlyGiangVien);
             this.PnMenu.Controls.Add(this.btnMenuQlyLop);
             this.PnMenu.Controls.Add(this.btnMenuQlySV);
-            this.PnMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnMenu.Location = new System.Drawing.Point(94, 0);
             this.PnMenu.Name = "PnMenu";
             this.PnMenu.Size = new System.Drawing.Size(201, 822);
@@ -279,10 +284,12 @@
             // 
             // PnMain
             // 
+            this.PnMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.PnMain.BackColor = System.Drawing.Color.Transparent;
             this.PnMain.Controls.Add(this.lblMarquee);
             this.PnMain.Controls.Add(this.pictureBox1);
-            this.PnMain.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnMain.Location = new System.Drawing.Point(293, 0);
             this.PnMain.Name = "PnMain";
             this.PnMain.Size = new System.Drawing.Size(1087, 822);

@@ -3,6 +3,7 @@ using DTO_QL;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,19 @@ namespace BUS_QL
     {
         DAL_CBQL QlThongTin = new DAL_CBQL();
 
-        //IT
-        public DataTable LoadDsIT()
+        public DataTable GetListStaffWithNOPhongBan()
         {
-            return QlThongTin.GetListIT();
+            return QlThongTin.GetListStaffWithNOPhongBan();
+        }
+        public bool Update(DTO_CBQL_IT IT, out string message)
+        {
+            return QlThongTin.Update(IT, out message);
+        }
+
+        //IT
+        public DataTable LoadDsIT(int id)
+        {
+            return QlThongTin.GetListIT(id);
         }
         public bool ThemIT(DTO_CBQL_IT IT, out string message)
         {
@@ -32,9 +42,9 @@ namespace BUS_QL
         }
 
         //CBDT
-        public DataTable LoadDsCBDT()
+        public DataTable LoadDsCBDT(int id)
         {
-            return QlThongTin.GetListCBDT();
+            return QlThongTin.GetListCBDT(id);
         }
         public bool ThemCBDT(DTO_CBQL_CBDT CBDT, out string message)
         {
@@ -50,9 +60,9 @@ namespace BUS_QL
         }
 
         //CBQL
-        public DataTable LoadDsCBQL()
+        public DataTable LoadDsCBQL(int id)
         {
-            return QlThongTin.GetListCBQL();
+            return QlThongTin.GetListCBQL(id);
         }
         public bool ThemCBQL(DTO_CBQL_CBQL CBQL, out string message)
         {
@@ -68,17 +78,29 @@ namespace BUS_QL
         }
 
         //Phòng ban
+        public DataTable LoadDsPhongBan()
+        {
+            return QlThongTin.GetListPhongBan();
+        }
         public DataTable LoadDsPhong()
         {
             return QlThongTin.GetListPhong();
         }
-        public bool ThemPhong(string TenPhong, out string message)
+        public DataTable LoadLoaiPhong()
         {
-            return QlThongTin.InsertPhong(TenPhong, out message);
+            return QlThongTin.GetListRole();
         }
-        public bool CapNhatPhong(int IDPhong, string TenPhong, out string message)
+        public DataTable GetRoleFromIDPhong(int IDPhong)
         {
-            return QlThongTin.UpdatePhong(IDPhong, TenPhong, out message);
+            return QlThongTin.GetRoleFromIDPhong(IDPhong);
+        }
+        public bool ThemPhong(string TenPhong, string IDROle, out string message)
+        {
+            return QlThongTin.InsertPhong(TenPhong, IDROle, out message);
+        }
+        public bool CapNhatPhong(int IDPhong, string TenPhong, string newIDRole, out string message)
+        {
+            return QlThongTin.UpdatePhong(IDPhong, TenPhong, newIDRole, out message);
         }
     }
 }

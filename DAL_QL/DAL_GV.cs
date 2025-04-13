@@ -56,7 +56,10 @@ namespace DAL_QL
                                 KH.TenKy AS [Học Kỳ], 
                                 MH.IDMonHoc AS [Mã Môn], 
                                 MH.TenMon AS [Tên Môn], 
-                                COALESCE(CAST(D.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm]
+                                COALESCE(CAST(D.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Điểm Lab (20%)],
+                                COALESCE(CAST(D.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Điểm Asm (30%)],
+                                COALESCE(CAST(D.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Điểm Thi (50%)],
+                                COALESCE(CAST(D.diem_tb AS NVARCHAR), N'Chưa xét') AS [Điểm Trung Bình]
                             FROM STUDENTS SV
                             JOIN CLASSES C ON SV.IDLop = C.IDLop
                             JOIN Class_Teacher CT ON SV.IDLop = CT.IDLop
@@ -206,14 +209,18 @@ namespace DAL_QL
         public DataTable SearchByID(string maLop, string maGV, string maSV)
         {
             DataTable dtSinhVien = new DataTable();
+
             string query = @"SELECT 
-                                SV.IDLop, 
-                                SV.IDSV, 
-                                SV.TenSV, 
-                                KH.TenKy, 
-                                MH.IDMonHoc, 
-                                MH.TenMon, 
-                                COALESCE(CAST(D.Diem AS NVARCHAR), N'Chưa nhập') AS Diem
+                                SV.IDLop AS [Mã Lớp], 
+                                SV.IDSV AS [Mã Sinh Viên], 
+                                SV.TenSV AS [Tên Sinh Viên], 
+                                KH.TenKy AS [Học Kỳ], 
+                                MH.IDMonHoc AS [Mã Môn], 
+                                MH.TenMon AS [Tên Môn], 
+                                COALESCE(CAST(D.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Điểm Lab],
+                                COALESCE(CAST(D.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Điểm Asm],
+                                COALESCE(CAST(D.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Điểm Thi],
+                                COALESCE(CAST(D.diem_tb AS NVARCHAR), N'Chưa xét') AS [Điểm Trung Bình]
                             FROM STUDENTS SV
                             JOIN CLASSES C ON SV.IDLop = C.IDLop
                             JOIN Class_Teacher CT ON SV.IDLop = CT.IDLop
@@ -240,7 +247,7 @@ namespace DAL_QL
         }
         public bool InsertGrade(DTO_GV_DIEM DiemSV, out string message)
         {
-            string query = "INSERT INTO Diem (IDKyHoc, IDSV, IDMonHoc, Diem) VALUES (@IDKyHoc, @IDSV, @IDMonHoc, @Diem)";
+            string query = "INSERT INTO Diem (IDKyHoc, IDSV, IDMonHoc, diem_lab, diem_asm, diem_thi) VALUES (@IDKyHoc, @IDSV, @IDMonHoc, @diem_lab, @diem_asm, @diem_thi)";
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -249,10 +256,12 @@ namespace DAL_QL
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@IDKyHoc", DiemSV._IDKyHoc);
-                        cmd.Parameters.AddWithValue("@IDSV", DiemSV._MaSV);
-                        cmd.Parameters.AddWithValue("@IDMonHoc", DiemSV._IDMonHoc);
-                        cmd.Parameters.AddWithValue("@Diem", DiemSV._Diem);
+                        cmd.Parameters.AddWithValue("@IDKyHoc", DiemSV.IDKyHoc);
+                        cmd.Parameters.AddWithValue("@IDSV", DiemSV.IDSV);
+                        cmd.Parameters.AddWithValue("@IDMonHoc", DiemSV.IDMonHoc);
+                        cmd.Parameters.AddWithValue("@diem_lab", DiemSV.DiemLab);
+                        cmd.Parameters.AddWithValue("@diem_asm", DiemSV.DiemASM);
+                        cmd.Parameters.AddWithValue("@diem_thi", DiemSV.DiemThi);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -276,7 +285,7 @@ namespace DAL_QL
         }
         public bool UpdateGrade(DTO_GV_DIEM DiemSV, out string message)
         {
-            string query = "UPDATE Diem SET Diem = @Diem WHERE IDKyHoc = @IDKyHoc AND IDSV = @IDSV AND IDMonHoc = @IDMonHoc";
+            string query = "UPDATE Diem SET diem_lab = @diem_lab, diem_asm = @diem_asm, diem_thi = @diem_thi WHERE IDKyHoc = @IDKyHoc AND IDSV = @IDSV AND IDMonHoc = @IDMonHoc";
 
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -285,10 +294,12 @@ namespace DAL_QL
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@IDKyHoc", DiemSV._IDKyHoc);
-                        cmd.Parameters.AddWithValue("@IDSV", DiemSV._MaSV);
-                        cmd.Parameters.AddWithValue("@IDMonHoc", DiemSV._IDMonHoc);
-                        cmd.Parameters.AddWithValue("@Diem", DiemSV._Diem);
+                        cmd.Parameters.AddWithValue("@IDKyHoc", DiemSV.IDKyHoc);
+                        cmd.Parameters.AddWithValue("@IDSV", DiemSV.IDSV);
+                        cmd.Parameters.AddWithValue("@IDMonHoc", DiemSV.IDMonHoc);
+                        cmd.Parameters.AddWithValue("@diem_lab", DiemSV.DiemLab);
+                        cmd.Parameters.AddWithValue("@diem_asm", DiemSV.DiemASM);
+                        cmd.Parameters.AddWithValue("@diem_thi", DiemSV.DiemThi);
 
                         int rowsAffected = cmd.ExecuteNonQuery();
                         if (rowsAffected > 0)
@@ -310,41 +321,7 @@ namespace DAL_QL
                 }
             }
         }
-        public bool DeleteGrade(DTO_GV_DIEM DiemSV, out string message)
-        {
-            string Deletequery = "DELETE FROM Diem WHERE IDKyHoc = @IDKyHoc AND IDSV = @IDSV AND IDMonHoc = @IDMonHoc";
-            using (SqlConnection conn = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(Deletequery, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@IDKyHoc", DiemSV._IDKyHoc);
-                        cmd.Parameters.AddWithValue("@IDSV", DiemSV._MaSV);
-                        cmd.Parameters.AddWithValue("@IDMonHoc", DiemSV._IDMonHoc);
-
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
-                        {
-                            message = "Điểm học sinh đã được xóa thành công!";
-                            return true;
-                        }
-                        else
-                        {
-                            message = "Không thể xóa điểm!";
-                            return false;
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    message = "Lỗi: " + ex.Message;
-                    return false;
-                }
-            }
-        }
-
+        
         //Form Lịch Dạy
         public DataTable GetListLichDay(string IDGV)
         {
@@ -621,7 +598,10 @@ namespace DAL_QL
                                 K.TenKy AS [Học Kỳ], 
                                 MH.IDMonHoc AS [Mã Môn], 
                                 MH.TenMon AS [Tên Môn], 
-                                D.Diem AS [Điểm]
+                                D.diem_lab AS [Điểm Lab],
+                                D.diem_asm AS [Điểm Asm],
+                                D.diem_thi AS [Điểm Thi],
+                                D.diem_tb AS [Điểm Trung Bình]
                             FROM Diem D
                             JOIN MonHoc MH ON D.IDMonHoc = MH.IDMonHoc
                             JOIN KyHoc K ON D.IDKyHoc = K.IDKyHoc

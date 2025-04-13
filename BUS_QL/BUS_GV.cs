@@ -71,10 +71,6 @@ namespace BUS_QL
         {
             return QlGiaoVien.UpdateGrade(DiemSV, out message);
         }
-        public bool XoaDiem(DTO_GV_DIEM DiemSV, out string message)
-        {
-            return QlGiaoVien.DeleteGrade(DiemSV, out message);
-        }
 
         //Form lịch dạy
         public DataTable LayDsLichDay(string IDGV)

@@ -36,72 +36,93 @@ namespace ASM
             switch (cbDanhSach.SelectedItem.ToString())
             {
                 case "Mặc định":
-                    query = @"SELECT GD.IDDiem AS [Mã Điểm], SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], MH.TenMon AS [Tên Môn],
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm] 
-                            FROM STUDENTS SV 
-                            LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
-                            LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc 
-                            WHERE SV.IDLop = @IDLop";
+                    query = @"SELECT GD.IDDiem AS [Mã Điểm], SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
+                    FROM STUDENTS SV
+                    LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc
+                    WHERE SV.IDLop = @IDLop";
                     break;
 
                 case "Top 3 sinh viên cao nhất":
-                    query = @"SELECT TOP 3 SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
-                            ROUND(SUM(GD.Diem) / COUNT(GD.IDDiem), 2) AS [Điểm Trung Bình]
-                            FROM STUDENTS SV
-                            JOIN Diem GD ON SV.IDSV = GD.IDSV
-                            WHERE SV.IDLop = @IDLop AND GD.Diem IS NOT NULL
-                            GROUP BY SV.IDSV, SV.TenSV
-                            ORDER BY DiemTB DESC";
+                    query = @"SELECT TOP 3 
+                    SV.IDSV AS [Mã Sinh Viên], 
+                    SV.TenSV AS [Tên Sinh Viên],
+                    ROUND(AVG(CAST(GD.diem_tb AS FLOAT)), 2) AS [Điểm Trung Bình Tất Cả Môn]
+                    FROM STUDENTS SV
+                    JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    WHERE SV.IDLop = @IDLop AND GD.diem_tb IS NOT NULL
+                    GROUP BY SV.IDSV, SV.TenSV
+                    ORDER BY [Điểm Trung Bình Tất Cả Môn] DESC";
                     break;
 
                 case "Tăng dần theo mã sinh viên":
-                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm], 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
-                            FROM STUDENTS SV 
-                            LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
-                            WHERE SV.IDLop = @IDLop 
-                            GROUP BY SV.IDSV, SV.TenSV, GD.Diem 
-                            ORDER BY SV.IDSV ASC";
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
+                    FROM STUDENTS SV
+                    LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc
+                    WHERE SV.IDLop = @IDLop
+                    ORDER BY SV.IDSV ASC";
                     break;
 
                 case "Tăng dần theo giới tính":
-                    query = @"SELECT SV.IDSV, SV.TenSV, 
-                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
-                            FROM STUDENTS SV 
-                            LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
-                            WHERE SV.IDLop = @IDLop 
-                            GROUP BY SV.IDSV, SV.TenSV, SV.GioiTinh 
-                            ORDER BY SV.GioiTinh ASC";
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính],
+                    MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
+                    FROM STUDENTS SV
+                    LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc
+                    WHERE SV.IDLop = @IDLop
+                    ORDER BY SV.GioiTinh ASC";
                     break;
 
                 case "Giảm dần theo mã sinh viên":
-                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
-                            COALESCE(CAST(GD.Diem AS NVARCHAR), N'Chưa nhập') AS [Điểm], 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
-                            FROM STUDENTS SV 
-                            LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
-                            WHERE SV.IDLop = @IDLop 
-                            GROUP BY SV.IDSV, SV.TenSV, GD.Diem 
-                            ORDER BY SV.IDSV DESC";
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
+                    FROM STUDENTS SV
+                    LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc
+                    WHERE SV.IDLop = @IDLop
+                    ORDER BY SV.IDSV DESC";
                     break;
 
                 case "Giảm dần theo giới tính":
-                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên], 
-                            CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính], 
-                            ROUND(AVG(CAST(GD.Diem AS FLOAT)), 2) AS [Điểm Trung Bình] 
-                            FROM STUDENTS SV 
-                            LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV 
-                            WHERE SV.IDLop = @IDLop 
-                            GROUP BY SV.IDSV, SV.TenSV, SV.GioiTinh 
-                            ORDER BY SV.GioiTinh DESC";
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính],
+                    MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
+                    FROM STUDENTS SV
+                    LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
+                    LEFT JOIN MonHoc MH ON GD.IDMonHoc = MH.IDMonHoc
+                    WHERE SV.IDLop = @IDLop
+                    ORDER BY SV.GioiTinh DESC";
                     break;
 
                 default:
                     MessageBox.Show("Vui lòng chọn 1 lựa chọn hiển thị");
                     break;
             }
+
             if (!string.IsNullOrEmpty(query))
             {
                 try

@@ -33,6 +33,9 @@ namespace ASM
             IdGv = QlGiangVien.GetIdGvFromIdAcc(Idacc);
             cbLop.SelectedIndexChanged += cbLop_SelectedIndexChanged;
             cbTenMon.SelectedIndexChanged += cbTenMon_SelectedIndexChanged;
+            txtDiemLab.TextChanged += new EventHandler(TinhDiemTrungBinh);
+            txtDiemASM.TextChanged += new EventHandler(TinhDiemTrungBinh);
+            txtDiemThi.TextChanged += new EventHandler(TinhDiemTrungBinh);
 
             LoadDsLop();
             LoadDsMonHoc();
@@ -102,7 +105,7 @@ namespace ASM
         }
         public void LoadTrangThaiDulieu()
         {
-            if (txtDiem.Text.Trim().Equals("Chưa nhập", StringComparison.OrdinalIgnoreCase))
+            if (txtDiemLab.Text.Trim().Equals("Chưa nhập", StringComparison.OrdinalIgnoreCase))
             {
                 btnNew.Enabled = true;
                 btnUpdate.Enabled = false;
@@ -113,6 +116,30 @@ namespace ASM
                 btnUpdate.Enabled = true;
             }
         }
+        private void txtDiemLab_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+        }
+
+        private void txtDiemASM_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+        }
+
+        private void txtDiemThi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == ',')
+            {
+                e.KeyChar = '.';
+            }
+        }
+
         private void LoadTrangThaiNutChuyenTrang()
         {
             btnChangeLeft.Enabled = currentindex > 0;
@@ -120,10 +147,20 @@ namespace ASM
             BtnRight.Enabled = currentindex < max - 1;
             btnChangeAllRight.Enabled = currentindex < max - 1;
         }
+        private void TinhDiemTrungBinh(object sender, EventArgs e)
+        {
+            double diemLab = double.TryParse(txtDiemLab.Text, out diemLab) ? diemLab : 0;
+            double diemAsm = double.TryParse(txtDiemASM.Text, out diemAsm) ? diemAsm : 0;
+            double diemThi = double.TryParse(txtDiemThi.Text, out diemThi) ? diemThi : 0;
+
+            double diemTB = diemLab * 0.2 + diemAsm * 0.3 + diemThi * 0.5;
+
+            txtDiemTB.Text = diemTB.ToString("F2");
+        }
         public bool Ktdv()
         {
             double Diem = 0;
-            if (double.TryParse(txtDiem.Text, out double DiemToan))
+            if (double.TryParse(txtDiemLab.Text, out double DiemToan))
             {
                 Diem += DiemToan;
             }
@@ -143,7 +180,10 @@ namespace ASM
                 txtMasvDiemtb.Text = row["Mã Sinh Viên"].ToString();
                 lbTenSV.Text = row["Tên Sinh Viên"].ToString();
                 cbTenMon.Text = row["Tên Môn"].ToString();
-                txtDiem.Text = row["Điểm"].ToString();
+                txtDiemLab.Text = row["Điểm Lab"].ToString();
+                txtDiemASM.Text = row["Điểm Asm"].ToString();
+                txtDiemThi.Text = row["Điểm Thi"].ToString();
+                txtDiemTB.Text = row["Điểm Trung Bình"].ToString();
 
                 dgvDanhSachSV.ClearSelection();
                 dgvDanhSachSV.Rows[index].Selected = true;
@@ -152,7 +192,10 @@ namespace ASM
         }
         public void LockControl()
         {
-            txtDiem.Enabled = false;
+            txtDiemLab.Enabled = false;
+            txtDiemASM.Enabled = false;
+            txtDiemThi.Enabled = false;
+            txtDiemTB.ReadOnly = true;
 
             btnNew.Enabled = true;
             btnUpdate.Enabled = false;
@@ -163,11 +206,15 @@ namespace ASM
             txtMasv.Clear();
             lbTenSV.Text = "";
             txtMasvDiemtb.Clear();
-            txtDiem.Clear();
+            txtDiemLab.Clear();
+            txtDiemASM.Clear();
+            txtDiemThi.Clear();
         }
         public void ClearDiem()
         {
-            txtDiem.Clear();
+            txtDiemLab.Clear();
+            txtDiemASM.Clear();
+            txtDiemThi.Clear();
         }
         private void txtMasv_Click(object sender, EventArgs e)
         {
@@ -205,7 +252,9 @@ namespace ASM
         private void btnNew_Click(object sender, EventArgs e)
         {
             IsAdding = true;
-            txtDiem.Enabled = true;
+            txtDiemLab.Enabled = true;
+            txtDiemASM.Enabled = true;
+            txtDiemThi.Enabled = true;
 
             btnSave.Enabled = true;
             btnNew.Enabled = false;
@@ -222,7 +271,9 @@ namespace ASM
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             IsAdding = false;
-            txtDiem.Enabled = true;
+            txtDiemLab.Enabled = true;
+            txtDiemASM.Enabled = true;
+            txtDiemThi.Enabled = true;
 
             btnSave.Enabled = true;
             btnNew.Enabled = false;
@@ -243,7 +294,7 @@ namespace ASM
                     return;
                 }
 
-                DTO_GV_DIEM Diemsv = new DTO_GV_DIEM(idkyhoc, txtMasvDiemtb.Text, Convert.ToInt32(cbTenMon.SelectedValue), txtDiem.Text);
+                DTO_GV_DIEM Diemsv = new DTO_GV_DIEM(idkyhoc, txtMasvDiemtb.Text, Convert.ToInt32(cbTenMon.SelectedValue), txtDiemLab.Text, txtDiemASM.Text, txtDiemThi.Text);
                 if (QlGiangVien.ThemDiem(Diemsv, out message))
                 {
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -263,7 +314,7 @@ namespace ASM
                     return;
                 }
 
-                DTO_GV_DIEM Diemsv = new DTO_GV_DIEM(idkyhoc, txtMasvDiemtb.Text, Convert.ToInt32(cbTenMon.SelectedValue), txtDiem.Text);
+                DTO_GV_DIEM Diemsv = new DTO_GV_DIEM(idkyhoc, txtMasvDiemtb.Text, Convert.ToInt32(cbTenMon.SelectedValue), txtDiemLab.Text, txtDiemASM.Text, txtDiemThi.Text);
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật điểm không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
@@ -281,29 +332,6 @@ namespace ASM
             }
 
             LoadDsSv();
-            LoadTrangThaiDulieu();
-            LoadTrangThaiNutChuyenTrang();
-        }
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            string message;
-            DTO_GV_DIEM Diemsv = new DTO_GV_DIEM(idkyhoc, txtMasvDiemtb.Text, Convert.ToInt32(cbTenMon.SelectedValue));
-            DialogResult s = MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (s == DialogResult.Yes)
-            {
-                if (QlGiangVien.XoaDiem(Diemsv, out message))
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ClearForm();
-                    LockControl();
-                    LoadDsSv();
-                }
-                else
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            
             LoadTrangThaiDulieu();
             LoadTrangThaiNutChuyenTrang();
         }
@@ -345,7 +373,10 @@ namespace ASM
                 lbTenSV.Text = dgvDanhSachSV.CurrentRow.Cells["Tên Sinh Viên"]?.Value?.ToString();
                 cbLop.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString();
                 cbTenMon.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Môn"]?.Value?.ToString();
-                txtDiem.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm"]?.Value?.ToString();
+                txtDiemLab.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Lab"]?.Value?.ToString();
+                txtDiemASM.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Asm"]?.Value?.ToString();
+                txtDiemThi.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Thi"]?.Value?.ToString();
+                txtDiemTB.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Trung Bình"]?.Value?.ToString();
 
                 LoadTrangThaiDulieu();
                 LoadTrangThaiNutChuyenTrang();

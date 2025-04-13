@@ -38,11 +38,11 @@
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tpIT = new System.Windows.Forms.TabPage();
             this.tpCBDT = new System.Windows.Forms.TabPage();
             this.tpCBQL = new System.Windows.Forms.TabPage();
             this.tpGV = new System.Windows.Forms.TabPage();
             this.tpSV = new System.Windows.Forms.TabPage();
-            this.tpIT = new System.Windows.Forms.TabPage();
             this.guna2TabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,20 +71,21 @@
             // 
             this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.ForeColor = System.Drawing.Color.White;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.guna2ControlBox2.Location = new System.Drawing.Point(1321, 5);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox2.TabIndex = 11;
-            this.guna2ControlBox2.Click += new System.EventHandler(this.guna2ControlBox2_Click);
             // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.ForeColor = System.Drawing.Color.White;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.guna2ControlBox1.Location = new System.Drawing.Point(1270, 5);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1258, 5);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 10;
@@ -121,6 +122,16 @@
             this.guna2TabControl1.TabIndex = 12;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             this.guna2TabControl1.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            // 
+            // tpIT
+            // 
+            this.tpIT.Location = new System.Drawing.Point(4, 44);
+            this.tpIT.Name = "tpIT";
+            this.tpIT.Padding = new System.Windows.Forms.Padding(3);
+            this.tpIT.Size = new System.Drawing.Size(1392, 852);
+            this.tpIT.TabIndex = 0;
+            this.tpIT.Text = "Quản lý IT";
+            this.tpIT.UseVisualStyleBackColor = true;
             // 
             // tpCBDT
             // 
@@ -161,16 +172,6 @@
             this.tpSV.TabIndex = 4;
             this.tpSV.Text = "Quản lý SV";
             this.tpSV.UseVisualStyleBackColor = true;
-            // 
-            // tpIT
-            // 
-            this.tpIT.Location = new System.Drawing.Point(4, 44);
-            this.tpIT.Name = "tpIT";
-            this.tpIT.Padding = new System.Windows.Forms.Padding(3);
-            this.tpIT.Size = new System.Drawing.Size(1392, 852);
-            this.tpIT.TabIndex = 0;
-            this.tpIT.Text = "Quản lý IT";
-            this.tpIT.UseVisualStyleBackColor = true;
             // 
             // FormAdmin
             // 

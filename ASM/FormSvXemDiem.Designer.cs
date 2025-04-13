@@ -103,11 +103,11 @@
             this.dgvDiem.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDiem.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDiem.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvDiem.Location = new System.Drawing.Point(0, 200);
+            this.dgvDiem.Location = new System.Drawing.Point(0, 152);
             this.dgvDiem.Name = "dgvDiem";
             this.dgvDiem.ReadOnly = true;
             this.dgvDiem.RowHeadersVisible = false;
-            this.dgvDiem.Size = new System.Drawing.Size(1079, 574);
+            this.dgvDiem.Size = new System.Drawing.Size(1079, 622);
             this.dgvDiem.TabIndex = 60;
             this.dgvDiem.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvDiem.ThemeStyle.AlternatingRowsStyle.Font = null;

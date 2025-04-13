@@ -22,21 +22,34 @@ namespace ASM
         {
             InitializeComponent();
             LoadDsPhong();
+            LoadLoaiPhong();
             LockControl();
 
+            if (dgvData.Columns.Contains("IDRole"))
+            {
+                dgvData.Columns["IDRole"].Visible = false;
+            }
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LoadDsPhong()
         {
-            dgvData.DataSource = QlPB.LoadDsPhong();
+            dgvData.DataSource = QlPB.LoadDsPhongBan();
+        }
+        public void LoadLoaiPhong()
+        {
+            cbLoaiPhong.DataSource = QlPB.LoadLoaiPhong();
+            cbLoaiPhong.DisplayMember = "Role";
+            cbLoaiPhong.ValueMember = "IDRole";
         }
         public void LockControl()
         {
             txtHoten.Enabled = false;
+            cbLoaiPhong.Enabled = false;
             dgvData.Enabled = true;
 
             btnSave.Enabled = false;
             btnUpdate.Enabled = false;
+            btnXem.Enabled = false;
         }
         public void ClearForm()
         {
@@ -56,8 +69,9 @@ namespace ASM
         {
             isAdding = true;
             txtHoten.Enabled = true;
-            btnSave.Enabled = true;
+            cbLoaiPhong.Enabled = true;
 
+            btnSave.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
             dgvData.Enabled = false;
@@ -69,6 +83,8 @@ namespace ASM
         {
             isAdding = false;
             txtHoten.Enabled = true;
+            cbLoaiPhong.Enabled = true;
+
             btnSave.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
@@ -81,7 +97,10 @@ namespace ASM
                 try
                 {
                     btnUpdate.Enabled = true;
+                    btnXem.Enabled = true;
+
                     txtHoten.Text = dgvData.CurrentRow.Cells["Tên Phòng"]?.Value?.ToString() ?? string.Empty;
+                    cbLoaiPhong.SelectedValue = dgvData.CurrentRow.Cells["IDRole"]?.Value?.ToString();
                 }
                 catch (Exception ex)
                 {
@@ -99,7 +118,7 @@ namespace ASM
                     return;
                 }
 
-                if (QlPB.ThemPhong(txtHoten.Text, out message))
+                if (QlPB.ThemPhong(txtHoten.Text, cbLoaiPhong.SelectedValue.ToString(), out message))
                 {
                     MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -116,12 +135,12 @@ namespace ASM
                 }
 
                 int IDPhong;
-                int.TryParse(dgvData.CurrentRow.Cells["IDPhong"].Value?.ToString(), out IDPhong);
+                int.TryParse(dgvData.CurrentRow.Cells["ID Phòng"].Value?.ToString(), out IDPhong);
 
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật phòng ban này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (QlPB.CapNhatPhong(IDPhong, txtHoten.Text, out message))
+                    if (QlPB.CapNhatPhong(IDPhong, txtHoten.Text, cbLoaiPhong.SelectedValue.ToString(), out message))
                     {
                         MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -135,6 +154,15 @@ namespace ASM
             ClearForm();
             LockControl();
             LoadDsPhong();
+        }
+
+        private void btnXem_Click(object sender, EventArgs e)
+        {
+            int IDPhong = 0;
+            int.TryParse(dgvData.CurrentRow.Cells["ID Phòng"].Value?.ToString(), out IDPhong);
+
+            FormXemNvFormPhongBan xemNvFormPhongBan = new FormXemNvFormPhongBan(IDPhong);
+            xemNvFormPhongBan.ShowDialog();
         }
     }
 }

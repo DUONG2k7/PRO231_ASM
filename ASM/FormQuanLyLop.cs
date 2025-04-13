@@ -39,6 +39,7 @@ namespace ASM
             btnNew.Enabled = true;
             btnUpdate.Enabled = false;
             btnLoU.Enabled = false;
+            btnXemSV.Enabled = false;
         }
         public void ClearForm()
         {
@@ -152,6 +153,7 @@ namespace ASM
                 try
                 {
                     btnUpdate.Enabled = true;
+                    btnXemSV.Enabled = true;
 
                     txtMaLop.Text = dgvData.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString() ?? string.Empty;
                     txtTenlop.Text = dgvData.CurrentRow.Cells["Tên Lớp"]?.Value?.ToString() ?? string.Empty;
@@ -250,5 +252,10 @@ namespace ASM
             dgvData.Enabled = true;
         }
 
+        private void btnXemSV_Click(object sender, EventArgs e)
+        {
+            FormXemSvFormLop xemSvFormLop = new FormXemSvFormLop(txtMaLop.Text);
+            xemSvFormLop.ShowDialog();
+        }
     }
 }

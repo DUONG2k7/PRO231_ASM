@@ -22,10 +22,14 @@ namespace ASM
         public FormQuanLyCBDT()
         {
             InitializeComponent();
-            LoadDsCBDT();
+            //LoadDsCBDT();
             LoadDsPhong();
             LockControl();
 
+            if (dgvData.Columns.Contains("Mã Phòng"))
+            {
+                dgvData.Columns["Mã Phòng"].Visible = false;
+            }
             if (dgvData.Columns.Contains("Hình"))
             {
                 dgvData.Columns["Hình"].Visible = false;
@@ -34,7 +38,7 @@ namespace ASM
         }
         public void LoadDsCBDT()
         {
-            dgvData.DataSource = QlCBDT.LoadDsCBDT();
+            //dgvData.DataSource = QlCBDT.LoadDsCBDT();
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvData.Columns["Hình"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }

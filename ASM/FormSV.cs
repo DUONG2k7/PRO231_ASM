@@ -96,7 +96,29 @@ namespace ASM
         private void btnMenuXemLichHoc_Click(object sender, EventArgs e)
         {
             PnMain.Controls.Clear();
-            FormSvXemThongTin SV = new FormSvXemThongTin(IDACC);
+            FormSvXemLichHoc SV = new FormSvXemLichHoc(IDACC);
+            SV.TopLevel = false;
+            SV.FormBorderStyle = FormBorderStyle.None;
+            SV.Dock = DockStyle.Fill;
+            PnMain.Controls.Add(SV);
+            SV.Show();
+        }
+
+        private void btnXemLichTHi_Click(object sender, EventArgs e)
+        {
+            PnMain.Controls.Clear();
+            FormSvXemLichThi SV = new FormSvXemLichThi(IDACC);
+            SV.TopLevel = false;
+            SV.FormBorderStyle = FormBorderStyle.None;
+            SV.Dock = DockStyle.Fill;
+            PnMain.Controls.Add(SV);
+            SV.Show();
+        }
+
+        private void btnXemDiem_Click(object sender, EventArgs e)
+        {
+            PnMain.Controls.Clear();
+            FormSvXemDiem SV = new FormSvXemDiem(IDACC);
             SV.TopLevel = false;
             SV.FormBorderStyle = FormBorderStyle.None;
             SV.Dock = DockStyle.Fill;

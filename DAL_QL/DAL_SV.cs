@@ -80,7 +80,24 @@ namespace DAL_QL
         }
         public DataTable GetListDiem(string IDACC, int IDKYHOC)
         {
-            string query = @"SELECT MH.IDMonHoc AS 'Mã Môn', MH.TenMon AS 'Tên Môn', D.Diem AS 'Điểm' FROM MonHoc MH JOIN Diem D ON MH.IDMonHoc = D.IDMonHoc JOIN KyHoc K ON D.IDKyHoc = K.IDKyHoc JOIN STUDENTS S ON D.IDSV = S.IDSV WHERE S.IdAcc = @IdAcc AND K.IDKyHoc = @IDKyHoc";
+            string query = @"
+        SELECT 
+            MH.IDMonHoc AS [Mã Môn], 
+            MH.TenMon AS [Tên Môn], 
+            D.diem_lab AS [Điểm Lab],
+            D.diem_asm AS [Điểm ASM],
+            D.diem_thi AS [Điểm Thi],
+            D.diem_tb AS [Điểm TB]
+        FROM 
+            MonHoc MH 
+        JOIN 
+            Diem D ON MH.IDMonHoc = D.IDMonHoc 
+        JOIN 
+            KyHoc K ON D.IDKyHoc = K.IDKyHoc 
+        JOIN 
+            STUDENTS S ON D.IDSV = S.IDSV 
+        WHERE 
+            S.IdAcc = @IdAcc AND K.IDKyHoc = @IDKyHoc";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 using (SqlCommand cmd = new SqlCommand(query, conn))

@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ASM.exe.manifest" size="23945">
+    <dependentAssembly dependencyType="install" codebase="ASM.exe.manifest" size="23946">
       <assemblyIdentity name="ASM.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x+7Pc5xEOshep1nw48D5/xyybB59LaLMGgKiHGRMT90=</dsig:DigestValue>
+        <dsig:DigestValue>5OI51+b9n2XKjY3lhX9kuOYBPWtDBYp0+RAUk74g7Y0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

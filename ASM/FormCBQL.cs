@@ -89,7 +89,7 @@ namespace ASM
         private void btnMenuQlyIT_Click(object sender, EventArgs e)
         {
             PnMain.Controls.Clear();
-            FormQuanLyNhanSu QlGV = new FormQuanLyNhanSu();
+            FormQuanLyIT QlGV = new FormQuanLyIT();
             QlGV.TopLevel = false;
             QlGV.FormBorderStyle = FormBorderStyle.None;
             QlGV.Dock = DockStyle.Fill;

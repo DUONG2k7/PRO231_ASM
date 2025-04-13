@@ -93,10 +93,8 @@ namespace ASM
 
         private void btnBaoCao_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormBaoCaoDiemDanh baoCaoDiemDanh = new FormBaoCaoDiemDanh(IDLICHHOC, NGAYDIEMDANH);
             baoCaoDiemDanh.ShowDialog();
-            this.Show();
         }
 
         private void btnLuu_Click(object sender, EventArgs e)
@@ -108,13 +106,9 @@ namespace ASM
             }
 
             DTO_GV_DIEMDANH XoaDiemDanh = new DTO_GV_DIEMDANH(IDKYHOC, NGAYDIEMDANH);
-            if (QLDiemDanh.XoaDiemDanhCu(XoaDiemDanh, out string message))
+            if (!QLDiemDanh.XoaDiemDanhCu(XoaDiemDanh, out string message))
             {
                 MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 

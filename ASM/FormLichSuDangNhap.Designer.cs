@@ -64,7 +64,7 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvLichSuDangNhap.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLichSuDangNhap.ColumnHeadersHeight = 4;
+            this.dgvLichSuDangNhap.ColumnHeadersHeight = 40;
             this.dgvLichSuDangNhap.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -77,8 +77,9 @@
             this.dgvLichSuDangNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvLichSuDangNhap.Location = new System.Drawing.Point(12, 66);
             this.dgvLichSuDangNhap.Name = "dgvLichSuDangNhap";
+            this.dgvLichSuDangNhap.ReadOnly = true;
             this.dgvLichSuDangNhap.RowHeadersVisible = false;
-            this.dgvLichSuDangNhap.Size = new System.Drawing.Size(707, 289);
+            this.dgvLichSuDangNhap.Size = new System.Drawing.Size(718, 289);
             this.dgvLichSuDangNhap.TabIndex = 40;
             this.dgvLichSuDangNhap.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLichSuDangNhap.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -92,8 +93,8 @@
             this.dgvLichSuDangNhap.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvLichSuDangNhap.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvLichSuDangNhap.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.dgvLichSuDangNhap.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvLichSuDangNhap.ThemeStyle.ReadOnly = false;
+            this.dgvLichSuDangNhap.ThemeStyle.HeaderStyle.Height = 40;
+            this.dgvLichSuDangNhap.ThemeStyle.ReadOnly = true;
             this.dgvLichSuDangNhap.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvLichSuDangNhap.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvLichSuDangNhap.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -16,6 +16,9 @@ GO
 CREATE TABLE PhongBan (
     IDPhong INT NOT NULL PRIMARY KEY IDENTITY(1,1),
     TenPhong NVARCHAR(100),
+	IDRole NVARCHAR(50),
+	SiSo INT,
+    FOREIGN KEY (IDRole) REFERENCES ROLES(IDRole)
 );
 GO
 
@@ -185,7 +188,10 @@ CREATE TABLE Diem (
 	IDKyHoc INT NOT NULL,
     IDSV NVARCHAR(50) NOT NULL,
 	IDMonHoc INT NOT NULL,
-    Diem float,
+    diem_lab FLOAT,
+    diem_asm FLOAT,
+    diem_thi FLOAT,
+    diem_tb AS (ROUND(diem_lab * 0.2 + diem_asm * 0.3 + diem_thi * 0.5, 2)) PERSISTED,
     FOREIGN KEY (IDKyHoc) REFERENCES KyHoc(IDKyHoc),
     FOREIGN KEY (IDSV) REFERENCES STUDENTS(IDSV),
     FOREIGN KEY (IDMonHoc) REFERENCES MonHoc(IDMonHoc)
@@ -254,11 +260,11 @@ VALUES
 GO
 
 -- Thêm dữ liệu vào bảng PhongBan
-INSERT INTO PhongBan(TenPhong)
+INSERT INTO PhongBan(TenPhong, IDRole)
 VALUES 
-('IT'),
-('CBDT'),
-('CBQL');
+('IT', 'R01'),
+('CBDT', 'R02'),
+('CBQL', 'R03');
 GO
 
 -- Thêm dữ liệu vào bảng ACCOUNTS
@@ -398,17 +404,6 @@ VALUES
 (N'Anh Văn', 3),
 (N'Lý', 3),
 (N'Hóa', 3);
-
--- Thêm điểm cho nửa còn lại sinh viên ở các lớp L01, L02, L03
-INSERT INTO DIEM (IDSV, IDKyHoc, IDMonHoc, Diem)
-VALUES 
-('SV13', 1, 1, 7.5), ('SV13', 1, 2, 8.0), ('SV13', 1, 3, 6.5),
-('SV14', 1, 1, 8.5), ('SV14', 1, 2, 7.0), ('SV14', 1, 3, 7.5),
-('SV15', 1, 1, 6.0), ('SV15', 1, 2, 7.5), ('SV15', 1, 3, 8.0),
-('SV16', 1, 1, 7.5), ('SV16', 1, 2, 6.5), ('SV16', 1, 3, 8.5),
-('SV17', 1, 1, 8.0), ('SV17', 1, 2, 9.0), ('SV17', 1, 3, 7.0),
-('SV18', 1, 1, 6.5), ('SV18', 1, 2, 7.0), ('SV18', 1, 3, 8.0);
-GO
 
 -- Tạo Trigger INSERT
 DROP TRIGGER IF EXISTS trg_Insert_KyHoc_TrangThai;

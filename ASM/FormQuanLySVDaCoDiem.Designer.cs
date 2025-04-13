@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label18 = new System.Windows.Forms.Label();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
@@ -38,7 +38,11 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.txtDiem = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtDiemThi = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtDiemASM = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDiemLab = new Guna.UI2.WinForms.Guna2TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.lbTenSV = new System.Windows.Forms.Label();
             this.txtMasvDiemtb = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,6 +61,8 @@
             this.btnNew = new Guna.UI2.WinForms.Guna2Button();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDiemTB = new Guna.UI2.WinForms.Guna2TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -73,7 +79,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(506, 74);
+            this.groupBox1.Size = new System.Drawing.Size(479, 74);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tìm kiếm SV trong lớp";
@@ -100,7 +106,7 @@
             this.btnSearch.FillColor = System.Drawing.Color.DarkOrange;
             this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(374, 19);
+            this.btnSearch.Location = new System.Drawing.Point(349, 19);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(105, 44);
             this.btnSearch.TabIndex = 95;
@@ -123,23 +129,29 @@
             this.txtMasv.Name = "txtMasv";
             this.txtMasv.PlaceholderText = "Nhập MSV cần tìm...";
             this.txtMasv.SelectedText = "";
-            this.txtMasv.Size = new System.Drawing.Size(221, 38);
+            this.txtMasv.Size = new System.Drawing.Size(196, 38);
             this.txtMasv.TabIndex = 94;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label24);
             this.groupBox2.Controls.Add(this.label22);
-            this.groupBox2.Controls.Add(this.txtDiem);
+            this.groupBox2.Controls.Add(this.txtDiemThi);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.txtDiemTB);
+            this.groupBox2.Controls.Add(this.txtDiemASM);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txtDiemLab);
+            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label19);
             this.groupBox2.Controls.Add(this.lbTenSV);
             this.groupBox2.Controls.Add(this.txtMasvDiemtb);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(561, 70);
+            this.groupBox2.Location = new System.Drawing.Point(500, 70);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(329, 252);
+            this.groupBox2.Size = new System.Drawing.Size(417, 276);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             // 
@@ -147,7 +159,7 @@
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label24.Location = new System.Drawing.Point(52, 35);
+            this.label24.Location = new System.Drawing.Point(5, 35);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(48, 25);
             this.label24.TabIndex = 94;
@@ -157,46 +169,107 @@
             // 
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label22.Location = new System.Drawing.Point(55, 82);
+            this.label22.Location = new System.Drawing.Point(5, 82);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(45, 25);
             this.label22.TabIndex = 96;
             this.label22.Text = "Mã:";
             // 
-            // txtDiem
+            // txtDiemThi
             // 
-            this.txtDiem.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtDiem.DefaultText = "";
-            this.txtDiem.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtDiem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtDiem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiem.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtDiem.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtDiem.ForeColor = System.Drawing.Color.Black;
-            this.txtDiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDiem.Location = new System.Drawing.Point(146, 129);
-            this.txtDiem.Name = "txtDiem";
-            this.txtDiem.PlaceholderText = "";
-            this.txtDiem.SelectedText = "";
-            this.txtDiem.Size = new System.Drawing.Size(120, 25);
-            this.txtDiem.TabIndex = 98;
+            this.txtDiemThi.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiemThi.DefaultText = "";
+            this.txtDiemThi.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiemThi.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiemThi.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemThi.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemThi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemThi.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiemThi.ForeColor = System.Drawing.Color.Black;
+            this.txtDiemThi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemThi.Location = new System.Drawing.Point(121, 226);
+            this.txtDiemThi.Name = "txtDiemThi";
+            this.txtDiemThi.PlaceholderText = "";
+            this.txtDiemThi.SelectedText = "";
+            this.txtDiemThi.Size = new System.Drawing.Size(120, 25);
+            this.txtDiemThi.TabIndex = 98;
+            this.txtDiemThi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemThi_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(5, 226);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(95, 25);
+            this.label3.TabIndex = 95;
+            this.label3.Text = "Điểm Thi:";
+            // 
+            // txtDiemASM
+            // 
+            this.txtDiemASM.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiemASM.DefaultText = "";
+            this.txtDiemASM.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiemASM.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiemASM.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemASM.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemASM.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemASM.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiemASM.ForeColor = System.Drawing.Color.Black;
+            this.txtDiemASM.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemASM.Location = new System.Drawing.Point(121, 179);
+            this.txtDiemASM.Name = "txtDiemASM";
+            this.txtDiemASM.PlaceholderText = "";
+            this.txtDiemASM.SelectedText = "";
+            this.txtDiemASM.Size = new System.Drawing.Size(120, 25);
+            this.txtDiemASM.TabIndex = 98;
+            this.txtDiemASM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemASM_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(5, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 25);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Điểm ASM:";
+            // 
+            // txtDiemLab
+            // 
+            this.txtDiemLab.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiemLab.DefaultText = "";
+            this.txtDiemLab.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiemLab.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiemLab.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemLab.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemLab.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemLab.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiemLab.ForeColor = System.Drawing.Color.Black;
+            this.txtDiemLab.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemLab.Location = new System.Drawing.Point(121, 129);
+            this.txtDiemLab.Name = "txtDiemLab";
+            this.txtDiemLab.PlaceholderText = "";
+            this.txtDiemLab.SelectedText = "";
+            this.txtDiemLab.Size = new System.Drawing.Size(120, 25);
+            this.txtDiemLab.TabIndex = 98;
+            this.txtDiemLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDiemLab_KeyPress);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label19.Location = new System.Drawing.Point(37, 129);
+            this.label19.Location = new System.Drawing.Point(5, 129);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(63, 25);
+            this.label19.Size = new System.Drawing.Size(103, 25);
             this.label19.TabIndex = 95;
-            this.label19.Text = "Điểm:";
+            this.label19.Text = "Điểm LAB:";
             // 
             // lbTenSV
             // 
             this.lbTenSV.AutoSize = true;
             this.lbTenSV.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTenSV.Location = new System.Drawing.Point(143, 42);
+            this.lbTenSV.Location = new System.Drawing.Point(118, 42);
             this.lbTenSV.Name = "lbTenSV";
             this.lbTenSV.Size = new System.Drawing.Size(0, 16);
             this.lbTenSV.TabIndex = 4;
@@ -213,7 +286,7 @@
             this.txtMasvDiemtb.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMasvDiemtb.ForeColor = System.Drawing.Color.Black;
             this.txtMasvDiemtb.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMasvDiemtb.Location = new System.Drawing.Point(146, 82);
+            this.txtMasvDiemtb.Location = new System.Drawing.Point(121, 82);
             this.txtMasvDiemtb.Name = "txtMasvDiemtb";
             this.txtMasvDiemtb.PlaceholderText = "";
             this.txtMasvDiemtb.ReadOnly = true;
@@ -236,7 +309,7 @@
             // btnChangeAllRight
             // 
             this.btnChangeAllRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeAllRight.Location = new System.Drawing.Point(158, 249);
+            this.btnChangeAllRight.Location = new System.Drawing.Point(138, 249);
             this.btnChangeAllRight.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAllRight.Name = "btnChangeAllRight";
             this.btnChangeAllRight.Size = new System.Drawing.Size(97, 47);
@@ -248,7 +321,7 @@
             // btnChangeAllLeft
             // 
             this.btnChangeAllLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangeAllLeft.Location = new System.Drawing.Point(296, 249);
+            this.btnChangeAllLeft.Location = new System.Drawing.Point(268, 249);
             this.btnChangeAllLeft.Margin = new System.Windows.Forms.Padding(2);
             this.btnChangeAllLeft.Name = "btnChangeAllLeft";
             this.btnChangeAllLeft.Size = new System.Drawing.Size(97, 47);
@@ -260,7 +333,7 @@
             // BtnRight
             // 
             this.BtnRight.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnRight.Location = new System.Drawing.Point(426, 249);
+            this.BtnRight.Location = new System.Drawing.Point(399, 249);
             this.BtnRight.Margin = new System.Windows.Forms.Padding(2);
             this.BtnRight.Name = "BtnRight";
             this.BtnRight.Size = new System.Drawing.Size(97, 47);
@@ -291,7 +364,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(506, 74);
+            this.groupBox3.Size = new System.Drawing.Size(479, 74);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Lọc Dữ Liệu";
@@ -308,7 +381,7 @@
             this.cbTenMon.ItemHeight = 30;
             this.cbTenMon.Location = new System.Drawing.Point(311, 26);
             this.cbTenMon.Name = "cbTenMon";
-            this.cbTenMon.Size = new System.Drawing.Size(168, 36);
+            this.cbTenMon.Size = new System.Drawing.Size(143, 36);
             this.cbTenMon.TabIndex = 101;
             this.cbTenMon.SelectedIndexChanged += new System.EventHandler(this.cbTenMon_SelectedIndexChanged);
             // 
@@ -344,7 +417,7 @@
             this.cbLop.ItemHeight = 30;
             this.cbLop.Location = new System.Drawing.Point(70, 26);
             this.cbLop.Name = "cbLop";
-            this.cbLop.Size = new System.Drawing.Size(168, 36);
+            this.cbLop.Size = new System.Drawing.Size(143, 36);
             this.cbLop.TabIndex = 99;
             this.cbLop.SelectedIndexChanged += new System.EventHandler(this.cbLop_SelectedIndexChanged);
             // 
@@ -352,26 +425,26 @@
             // 
             this.dgvDanhSachSV.AllowUserToAddRows = false;
             this.dgvDanhSachSV.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvDanhSachSV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvDanhSachSV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachSV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvDanhSachSV.ColumnHeadersHeight = 40;
             this.dgvDanhSachSV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDanhSachSV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDanhSachSV.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvDanhSachSV.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvDanhSachSV.Location = new System.Drawing.Point(0, 368);
             this.dgvDanhSachSV.Name = "dgvDanhSachSV";
@@ -415,7 +488,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnUpdate.Location = new System.Drawing.Point(931, 163);
+            this.btnUpdate.Location = new System.Drawing.Point(956, 184);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 58);
             this.btnUpdate.TabIndex = 93;
@@ -436,7 +509,7 @@
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnNew.Location = new System.Drawing.Point(931, 78);
+            this.btnNew.Location = new System.Drawing.Point(956, 99);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(117, 58);
             this.btnNew.TabIndex = 92;
@@ -457,7 +530,7 @@
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnSave.ForeColor = System.Drawing.Color.White;
             this.btnSave.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnSave.Location = new System.Drawing.Point(931, 249);
+            this.btnSave.Location = new System.Drawing.Point(956, 270);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(117, 58);
             this.btnSave.TabIndex = 93;
@@ -474,6 +547,35 @@
             this.label2.Size = new System.Drawing.Size(376, 40);
             this.label2.TabIndex = 94;
             this.label2.Text = "QUẢN LÝ ĐIỂM SINH VIÊN";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(289, 114);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 25);
+            this.label4.TabIndex = 95;
+            this.label4.Text = "Điểm TB:";
+            // 
+            // txtDiemTB
+            // 
+            this.txtDiemTB.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtDiemTB.DefaultText = "";
+            this.txtDiemTB.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtDiemTB.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtDiemTB.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemTB.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtDiemTB.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemTB.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtDiemTB.ForeColor = System.Drawing.Color.Black;
+            this.txtDiemTB.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtDiemTB.Location = new System.Drawing.Point(274, 147);
+            this.txtDiemTB.Name = "txtDiemTB";
+            this.txtDiemTB.PlaceholderText = "";
+            this.txtDiemTB.SelectedText = "";
+            this.txtDiemTB.Size = new System.Drawing.Size(120, 25);
+            this.txtDiemTB.TabIndex = 98;
             // 
             // FormQuanLySVDaCoDiem
             // 
@@ -526,7 +628,7 @@
         private Guna.UI2.WinForms.Guna2Button btnNew;
         private Guna.UI2.WinForms.Guna2Button btnSave;
         private System.Windows.Forms.Label label24;
-        private Guna.UI2.WinForms.Guna2TextBox txtDiem;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiemLab;
         private System.Windows.Forms.Label label22;
         private Guna.UI2.WinForms.Guna2TextBox txtMasvDiemtb;
         private System.Windows.Forms.Label label19;
@@ -538,5 +640,11 @@
         private Guna.UI2.WinForms.Guna2Button btnSearch;
         private Guna.UI2.WinForms.Guna2TextBox txtMasv;
         private System.Windows.Forms.Label label2;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiemThi;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiemASM;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2TextBox txtDiemTB;
     }
 }

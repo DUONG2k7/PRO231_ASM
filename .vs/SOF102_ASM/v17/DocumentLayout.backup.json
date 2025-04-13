@@ -3,8 +3,20 @@
   "WorkspaceRootPath": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|c:\\git_pro231_3layer\\finalasm\\pro231_asm\\asm\\formquanlylich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|solutionrelative:asm\\formquanlylich.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|c:\\git_pro231_3layer\\finalasm\\pro231_asm\\asm\\formquanlyit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|solutionrelative:asm\\formquanlyit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|c:\\git_pro231_3layer\\finalasm\\pro231_asm\\dal_ql\\dal_cbql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|solutionrelative:dal_ql\\dal_cbql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{855F2DA6-1611-498D-B4EA-F269C56A64E5}|BUS_QL\\BUS_QL.csproj|c:\\git_pro231_3layer\\finalasm\\pro231_asm\\bus_ql\\bus_cbql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{855F2DA6-1611-498D-B4EA-F269C56A64E5}|BUS_QL\\BUS_QL.csproj|solutionrelative:bus_ql\\bus_cbql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\dal_ql\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EB569C07-FEB1-443E-826C-FFA15907ADE3}|DAL_QL\\DAL_QL.csproj|solutionrelative:dal_ql\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 165,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,15 +38,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormQuanLyLich.cs",
-              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\ASM\\FormQuanLyLich.cs",
-              "RelativeDocumentMoniker": "ASM\\FormQuanLyLich.cs",
-              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\ASM\\FormQuanLyLich.cs",
-              "RelativeToolTip": "ASM\\FormQuanLyLich.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAAABoAAAArAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "DAL_CBQL.cs",
+              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\DAL_QL\\DAL_CBQL.cs",
+              "RelativeDocumentMoniker": "DAL_QL\\DAL_CBQL.cs",
+              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\DAL_QL\\DAL_CBQL.cs",
+              "RelativeToolTip": "DAL_QL\\DAL_CBQL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T12:44:22.95Z",
+              "WhenOpened": "2025-04-13T06:35:31.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BUS_CBQL.cs",
+              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\BUS_QL\\BUS_CBQL.cs",
+              "RelativeDocumentMoniker": "BUS_QL\\BUS_CBQL.cs",
+              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\BUS_QL\\BUS_CBQL.cs",
+              "RelativeToolTip": "BUS_QL\\BUS_CBQL.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAiwGUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T02:46:09.065Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormQuanLyIT.cs",
+              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\ASM\\FormQuanLyIT.cs",
+              "RelativeDocumentMoniker": "ASM\\FormQuanLyIT.cs",
+              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\ASM\\FormQuanLyIT.cs",
+              "RelativeToolTip": "ASM\\FormQuanLyIT.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAQwEQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T03:18:32.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DbConnect.cs",
+              "DocumentMoniker": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\DAL_QL\\DbConnect.cs",
+              "RelativeDocumentMoniker": "DAL_QL\\DbConnect.cs",
+              "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\DAL_QL\\DbConnect.cs",
+              "RelativeToolTip": "DAL_QL\\DbConnect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T05:28:26.932Z",
               "EditorCaption": ""
             }
           ]

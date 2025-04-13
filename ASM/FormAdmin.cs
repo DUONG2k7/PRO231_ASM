@@ -23,7 +23,6 @@ namespace ASM
         {
             this.Close();
         }
-
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             tpIT.Controls.Clear();

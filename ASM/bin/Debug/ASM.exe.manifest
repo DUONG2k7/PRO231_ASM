@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="34548672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="34565568">
       <assemblyIdentity name="ASM" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4O6gZBUJQIxLkDgaahVbQWhULKBq66+8G4osLCKU22U=</dsig:DigestValue>
+        <dsig:DigestValue>8xG04j5n5rjUXqnCYbeH1JyDqGDw1EpncgOPMP3VaW4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,31 +61,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>L2So5wOmt/ka/rFAxZi5zwcuHDwa6obEdFyvNbn/c8A=</dsig:DigestValue>
+        <dsig:DigestValue>BU+wiGa29m9M/azolcmkvKnK/hFTilUwbf0X/VRt8sk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="96256">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="112640">
       <assemblyIdentity name="DAL_QL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lRIT0Q404THz1giz7FACeHKTVXqk46l1F9R/ridFGWk=</dsig:DigestValue>
+        <dsig:DigestValue>JyE7KoGik/+vYK3QW8HZFoHEc6le8/fF9Nd7/vVz8Eo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO_QL.dll" size="18944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DTO_QL.dll" size="19456">
       <assemblyIdentity name="DTO_QL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OxZl33ibWFO4DwVXaPVqkQQjuVw+qLuf/9cEJiVCBRM=</dsig:DigestValue>
+        <dsig:DigestValue>Se4BGPYrUah8lmsuZpkMRiWvJbZXSHJen7fDlbO9NxY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

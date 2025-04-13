@@ -22,8 +22,9 @@ namespace ASM
         public FormQuanLyIT()
         {
             InitializeComponent();
-            LoadDsIT();
+            LoadDsLocDuLieu();
             LoadDsPhong();
+            LoadDsNhanSu();
             LockControl();
 
             if (dgvData.Columns.Contains("Hình"))
@@ -32,17 +33,119 @@ namespace ASM
             }
             dgvData.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        public void LoadDsIT()
+        public void LoadDsNhanSu()
         {
-            dgvData.DataSource = QlIT.LoadDsIT();
+            int idPhong = 0;
+            
+            if (cbLocDuLieu.SelectedItem is DataRowView drv)
+            {
+                idPhong = Convert.ToInt32(drv["IDPhong"]);
+            }
+
+            DataTable dtRole = QlIT.GetRoleFromIDPhong(idPhong);
+            if (dtRole.Rows.Count == 0)
+            {
+                dgvData.DataSource = QlIT.GetListStaffWithNOPhongBan();
+                return;
+            }
+
+            string idRole = dtRole.Rows[0]["IDRole"].ToString().Trim();
+            switch (idRole)
+            {
+                case "R01":
+                    dgvData.DataSource = QlIT.LoadDsIT(idPhong);
+                    break;
+                case "R02":
+                    dgvData.DataSource = QlIT.LoadDsCBDT(idPhong);
+                    break;
+                case "R03":
+                    dgvData.DataSource = QlIT.LoadDsCBQL(idPhong);
+                    break;
+            }
+
+            if (dgvData.Columns.Contains("Mã Phòng"))
+            {
+                dgvData.Columns["Mã Phòng"].Visible = false;
+            }
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvData.Columns["Hình"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
+        public void LoadDsLocDuLieu()
+        {
+            DataTable dtPhong = QlIT.LoadDsPhong();
+            DataRow row = dtPhong.NewRow();
+            row["IDPhong"] = 0;
+            row["Tên Phòng"] = "Chưa có phòng ban";
+            dtPhong.Rows.InsertAt(row, 0);
+
+            cbLocDuLieu.DataSource = dtPhong;
+            cbLocDuLieu.DisplayMember = "Tên Phòng";
+            cbLocDuLieu.ValueMember = "IDPhong";
+        }
         public void LoadDsPhong()
         {
-            cbPhongBan.DataSource = QlIT.LoadDsPhong();
+            DataTable dtPhong = QlIT.LoadDsPhong();
+            DataRow row = dtPhong.NewRow();
+            row["IDPhong"] = 0;
+            row["Tên Phòng"] = "Chưa có phòng ban";
+            dtPhong.Rows.InsertAt(row, 0);
+
+            cbPhongBan.DataSource = dtPhong;
             cbPhongBan.DisplayMember = "Tên Phòng";
             cbPhongBan.ValueMember = "IDPhong";
+        }
+        private void cbLocDuLieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadDsNhanSu();
+        }
+        private void cbPhongBan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TaoID();
+        }
+        public void TaoID()
+        {
+            if (cbPhongBan.SelectedValue == null)
+            {
+                txtID.Text = "";
+                return;
+            }
+
+            int idPhong = 0;
+
+            if (cbPhongBan.SelectedItem is DataRowView drv)
+            {
+                idPhong = Convert.ToInt32(drv["IDPhong"]);
+            }
+            else if (int.TryParse(cbPhongBan.SelectedValue.ToString(), out int parsedId))
+            {
+                idPhong = parsedId;
+            }
+
+            DataTable dtRole = QlIT.GetRoleFromIDPhong(idPhong);
+            if (dtRole.Rows.Count == 0)
+            {
+                txtID.Text = "";
+                txtID.PlaceholderText = "Chọn phòng ban khác";
+                return;
+            }
+
+            string idRole = dtRole.Rows[0]["IDRole"].ToString().Trim();
+
+            switch (idRole)
+            {
+                case "R01":
+                    txtID.Text = QlIT.CreateNewItId("IT");
+                    break;
+                case "R02":
+                    txtID.Text = QlIT.CreateNewCBDTId("DT");
+                    break;
+                case "R03":
+                    txtID.Text = QlIT.CreateNewCBQLId("QL");
+                    break;
+                default:
+                    txtID.Text = "";
+                    break;
+            }
         }
         private void LoadPictureBox()
         {
@@ -76,7 +179,7 @@ namespace ASM
         }
         public void LockControl()
         {
-            txtMaIT.Enabled = false;
+            txtID.Enabled = false;
             txtHoten.Enabled = false;
             txtEmail.Enabled = false;
             txtSodt.Enabled = false;
@@ -104,7 +207,7 @@ namespace ASM
         }
         private bool CheckInput()
         {
-            if (string.IsNullOrWhiteSpace(txtHoten.Text) ||
+            if (string.IsNullOrWhiteSpace(txtID.Text) ||
                 string.IsNullOrWhiteSpace(txtHoten.Text) ||
                 string.IsNullOrWhiteSpace(txtEmail.Text) ||
                 string.IsNullOrWhiteSpace(txtSodt.Text) ||
@@ -166,6 +269,7 @@ namespace ASM
             txtDiachi.Enabled = true;
             rdbNam.Enabled = true;
             rdbNu.Enabled = true;
+            cbPhongBan.Enabled = true;
             pbPicIT.Enabled = true;
             btnSave.Enabled = true;
 
@@ -175,8 +279,8 @@ namespace ASM
 
             ClearForm();
 
-            string tiento = "IT"; //tiền tố
-            txtMaIT.Text = QlIT.CreateNewItId(tiento);
+            cbPhongBan.SelectedIndexChanged += cbPhongBan_SelectedIndexChanged;
+            TaoID();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -189,6 +293,7 @@ namespace ASM
             rdbNam.Enabled = true;
             rdbNu.Enabled = true;
             pbPicIT.Enabled = true;
+            cbPhongBan.Enabled = true;
             btnSave.Enabled = true;
             btnNew.Enabled = false;
             btnUpdate.Enabled = false;
@@ -198,72 +303,114 @@ namespace ASM
         {
             if (e.RowIndex >= 0 && dgvData.CurrentRow != null)
             {
-                try
+                btnUpdate.Enabled = true;
+                cbPhongBan.SelectedIndexChanged -= cbPhongBan_SelectedIndexChanged;
+
+                txtID.Text = dgvData.CurrentRow.Cells["Mã Cán Bộ"]?.Value?.ToString() ?? string.Empty;
+                txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
+                if (dgvData.CurrentRow.Cells["Mã Phòng"].Value != DBNull.Value && dgvData.CurrentRow.Cells["Mã Phòng"].Value != null)
                 {
-                    btnUpdate.Enabled = true;
+                    cbPhongBan.SelectedValue = dgvData.CurrentRow.Cells["Mã Phòng"].Value.ToString();
+                }
+                else
+                {
+                    cbPhongBan.SelectedIndex = 0;  // Nếu không có phòng ban, chọn không có gì trong ComboBox
+                }
 
-                    txtMaIT.Text = dgvData.CurrentRow.Cells["Mã Cán Bộ"]?.Value?.ToString() ?? string.Empty;
-                    txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
-                    cbPhongBan.SelectedValue = dgvData.CurrentRow.Cells["Mã Phòng"]?.Value?.ToString() ?? string.Empty;
-                    txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
-                    txtEmail.Text = dgvData.CurrentRow.Cells["Email"]?.Value?.ToString() ?? string.Empty;
-                    txtSodt.Text = dgvData.CurrentRow.Cells["Số Điện Thoại"]?.Value?.ToString() ?? string.Empty;
-                    txtDiachi.Text = dgvData.CurrentRow.Cells["Địa Chỉ"]?.Value?.ToString() ?? string.Empty;
+                txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
+                txtEmail.Text = dgvData.CurrentRow.Cells["Email"]?.Value?.ToString() ?? string.Empty;
+                txtSodt.Text = dgvData.CurrentRow.Cells["Số Điện Thoại"]?.Value?.ToString() ?? string.Empty;
+                txtDiachi.Text = dgvData.CurrentRow.Cells["Địa Chỉ"]?.Value?.ToString() ?? string.Empty;
 
-                    string gioiTinh = dgvData.CurrentRow.Cells["Giới Tính"]?.Value?.ToString();
-                    if (!string.IsNullOrEmpty(gioiTinh))
-                    {
-                        rdbNam.Checked = gioiTinh == "Nam";
-                        rdbNu.Checked = gioiTinh == "Nữ";
-                    }
-                    else
-                    {
-                        rdbNam.Checked = false;
-                        rdbNu.Checked = false;
-                    }
+                string gioiTinh = dgvData.CurrentRow.Cells["Giới Tính"]?.Value?.ToString();
+                if (!string.IsNullOrEmpty(gioiTinh))
+                {
+                    rdbNam.Checked = gioiTinh == "Nam";
+                    rdbNu.Checked = gioiTinh == "Nữ";
+                }
+                else
+                {
+                    rdbNam.Checked = false;
+                    rdbNu.Checked = false;
+                }
 
-                    image = dgvData.CurrentRow.Cells["Hình"]?.Value as byte[];
-                    if (image != null && image.Length > 0)
+                image = dgvData.CurrentRow.Cells["Hình"]?.Value as byte[];
+                if (image != null && image.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(image))
                     {
-                        using (MemoryStream ms = new MemoryStream(image))
-                        {
-                            pbPicIT.Image = Image.FromStream(ms);
-                        }
-                    }
-                    else
-                    {
-                        pbPicIT.Image = null;
+                        pbPicIT.Image = Image.FromStream(ms);
                     }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Lỗi khi xử lý dữ liệu: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    pbPicIT.Image = null;
                 }
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
             string message;
+            int idPhong = 0;
+            if (cbPhongBan.SelectedItem is DataRowView drv)
+            {
+                idPhong = Convert.ToInt32(drv["IDPhong"]);
+            }
+            else if (int.TryParse(cbPhongBan.SelectedValue.ToString(), out int parsedId))
+            {
+                idPhong = parsedId;
+            }
+            DataTable dtRole = QlIT.GetRoleFromIDPhong(idPhong);
+            string idRole = dtRole.Rows[0]["IDRole"].ToString().Trim();
+
             if (isAdding)
             {
                 if (!CheckInput())
                 {
                     return;
                 }
+
                 if (!checkEmail(txtEmail.Text))
                 {
                     MessageBox.Show("Email không hợp lệ. Vui lòng nhập lại.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                DTO_CBQL_IT IT = new DTO_CBQL_IT(txtMaIT.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
-                if (QlIT.ThemIT(IT, out message))
+                switch (idRole)
                 {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    case "R01":
+                        DTO_CBQL_IT IT = new DTO_CBQL_IT(txtID.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
+                        if (QlIT.ThemIT(IT, out message))
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        break;
+                    case "R02":
+                        DTO_CBQL_CBDT CBDT = new DTO_CBQL_CBDT(txtID.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
+                        if (QlIT.ThemCBDT(CBDT, out message))
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        break;
+                    case "R03":
+                        DTO_CBQL_CBQL CBQL = new DTO_CBQL_CBQL(txtID.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
+                        if (QlIT.ThemCBQL(CBQL, out message))
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        break;
                 }
             }
             else
@@ -279,13 +426,12 @@ namespace ASM
                     return;
                 }
 
-                DTO_CBQL_IT IT = new DTO_CBQL_IT(txtMaIT.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
-
+                DTO_CBQL_IT IT = new DTO_CBQL_IT(txtID.Text, Convert.ToInt32(cbPhongBan.SelectedValue), txtHoten.Text, txtEmail.Text, txtSodt.Text, rdbNam.Checked, txtDiachi.Text, image);
 
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật cán bộ này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (result == DialogResult.Yes)
                 {
-                    if (QlIT.CapNhatIT(IT, out message))
+                    if (QlIT.Update(IT, out message))
                     {
                         MessageBox.Show(message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -296,9 +442,12 @@ namespace ASM
                 }
             }
 
+            cbPhongBan.SelectedIndexChanged -= cbPhongBan_SelectedIndexChanged;
+
             ClearForm();
             LockControl();
-            LoadDsIT();
+            LoadDsLocDuLieu();
+            LoadDsNhanSu();
             LoadDsPhong();
         }
     }

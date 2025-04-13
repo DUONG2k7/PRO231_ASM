@@ -44,7 +44,6 @@
             this.dragFromCBQL = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl2 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.PnMain.SuspendLayout();
             this.PnInfo.SuspendLayout();
@@ -110,22 +109,21 @@
             this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
             this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.Image = global::ASM.Properties.Resources.undo;
-            this.guna2Button2.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(12, 830);
+            this.guna2Button2.Location = new System.Drawing.Point(0, 755);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(67, 45);
+            this.guna2Button2.Size = new System.Drawing.Size(94, 67);
             this.guna2Button2.TabIndex = 2;
             this.guna2Button2.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // PnInfo
             // 
             this.PnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.PnInfo.Controls.Add(this.guna2Button3);
             this.PnInfo.Controls.Add(this.guna2Button2);
             this.PnInfo.Controls.Add(this.guna2Button1);
             this.PnInfo.Dock = System.Windows.Forms.DockStyle.Left;
@@ -208,33 +206,14 @@
             this.guna2DragControl1.TargetControl = this.PnInfo;
             this.guna2DragControl1.UseTransparentDrag = true;
             // 
-            // guna2Button3
-            // 
-            this.guna2Button3.Animated = true;
-            this.guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button3.ForeColor = System.Drawing.Color.White;
-            this.guna2Button3.Image = global::ASM.Properties.Resources.undo;
-            this.guna2Button3.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.guna2Button3.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button3.Location = new System.Drawing.Point(12, 765);
-            this.guna2Button3.Name = "guna2Button3";
-            this.guna2Button3.Size = new System.Drawing.Size(67, 45);
-            this.guna2Button3.TabIndex = 17;
-            this.guna2Button3.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-            // 
             // FormCBQL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 822);
             this.Controls.Add(this.PnMenu);
-            this.Controls.Add(this.PnInfo);
             this.Controls.Add(this.PnMain);
+            this.Controls.Add(this.PnInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormCBQL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -265,6 +244,5 @@
         private Guna.UI2.WinForms.Guna2DragControl dragFromCBQL;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
     }
 }

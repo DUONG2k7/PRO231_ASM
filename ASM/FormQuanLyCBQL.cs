@@ -22,7 +22,7 @@ namespace ASM
         public FormQuanLyCBQL()
         {
             InitializeComponent();
-            LoadDsCBQL();
+            //LoadDsCBQL();
             LoadDsPhong();
             LockControl();
 
@@ -34,7 +34,7 @@ namespace ASM
         }
         public void LoadDsCBQL()
         {
-            dgvData.DataSource = QlCBQL.LoadDsCBQL();
+            //dgvData.DataSource = QlCBQL.LoadDsCBQL();
             DataGridViewImageColumn imageColumn = (DataGridViewImageColumn)dgvData.Columns["Hình"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Zoom;
         }
