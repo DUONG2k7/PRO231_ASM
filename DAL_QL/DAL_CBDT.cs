@@ -860,40 +860,121 @@ namespace DAL_QL
         {
             try
             {
-                string query = "INSERT INTO LichHoc (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc) " +
-               "VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
-
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
-                        cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
-                        cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
-                        cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
-                        cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
-                        cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
-                        cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
-                        cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                    if (LICH.LoaiNgay)
+                    {
+                        // 1. Lấy số tiết môn học
+                        string queryTiet = "SELECT SoTiet FROM MonHoc WHERE IDMonHoc = @IDMonHoc";
+                        int soTietMonHoc = 0;
+
+                        using (SqlCommand cmdTiet = new SqlCommand(queryTiet, conn))
                         {
-                            message = "Thông tin lịch đã được lưu thành công!";
-                            return true;
+                            cmdTiet.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            object result = cmdTiet.ExecuteScalar();
+                            if (result != null)
+                            {
+                                soTietMonHoc = Convert.ToInt32(result);
+                            }
+                            else
+                            {
+                                message = "Không tìm thấy môn học.";
+                                return false;
+                            }
                         }
-                        else
+
+                        // 2. Tính số ca học cần có = SoTiet / 2
+                        int soCaCanCo = soTietMonHoc / 2;
+
+                        // 3. Đếm số ca học đã có
+                        string queryDemCa = @"
+                SELECT COUNT(*) 
+                FROM LichHoc 
+                WHERE IDLop = @IDLop AND IDMonHoc = @IDMonHoc AND IDKyHoc = @IDKyHoc";
+
+                        int soCaDaCo = 0;
+                        using (SqlCommand cmdDem = new SqlCommand(queryDemCa, conn))
                         {
-                            message = "Không có dữ liệu nào được thêm.";
+                            cmdDem.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmdDem.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmdDem.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+
+                            soCaDaCo = (int)cmdDem.ExecuteScalar();
+                        }
+
+                        // 4. Kiểm tra nếu đủ ca rồi thì không cho thêm
+                        if (soCaDaCo >= soCaCanCo)
+                        {
+                            message = $"Môn học đã đủ số ca học ({soCaCanCo} ca = {soTietMonHoc} tiết).";
                             return false;
+                        }
+
+                        // 5. Thêm lịch học nếu còn ca trống
+                        string query = @"INSERT INTO LichHoc 
+                (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
+                VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
+                            cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+                            cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
+                            cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
+                            cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
+                            cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                message = "Thêm lịch học thành công.";
+                                return true;
+                            }
+                            else
+                            {
+                                message = "Không thể thêm lịch học.";
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string query = @"INSERT INTO LichHoc 
+                (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
+                VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
+
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
+                            cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+                            cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
+                            cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
+                            cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
+                            cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                message = "Thêm lịch học thành công.";
+                                return true;
+                            }
+                            else
+                            {
+                                message = "Không thể thêm lịch học.";
+                                return false;
+                            }
                         }
                     }
                 }
             }
             catch (Exception ex)
             {
-                message = "Lỗi khi thêm lịch: " + ex.Message;
+                message = "Lỗi khi thêm lịch học: " + ex.Message;
                 return false;
             }
         }
@@ -901,36 +982,132 @@ namespace DAL_QL
         {
             try
             {
-                string query = "UPDATE LichHoc SET " +
-                               "IDLop = @IDLop, IDMonHoc = @IDMonHoc, IDGV = @IDGV, IDKyHoc = @IDKyHoc, " +
-                               "LoaiNgay = @LoaiNgay, Ngay = @Ngay, GioBatDau = @GioBatDau, GioKetThuc = @GioKetThuc " +
-                               "WHERE IDLichHoc = @IDLichHoc";
-
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@IDLichHoc", LICH.IDLICHHOC);
-                        cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
-                        cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
-                        cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
-                        cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
-                        cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
-                        cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
-                        cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
-                        cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
 
-                        int rowsAffected = cmd.ExecuteNonQuery();
-                        if (rowsAffected > 0)
+                    if (LICH.LoaiNgay)
+                    {
+                        // 1. Lấy số tiết của môn học
+                        string queryTiet = "SELECT SoTiet FROM MonHoc WHERE IDMonHoc = @IDMonHoc";
+                        int soTiet = 0;
+
+                        using (SqlCommand cmdTiet = new SqlCommand(queryTiet, conn))
                         {
-                            message = "Cập nhật thông tin lịch học thành công!";
-                            return true;
+                            cmdTiet.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            object result = cmdTiet.ExecuteScalar();
+                            if (result != null)
+                                soTiet = Convert.ToInt32(result);
+                            else
+                            {
+                                message = "Không tìm thấy môn học.";
+                                return false;
+                            }
                         }
-                        else
+
+                        int soCaToiDa = soTiet / 2;
+
+                        // 2. Đếm số ca đã có cho lớp + môn + kỳ học, trừ lịch đang update
+                        string queryCount = @"
+                SELECT COUNT(*) FROM LichHoc 
+                WHERE IDLop = @IDLop 
+                  AND IDMonHoc = @IDMonHoc 
+                  AND IDKyHoc = @IDKyHoc 
+                  AND IDLichHoc <> @IDLichHoc";
+
+                        int soCaDaCo = 0;
+
+                        using (SqlCommand cmdCount = new SqlCommand(queryCount, conn))
                         {
-                            message = "Không có bản ghi nào được cập nhật.";
+                            cmdCount.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmdCount.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmdCount.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+                            cmdCount.Parameters.AddWithValue("@IDLichHoc", LICH.IDLICHHOC);
+
+                            soCaDaCo = (int)cmdCount.ExecuteScalar();
+                        }
+
+                        if (soCaDaCo >= soCaToiDa)
+                        {
+                            message = $"Không thể cập nhật. Môn học đã đủ số ca ({soCaToiDa}).";
                             return false;
+                        }
+
+                        // 3. Thực hiện update
+                        string queryUpdate = @"
+                UPDATE LichHoc SET 
+                    IDLop = @IDLop,
+                    IDMonHoc = @IDMonHoc,
+                    IDGV = @IDGV,
+                    IDKyHoc = @IDKyHoc,
+                    LoaiNgay = @LoaiNgay,
+                    Ngay = @Ngay,
+                    GioBatDau = @GioBatDau,
+                    GioKetThuc = @GioKetThuc
+                WHERE IDLichHoc = @IDLichHoc";
+
+                        using (SqlCommand cmd = new SqlCommand(queryUpdate, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@IDLichHoc", LICH.IDLICHHOC);
+                            cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
+                            cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+                            cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
+                            cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
+                            cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
+                            cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                message = "Cập nhật thông tin lịch học thành công!";
+                                return true;
+                            }
+                            else
+                            {
+                                message = "Không có bản ghi nào được cập nhật.";
+                                return false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        string queryUpdate = @"
+                        UPDATE LichHoc SET 
+                            IDLop = @IDLop,
+                            IDMonHoc = @IDMonHoc,
+                            IDGV = @IDGV,
+                            IDKyHoc = @IDKyHoc,
+                            LoaiNgay = @LoaiNgay,
+                            Ngay = @Ngay,
+                            GioBatDau = @GioBatDau,
+                            GioKetThuc = @GioKetThuc
+                        WHERE IDLichHoc = @IDLichHoc";
+
+                        using (SqlCommand cmd = new SqlCommand(queryUpdate, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@IDLichHoc", LICH.IDLICHHOC);
+                            cmd.Parameters.AddWithValue("@IDLop", LICH.IDLop);
+                            cmd.Parameters.AddWithValue("@IDMonHoc", LICH.IDMonHoc);
+                            cmd.Parameters.AddWithValue("@IDGV", LICH.IDGV);
+                            cmd.Parameters.AddWithValue("@IDKyHoc", LICH.IDKyHoc);
+                            cmd.Parameters.AddWithValue("@LoaiNgay", LICH.LoaiNgay ? 1 : 0);
+                            cmd.Parameters.AddWithValue("@Ngay", LICH.Ngay);
+                            cmd.Parameters.AddWithValue("@GioBatDau", LICH.GioBatDau);
+                            cmd.Parameters.AddWithValue("@GioKetThuc", LICH.GioKetThuc);
+
+                            int rowsAffected = cmd.ExecuteNonQuery();
+                            if (rowsAffected > 0)
+                            {
+                                message = "Cập nhật thông tin lịch học thành công!";
+                                return true;
+                            }
+                            else
+                            {
+                                message = "Không có bản ghi nào được cập nhật.";
+                                return false;
+                            }
                         }
                     }
                 }

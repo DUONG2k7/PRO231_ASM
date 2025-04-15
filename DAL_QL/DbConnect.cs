@@ -9,6 +9,6 @@ namespace DAL_QL
 {
     public class DbConnect
     {
-        protected string ConnectionString = @"Data Source=172.16.50.44,1433;Initial Catalog=PRO231;Persist Security Info=True;User ID=sa;Password=123;Encrypt=False";
+        protected string ConnectionString = @"Data Source=192.168.1.4,1433;Initial Catalog=PRO231;Persist Security Info=True;User ID=sa;Password=123;Encrypt=False";
     }
 }

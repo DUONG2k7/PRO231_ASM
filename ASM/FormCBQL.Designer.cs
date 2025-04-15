@@ -36,7 +36,7 @@
             this.PnMain = new Guna.UI2.WinForms.Guna2Panel();
             this.ElipseFormCBQL = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
+            this.btnthoat = new Guna.UI2.WinForms.Guna2Button();
             this.PnInfo = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMenuQlyIT = new Guna.UI2.WinForms.Guna2Button();
             this.btnMenuQlyPhongBan = new Guna.UI2.WinForms.Guna2Button();
@@ -102,29 +102,29 @@
             this.guna2Button1.Size = new System.Drawing.Size(67, 42);
             this.guna2Button1.TabIndex = 1;
             // 
-            // guna2Button2
+            // btnthoat
             // 
-            this.guna2Button2.Animated = true;
-            this.guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.guna2Button2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button2.ForeColor = System.Drawing.Color.White;
-            this.guna2Button2.Image = global::ASM.Properties.Resources.undo;
-            this.guna2Button2.ImageSize = new System.Drawing.Size(40, 40);
-            this.guna2Button2.Location = new System.Drawing.Point(0, 755);
-            this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(94, 67);
-            this.guna2Button2.TabIndex = 2;
-            this.guna2Button2.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            this.btnthoat.Animated = true;
+            this.btnthoat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnthoat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnthoat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnthoat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnthoat.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnthoat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.btnthoat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnthoat.ForeColor = System.Drawing.Color.White;
+            this.btnthoat.Image = global::ASM.Properties.Resources.undo;
+            this.btnthoat.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnthoat.Location = new System.Drawing.Point(0, 755);
+            this.btnthoat.Name = "btnthoat";
+            this.btnthoat.Size = new System.Drawing.Size(94, 67);
+            this.btnthoat.TabIndex = 2;
+            this.btnthoat.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // PnInfo
             // 
             this.PnInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.PnInfo.Controls.Add(this.guna2Button2);
+            this.PnInfo.Controls.Add(this.btnthoat);
             this.PnInfo.Controls.Add(this.guna2Button1);
             this.PnInfo.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnInfo.Location = new System.Drawing.Point(0, 0);
@@ -239,7 +239,7 @@
         private Guna.UI2.WinForms.Guna2Button btnMenuQlyPhongBan;
         private Guna.UI2.WinForms.Guna2Button btnMenuQlyIT;
         private Guna.UI2.WinForms.Guna2Panel PnInfo;
-        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btnthoat;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DragControl dragFromCBQL;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl2;
