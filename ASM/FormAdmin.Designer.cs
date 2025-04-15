@@ -130,7 +130,7 @@
             this.tpIT.Padding = new System.Windows.Forms.Padding(3);
             this.tpIT.Size = new System.Drawing.Size(1392, 852);
             this.tpIT.TabIndex = 0;
-            this.tpIT.Text = "Quản lý IT";
+            this.tpIT.Text = "IT";
             this.tpIT.UseVisualStyleBackColor = true;
             // 
             // tpCBDT
@@ -140,7 +140,7 @@
             this.tpCBDT.Padding = new System.Windows.Forms.Padding(3);
             this.tpCBDT.Size = new System.Drawing.Size(1392, 852);
             this.tpCBDT.TabIndex = 1;
-            this.tpCBDT.Text = "Quản lý CBDT";
+            this.tpCBDT.Text = "CBDT";
             this.tpCBDT.UseVisualStyleBackColor = true;
             // 
             // tpCBQL
@@ -150,7 +150,7 @@
             this.tpCBQL.Padding = new System.Windows.Forms.Padding(3);
             this.tpCBQL.Size = new System.Drawing.Size(1392, 852);
             this.tpCBQL.TabIndex = 2;
-            this.tpCBQL.Text = "Quản lý CBQL";
+            this.tpCBQL.Text = "CBQL";
             this.tpCBQL.UseVisualStyleBackColor = true;
             // 
             // tpGV
@@ -160,7 +160,7 @@
             this.tpGV.Padding = new System.Windows.Forms.Padding(3);
             this.tpGV.Size = new System.Drawing.Size(1392, 852);
             this.tpGV.TabIndex = 3;
-            this.tpGV.Text = "Quản lý GV";
+            this.tpGV.Text = "GV";
             this.tpGV.UseVisualStyleBackColor = true;
             // 
             // tpSV

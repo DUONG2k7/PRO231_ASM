@@ -308,7 +308,7 @@ namespace ASM
 
                 txtID.Text = dgvData.CurrentRow.Cells["Mã Cán Bộ"]?.Value?.ToString() ?? string.Empty;
                 txtHoten.Text = dgvData.CurrentRow.Cells["Tên Cán Bộ"]?.Value?.ToString() ?? string.Empty;
-                if (dgvData.CurrentRow.Cells["Mã Phòng"].Value != DBNull.Value && dgvData.CurrentRow.Cells["Mã Phòng"].Value != null)
+                if (dgvData.Columns.Contains("Mã Phòng") && dgvData.CurrentRow.Cells["Mã Phòng"].Value != DBNull.Value)
                 {
                     cbPhongBan.SelectedValue = dgvData.CurrentRow.Cells["Mã Phòng"].Value.ToString();
                 }

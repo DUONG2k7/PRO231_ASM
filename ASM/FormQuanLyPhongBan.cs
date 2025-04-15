@@ -47,6 +47,7 @@ namespace ASM
             cbLoaiPhong.Enabled = false;
             dgvData.Enabled = true;
 
+            btnNew.Enabled = true;
             btnSave.Enabled = false;
             btnUpdate.Enabled = false;
             btnXem.Enabled = false;
