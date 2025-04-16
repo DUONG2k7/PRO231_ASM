@@ -152,7 +152,7 @@ namespace ASM
                         dtpGioKetThuc.Value = dtpGioBatDau.Value.AddMinutes(120); // 09:30
                         break;
                     case 2:
-                        dtpGioBatDau.Value = DateTime.Today.AddHours(9).AddMinutes(10);
+                        dtpGioBatDau.Value = DateTime.Today.AddHours(9).AddMinutes(40);
                         dtpGioKetThuc.Value = dtpGioBatDau.Value.AddMinutes(120);
                         break;
                     case 3:
@@ -257,10 +257,16 @@ namespace ASM
                     return;
                 }
 
-                if (QlLich.KiemTraTrungLich(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
+                if (QlLich.KiemTraTrungLichLop(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
                                   dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay))
                 {
                     MessageBox.Show("Lớp này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (QlLich.KiemTraTrungLichGV(cbGvMonhoc.SelectedValue.ToString(), dtpNgay.Value.Date,
+                                  dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay))
+                {
+                    MessageBox.Show("Giảng viên này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -287,10 +293,16 @@ namespace ASM
                     return;
                 }
 
-                if (QlLich.KiemTraTrungLichSua(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
+                if (QlLich.KiemTraTrungLichLopSua(cbLop.SelectedValue.ToString(), dtpNgay.Value.Date,
                                   dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay, Convert.ToInt32(dgvLichHoc.CurrentRow.Cells["IDLichHoc"].Value)))
                 {
                     MessageBox.Show("Lớp này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if(QlLich.KiemTraTrungLichGVSua(cbGvMonhoc.SelectedValue.ToString(), dtpNgay.Value.Date,
+                                  dtpGioBatDau.Value.TimeOfDay, dtpGioKetThuc.Value.TimeOfDay, Convert.ToInt32(dgvLichHoc.CurrentRow.Cells["IDLichHoc"].Value)))
+                {
+                    MessageBox.Show("Giảng viên này đã có lịch học khác trong khung giờ trùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -330,7 +342,7 @@ namespace ASM
 
                     TimeSpan gioBatDau = (TimeSpan)dgvLichHoc.CurrentRow.Cells["Giờ Bắt Đầu"].Value;
                     if (gioBatDau == new TimeSpan(7, 30, 0)) cbCahoc.SelectedItem = 1;
-                    else if (gioBatDau == new TimeSpan(9, 10, 0)) cbCahoc.SelectedItem = 2;
+                    else if (gioBatDau == new TimeSpan(9, 40, 0)) cbCahoc.SelectedItem = 2;
                     else if (gioBatDau == new TimeSpan(13, 0, 0)) cbCahoc.SelectedItem = 3;
                     else if (gioBatDau == new TimeSpan(15, 10, 0)) cbCahoc.SelectedItem = 4;
                     else cbCahoc.SelectedIndex = -1;

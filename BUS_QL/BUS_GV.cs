@@ -19,6 +19,10 @@ namespace BUS_QL
         {
             return QlGiaoVien.GetMaLop(taikhoan);
         }
+        public DataTable GetMaLopFormTk(string taikhoan)
+        {
+            return QlGiaoVien.GetMaLopFormTk(taikhoan);
+        }
 
         //Form Hiện Thị
         public DataTable GetData(string query, string Malop)

@@ -84,9 +84,9 @@ namespace DAL_QL
         SELECT 
             MH.IDMonHoc AS [Mã Môn], 
             MH.TenMon AS [Tên Môn], 
-            D.diem_lab AS [Điểm Lab],
-            D.diem_asm AS [Điểm ASM],
-            D.diem_thi AS [Điểm Thi],
+            D.diem_lab AS [Điểm Lab (20%)],
+            D.diem_asm AS [Điểm ASM (30%)],
+            D.diem_thi AS [Điểm Thi (50%)],
             D.diem_tb AS [Điểm TB]
         FROM 
             MonHoc MH 

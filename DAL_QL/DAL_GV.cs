@@ -29,6 +29,25 @@ namespace DAL_QL
                 }
             }
         }
+        public DataTable GetMaLopFormTk(string taikhoan)
+        {
+            string query = @"SELECT C.IDLop, C.ClassName FROM CLASSES C 
+                            JOIN Class_Teacher CT ON C.IDLop = CT.IDLop 
+                            JOIN TEACHERS T ON CT.IDGV = T.IDGV 
+                            JOIN ACCOUNTS A ON T.IdAcc = A.IdAcc 
+                            WHERE A.Username = @Username";
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Username", taikhoan);
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    dataAdapter.Fill(dt);
+                    return dt;
+                }
+            }
+        }
 
         //Form danh sách hiển thị
         public DataTable GetData(string query, string Malop)
@@ -598,9 +617,9 @@ namespace DAL_QL
                                 K.TenKy AS [Học Kỳ], 
                                 MH.IDMonHoc AS [Mã Môn], 
                                 MH.TenMon AS [Tên Môn], 
-                                D.diem_lab AS [Điểm Lab],
-                                D.diem_asm AS [Điểm Asm],
-                                D.diem_thi AS [Điểm Thi],
+                                D.diem_lab AS [Điểm Lab (20%)],
+                                D.diem_asm AS [Điểm Asm (30%)],
+                                D.diem_thi AS [Điểm Thi (50%)],
                                 D.diem_tb AS [Điểm Trung Bình]
                             FROM Diem D
                             JOIN MonHoc MH ON D.IDMonHoc = MH.IDMonHoc

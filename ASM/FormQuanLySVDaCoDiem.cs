@@ -180,9 +180,9 @@ namespace ASM
                 txtMasvDiemtb.Text = row["Mã Sinh Viên"].ToString();
                 lbTenSV.Text = row["Tên Sinh Viên"].ToString();
                 cbTenMon.Text = row["Tên Môn"].ToString();
-                txtDiemLab.Text = row["Điểm Lab"].ToString();
-                txtDiemASM.Text = row["Điểm Asm"].ToString();
-                txtDiemThi.Text = row["Điểm Thi"].ToString();
+                txtDiemLab.Text = row["Điểm Lab (20%)"].ToString();
+                txtDiemASM.Text = row["Điểm Asm (30%)"].ToString();
+                txtDiemThi.Text = row["Điểm Thi (50%)"].ToString();
                 txtDiemTB.Text = row["Điểm Trung Bình"].ToString();
 
                 dgvDanhSachSV.ClearSelection();
@@ -373,9 +373,9 @@ namespace ASM
                 lbTenSV.Text = dgvDanhSachSV.CurrentRow.Cells["Tên Sinh Viên"]?.Value?.ToString();
                 cbLop.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Lớp"]?.Value?.ToString();
                 cbTenMon.SelectedValue = dgvDanhSachSV.CurrentRow.Cells["Mã Môn"]?.Value?.ToString();
-                txtDiemLab.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Lab"]?.Value?.ToString();
-                txtDiemASM.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Asm"]?.Value?.ToString();
-                txtDiemThi.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Thi"]?.Value?.ToString();
+                txtDiemLab.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Lab (20%)"]?.Value?.ToString();
+                txtDiemASM.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Asm (30%)"]?.Value?.ToString();
+                txtDiemThi.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Thi (50%)"]?.Value?.ToString();
                 txtDiemTB.Text = dgvDanhSachSV.CurrentRow.Cells["Điểm Trung Bình"]?.Value?.ToString();
 
                 LoadTrangThaiDulieu();

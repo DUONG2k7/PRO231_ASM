@@ -808,7 +808,7 @@ namespace DAL_QL
                 }
             }
         }
-        public bool KiemTraTrungLich(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
+        public bool KiemTraTrungLichLop(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -831,7 +831,31 @@ namespace DAL_QL
                 return count > 0;
             }
         }
-        public bool KiemTraTrungLichSua(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
+        public bool KiemTraTrungLichGV(string maGV, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                string query = @"
+                SELECT COUNT(*) 
+                FROM LichHoc 
+                WHERE 
+                IDGV = @IDGV 
+                AND CONVERT(date, Ngay) = @NgayHoc 
+                AND (@GioBDMoi < GioKetThuc AND @GioKTMoi > GioBatDau)";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDGV", maGV);
+                cmd.Parameters.AddWithValue("@NgayHoc", ngayHoc.Date);
+                cmd.Parameters.AddWithValue("@GioBDMoi", gioBDMoi);
+                cmd.Parameters.AddWithValue("@GioKTMoi", gioKTMoi);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        public bool KiemTraTrungLichLopSua(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
         {
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
@@ -850,6 +874,30 @@ namespace DAL_QL
                 cmd.Parameters.AddWithValue("@GioBDMoi", gioBDMoi);
                 cmd.Parameters.AddWithValue("@GioKTMoi", gioKTMoi);
                 cmd.Parameters.AddWithValue("@IDLichHoc", idLichHoc);
+
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+        public bool KiemTraTrungLichGVSua(string maGV, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
+        {
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
+            {
+                string query = @"
+                SELECT COUNT(*) 
+                FROM LichHoc 
+                WHERE 
+                IDGV = @IDGV 
+                AND CONVERT(date, Ngay) = @NgayHoc 
+                AND (@GioBDMoi < GioKetThuc AND @GioKTMoi > GioBatDau)
+                AND IDLICHHOC != @IDLichHoc";
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@IDGV", maGV);
+                cmd.Parameters.AddWithValue("@NgayHoc", ngayHoc.Date);
+                cmd.Parameters.AddWithValue("@GioBDMoi", gioBDMoi);
+                cmd.Parameters.AddWithValue("@GioKTMoi", gioKTMoi);
 
                 conn.Open();
                 int count = (int)cmd.ExecuteScalar();
@@ -885,14 +933,14 @@ namespace DAL_QL
                             }
                         }
 
-                        // 2. Tính số ca học cần có = SoTiet / 2
-                        int soCaCanCo = soTietMonHoc / 2;
+                        // 2. Tính số ca học cần có = SoTiet / 2 (làm tròn lên)
+                        int soCaCanCo = (int)Math.Ceiling(soTietMonHoc / 2.0);
 
                         // 3. Đếm số ca học đã có
                         string queryDemCa = @"
-                SELECT COUNT(*) 
-                FROM LichHoc 
-                WHERE IDLop = @IDLop AND IDMonHoc = @IDMonHoc AND IDKyHoc = @IDKyHoc";
+                        SELECT COUNT(*) 
+                        FROM LichHoc 
+                        WHERE IDLop = @IDLop AND IDMonHoc = @IDMonHoc AND IDKyHoc = @IDKyHoc";
 
                         int soCaDaCo = 0;
                         using (SqlCommand cmdDem = new SqlCommand(queryDemCa, conn))
@@ -907,14 +955,14 @@ namespace DAL_QL
                         // 4. Kiểm tra nếu đủ ca rồi thì không cho thêm
                         if (soCaDaCo >= soCaCanCo)
                         {
-                            message = $"Môn học đã đủ số ca học ({soCaCanCo} ca = {soTietMonHoc} tiết).";
+                            message = $"Môn học đã đủ số ca học ({soTietMonHoc} tiết = {soCaCanCo} ca).";
                             return false;
                         }
 
                         // 5. Thêm lịch học nếu còn ca trống
                         string query = @"INSERT INTO LichHoc 
-                (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
-                VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
+                        (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
+                        VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -943,8 +991,8 @@ namespace DAL_QL
                     else
                     {
                         string query = @"INSERT INTO LichHoc 
-                (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
-                VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
+                        (IDLop, IDMonHoc, IDGV, IDKyHoc, LoaiNgay, Ngay, GioBatDau, GioKetThuc)
+                        VALUES (@IDLop, @IDMonHoc, @IDGV, @IDKyHoc, @LoaiNgay, @Ngay, @GioBatDau, @GioKetThuc)";
 
                         using (SqlCommand cmd = new SqlCommand(query, conn))
                         {
@@ -1005,7 +1053,7 @@ namespace DAL_QL
                             }
                         }
 
-                        int soCaToiDa = soTiet / 2;
+                        int soCaToiDa = (int)Math.Ceiling(soTiet / 2.0);
 
                         // 2. Đếm số ca đã có cho lớp + môn + kỳ học, trừ lịch đang update
                         string queryCount = @"
@@ -1029,7 +1077,7 @@ namespace DAL_QL
 
                         if (soCaDaCo >= soCaToiDa)
                         {
-                            message = $"Không thể cập nhật. Môn học đã đủ số ca ({soCaToiDa}).";
+                            message = $"Không thể cập nhật. Môn học đã đủ số ca ({soTiet} tiết = {soCaToiDa} ca).";
                             return false;
                         }
 

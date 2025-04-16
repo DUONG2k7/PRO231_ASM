@@ -113,7 +113,7 @@
             this.txtTieuDe.Name = "txtTieuDe";
             this.txtTieuDe.PlaceholderText = "";
             this.txtTieuDe.SelectedText = "";
-            this.txtTieuDe.Size = new System.Drawing.Size(260, 34);
+            this.txtTieuDe.Size = new System.Drawing.Size(260, 44);
             this.txtTieuDe.TabIndex = 67;
             // 
             // dtpNgayDang

@@ -134,13 +134,21 @@ namespace BUS_QL
         {
             return QlThongTin.GetListTeacherOfSubjectFormLich(IdMonHoc, IDLop, IDKyHoc);
         }
-        public bool KiemTraTrungLich(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
+        public bool KiemTraTrungLichLop(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
         {
-            return QlThongTin.KiemTraTrungLich(maLop, ngayHoc, gioBDMoi, gioKTMoi);
+            return QlThongTin.KiemTraTrungLichLop(maLop, ngayHoc, gioBDMoi, gioKTMoi);
         }
-        public bool KiemTraTrungLichSua(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
+        public bool KiemTraTrungLichGV(string maGV, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi)
         {
-            return QlThongTin.KiemTraTrungLichSua(maLop, ngayHoc, gioBDMoi, gioKTMoi, idLichHoc);
+            return QlThongTin.KiemTraTrungLichGV(maGV, ngayHoc, gioBDMoi, gioKTMoi);
+        }
+        public bool KiemTraTrungLichLopSua(string maLop, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
+        {
+            return QlThongTin.KiemTraTrungLichLopSua(maLop, ngayHoc, gioBDMoi, gioKTMoi, idLichHoc);
+        }
+        public bool KiemTraTrungLichGVSua(string maGV, DateTime ngayHoc, TimeSpan gioBDMoi, TimeSpan gioKTMoi, int idLichHoc)
+        {
+            return QlThongTin.KiemTraTrungLichLopSua(maGV, ngayHoc, gioBDMoi, gioKTMoi, idLichHoc);
         }
         public bool ThemLichHoc(DTO_CBDT_LICHHOC LICH, out string message)
         {

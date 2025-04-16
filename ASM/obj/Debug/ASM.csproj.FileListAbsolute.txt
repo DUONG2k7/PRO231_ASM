@@ -1887,6 +1887,7 @@ C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemDiem.resourc
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemLichHoc.resources
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemLichThi.resources
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormSvXemThongTin.resources
+C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormXemNvFormPhongBan.resources
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormXemSvFormLop.resources
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.Properties.Resources.resources
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.UcTinTuc.resources
@@ -1897,4 +1898,3 @@ C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.application
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.csproj.Up2Date
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.exe
 C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.pdb
-C:\GIT_PRO231_3layer\FinalASM\PRO231_ASM\ASM\obj\Debug\ASM.FormXemNvFormPhongBan.resources

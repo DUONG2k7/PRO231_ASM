@@ -110,9 +110,9 @@ namespace DAL_QL
                         {
                             cmdCheck.Parameters.AddWithValue("@ID", id);
                             object result = cmdCheck.ExecuteScalar();
-                            if (result != null && result != DBNull.Value)
+                            if (result != null)
                             {
-                                idAcc = result.ToString();
+                                idAcc = result == DBNull.Value ? "" : result.ToString();
                                 currentTable = tables[i];
                                 break;
                             }

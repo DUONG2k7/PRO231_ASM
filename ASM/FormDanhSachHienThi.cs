@@ -15,13 +15,13 @@ namespace ASM
     public partial class FormDanhSachHienThi : Form
     {
         BUS_GV QlDAnhSach = new BUS_GV();
-        string Malop;
         public FormDanhSachHienThi(string TK)
         {
             InitializeComponent();
 
-            Malop = QlDAnhSach.GetMaLop(TK);
+            LoaddsLop(TK);
             cbDanhSach.SelectedIndex = 0;
+            cbLop.SelectedIndexChanged += cbDanhSach_SelectedIndexChanged;
             cbDanhSach.SelectedIndexChanged += cbDanhSach_SelectedIndexChanged;
             dgvDanhSach.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
@@ -29,18 +29,23 @@ namespace ASM
         {
             this.Close();
         }
-
+        public void LoaddsLop(string tk)
+        {
+            cbLop.DataSource = QlDAnhSach.GetMaLopFormTk(tk);
+            cbLop.DisplayMember = "ClassName";
+            cbLop.ValueMember = "IDLop";
+        }
         private void cbDanhSach_SelectedIndexChanged(object sender, EventArgs e)
         {
             string query = "";
             switch (cbDanhSach.SelectedItem.ToString())
             {
                 case "Mặc định":
-                    query = @"SELECT GD.IDDiem AS [Mã Điểm], SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
+                    query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
                     MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
-                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
-                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
-                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab (20%)],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment (30%)],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam (50%)],
                     COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
                     FROM STUDENTS SV
                     LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
@@ -63,9 +68,9 @@ namespace ASM
                 case "Tăng dần theo mã sinh viên":
                     query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
                     MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
-                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
-                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
-                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab (20%)],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment (30%)],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam (50%)],
                     COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
                     FROM STUDENTS SV
                     LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
@@ -78,9 +83,9 @@ namespace ASM
                     query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
                     CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính],
                     MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
-                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
-                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
-                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab (20%)],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment (30%)],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam (50%)],
                     COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
                     FROM STUDENTS SV
                     LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
@@ -92,9 +97,9 @@ namespace ASM
                 case "Giảm dần theo mã sinh viên":
                     query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
                     MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
-                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
-                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
-                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab (20%)],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment (30%)],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam (50%)],
                     COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
                     FROM STUDENTS SV
                     LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
@@ -107,9 +112,9 @@ namespace ASM
                     query = @"SELECT SV.IDSV AS [Mã Sinh Viên], SV.TenSV AS [Tên Sinh Viên],
                     CASE WHEN SV.GioiTinh = 1 THEN N'Nam' ELSE N'Nữ' END AS [Giới Tính],
                     MH.IDMonHoc AS [Mã Môn], MH.TenMon AS [Tên Môn],
-                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab],
-                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment],
-                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam],
+                    COALESCE(CAST(GD.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Lab (20%)],
+                    COALESCE(CAST(GD.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Assignment (30%)],
+                    COALESCE(CAST(GD.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Exam (50%)],
                     COALESCE(CAST(GD.diem_tb AS NVARCHAR), N'Chưa nhập') AS [Điểm Trung Bình]
                     FROM STUDENTS SV
                     LEFT JOIN Diem GD ON SV.IDSV = GD.IDSV
@@ -127,7 +132,7 @@ namespace ASM
             {
                 try
                 {
-                    DataTable dt = QlDAnhSach.GetData(query, Malop);
+                    DataTable dt = QlDAnhSach.GetData(query, cbLop.SelectedValue.ToString());
                     dgvDanhSach.DataSource = dt;
                 }
                 catch (Exception)
