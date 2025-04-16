@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|c:\\git_pro231_3layer\\finalasm\\pro231_asm\\asm\\formdanhsachhienthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\asm\\formdanhsachhienthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4ED0B138-2E1E-4993-BB69-2B902511DF0B}|ASM\\ASM.csproj|solutionrelative:asm\\formdanhsachhienthi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -36,7 +36,7 @@
               "RelativeDocumentMoniker": "ASM\\FormDanhSachHienThi.cs",
               "ToolTip": "C:\\GIT_PRO231_3layer\\FinalASM\\PRO231_ASM\\ASM\\FormDanhSachHienThi.cs",
               "RelativeToolTip": "ASM\\FormDanhSachHienThi.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAA6wCsAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBcAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T16:25:18.456Z",
               "EditorCaption": ""
@@ -51,8 +51,7 @@
               "RelativeToolTip": "DAL_QL\\DbConnect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T05:28:26.932Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-12T05:28:26.932Z"
             }
           ]
         }
