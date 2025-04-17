@@ -776,7 +776,7 @@ namespace DAL_QL
         }
         public DataTable GetListSubjectFormLich()
         {
-            string query = "SELECT MH.IDMonHoc, MH.TenMon FROM MonHoc MH JOIN MonHoc_KyHoc MK ON MH.IDMonHoc = MK.IDMonHoc JOIN KyHoc K ON MK.IDKyHoc = K.IDKyHoc WHERE K.Trangthai = 1";
+            string query = "SELECT MH.IDMonHoc, MH.TenMon FROM MonHoc MH JOIN MonHoc_KyHoc MK ON MH.IDMonHoc = MK.IDMonHoc JOIN KyHoc K ON MK.IDKyHoc = K.IDKyHoc WHERE K.Trangthai = 1 AND MK.Trangthai = 1";
             using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(query, conn);

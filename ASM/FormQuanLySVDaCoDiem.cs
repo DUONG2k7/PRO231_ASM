@@ -51,6 +51,9 @@ namespace ASM
             {
                 MessageBox.Show("Không thể lấy tổng sinh viên vì giảng viên chưa được phân lớp", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            dgvDanhSachSV.DefaultCellStyle.SelectionBackColor = Color.Cyan;
+            dgvDanhSachSV.DefaultCellStyle.SelectionForeColor = Color.Black;
             dgvDanhSachSV.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         public void LoadDsSv()

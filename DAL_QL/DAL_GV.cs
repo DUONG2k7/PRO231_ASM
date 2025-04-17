@@ -236,9 +236,9 @@ namespace DAL_QL
                                 KH.TenKy AS [Học Kỳ], 
                                 MH.IDMonHoc AS [Mã Môn], 
                                 MH.TenMon AS [Tên Môn], 
-                                COALESCE(CAST(D.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Điểm Lab],
-                                COALESCE(CAST(D.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Điểm Asm],
-                                COALESCE(CAST(D.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Điểm Thi],
+                                COALESCE(CAST(D.diem_lab AS NVARCHAR), N'Chưa nhập') AS [Điểm Lab (20%)],
+                                COALESCE(CAST(D.diem_asm AS NVARCHAR), N'Chưa nhập') AS [Điểm Asm (30%)],
+                                COALESCE(CAST(D.diem_thi AS NVARCHAR), N'Chưa nhập') AS [Điểm Thi (50%)],
                                 COALESCE(CAST(D.diem_tb AS NVARCHAR), N'Chưa xét') AS [Điểm Trung Bình]
                             FROM STUDENTS SV
                             JOIN CLASSES C ON SV.IDLop = C.IDLop

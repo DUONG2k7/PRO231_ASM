@@ -40,7 +40,7 @@ namespace ASM
         private void FormAdmin_Load(object sender, EventArgs e)
         {
             tpIT.Controls.Clear();
-            FormIT QlIT = new FormIT("I", "R01");
+            FormIT QlIT = new FormIT("IT1", "R01");
             QlIT.TopLevel = false;
             QlIT.FormBorderStyle = FormBorderStyle.None;
             QlIT.Dock = DockStyle.Fill;
@@ -55,7 +55,7 @@ namespace ASM
             QlIT.Show();
 
             tpCBDT.Controls.Clear();
-            FormCBDT QlDT = new FormCBDT("DT", "R02");
+            FormCBDT QlDT = new FormCBDT("DT1", "R02");
             QlDT.TopLevel = false;
             QlDT.FormBorderStyle = FormBorderStyle.None;
             QlDT.Dock = DockStyle.Fill;
@@ -70,7 +70,7 @@ namespace ASM
             QlDT.Show();
 
             tpCBQL.Controls.Clear();
-            FormCBQL QlQL = new FormCBQL("QL", "R03");
+            FormCBQL QlQL = new FormCBQL("QL1", "R03");
             QlQL.TopLevel = false;
             QlQL.FormBorderStyle = FormBorderStyle.None;
             QlQL.Dock = DockStyle.Fill;
@@ -85,7 +85,7 @@ namespace ASM
             QlQL.Show();
 
             tpGV.Controls.Clear();
-            FormGV QlGV = new FormGV("GV", "R04", "A08");
+            FormGV QlGV = new FormGV("GV1", "R04", "A20");
             QlGV.TopLevel = false;
             QlGV.FormBorderStyle = FormBorderStyle.None;
             QlGV.Dock = DockStyle.Fill;
@@ -100,7 +100,7 @@ namespace ASM
             QlGV.Show();
 
             tpSV.Controls.Clear();
-            FormSV QlSV = new FormSV("SV", "R05", "A11");
+            FormSV QlSV = new FormSV("SV1", "R05", "A25");
             QlSV.TopLevel = false;
             QlSV.FormBorderStyle = FormBorderStyle.None;
             QlSV.Dock = DockStyle.Fill;

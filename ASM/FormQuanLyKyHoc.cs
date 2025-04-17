@@ -307,9 +307,9 @@ namespace ASM
         {
             string message;
             int idkyhoc;
-            int.TryParse(dgvDsKyHocMonHoc.CurrentRow.Cells["IDKyHoc"].Value?.ToString(), out idkyhoc);
+            int.TryParse(dgvDsKyHocMonHoc.CurrentRow.Cells["Mã Kỳ"].Value?.ToString(), out idkyhoc);
             int idmonhoc;
-            int.TryParse(dgvDsKyHocMonHoc.CurrentRow.Cells["IDMonHoc"].Value?.ToString(), out idmonhoc);
+            int.TryParse(dgvDsKyHocMonHoc.CurrentRow.Cells["Mã Môn"].Value?.ToString(), out idmonhoc);
 
             if (Qlkyhoc.KhoaOrMoKhoaMonHoc(idkyhoc, idmonhoc, out message))
             {

@@ -178,7 +178,7 @@ namespace ASM
             }
             else
             {
-                int.TryParse(dgvDataTinTuc.CurrentRow.Cells["IDTin"].Value?.ToString(), out int IDTin);
+                int.TryParse(dgvDataTinTuc.CurrentRow.Cells["Mã Tin"].Value?.ToString(), out int IDTin);
 
                 DTO_IT_TINTUC Tintuc = new DTO_IT_TINTUC(IDTin, txtTieuDe.Text, txtNoiDung.Text, dtpNgayDang.Value, image);
                 DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn cập nhật tin tức này không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="34567104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ASM.exe" size="34567616">
       <assemblyIdentity name="ASM" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lFdVtJ540x1EFjkqDVNenoqg9OprFUzHPT+gK+RgwgQ=</dsig:DigestValue>
+        <dsig:DigestValue>mvKI2Sh940mRHsV8MxSEYA231Fqf9ynEb+lQcJ2a95Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -66,14 +66,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="118784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DAL_QL.dll" size="119296">
       <assemblyIdentity name="DAL_QL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4WkkIn1AvPqyA51vuROtiI6LLacKq83KUpLNDyyAwAs=</dsig:DigestValue>
+        <dsig:DigestValue>VzZq6jX1cNIyduiHoOUAuf1g5I19qqpjTEPm2VMi5kM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
